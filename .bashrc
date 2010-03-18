@@ -1,5 +1,5 @@
 #######################################################
-# Adolfo BenedettiDave Crouse's .bashrc file, 
+# Adolfo Benedetti's .bashrc file, 
 # based on Dave Crouse's .bashrc www.usalug.org
 # www.bashscripts.org
 #
@@ -239,12 +239,11 @@ detectlanguage()
 curl -s "http://ajax.googleapis.com/ajax/services/language/detect?v=1.0&q=$(echo "$@" | sed 's/ /%20/g')" | sed 's/{"responseData": {"language":"\([^"]*\)".*/\1\n/'
 }
         
-translate()
-{ 
-taal = curl -s "http://ajax.googleapis.com/ajax/services/language/detect?v=1.0&q=$(echo "$1" | sed 's/ /%20/g')" | sed 's/{"responseData": {"language":"\([^"]*\)".*/\1\n/'
-echo ${taal}
-curl -s "http://ajax.googleapis.com/ajax/services/language/translate?v=1.0&q=$(echo "$1" | sed 's/ /%20/g')&langpair=${taal}%7C$2" | sed 's/{"responseData": {"translatedText":"\([^"]*\)"}, .*}/\1\n/'
-}
+#·translate() 
+#taal = curl -s "http://ajax.googleapis.com/ajax/services/language/detect?v=1.0&q=$(echo "$1" | sed 's/ /%20/g')" | sed 's/{"responseData": {"language":"\([^"]*\)".*/\1\n/'
+#echo ${taal}
+#curl -s "http://ajax.googleapis.com/ajax/services/language/translate?v=1.0&q=$(echo "$1" | sed 's/ /%20/g')&langpair=${taal}%7C$2" | sed 's/{"responseData": {"translatedText":"\([^"]*\)"}, .*}/\1\n/'
+#}
 
 traductor()
 {
