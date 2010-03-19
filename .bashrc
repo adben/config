@@ -1,5 +1,5 @@
 #######################################################
-# Adolfo Benedetti's .bashrc file, 
+# Adolfo BenedettiDave Crouse's .bashrc file, 
 # based on Dave Crouse's .bashrc www.usalug.org
 # www.bashscripts.org
 #
@@ -123,6 +123,17 @@ alias ll='ls -l'
 alias la='ls -A'
 alias l='ls -CF'
 alias ua='sudo apt-get update;sudo apt-get upgrade;sudo apt-get clean;sudo apt-get autoclean;sudo apt-get autoremove'
+
+#some aliases with git --- see peepcode/git stuff
+alias gst='git status'
+alias gl='git pull'
+alias gp='git push'
+alias gd='git diff | mate'
+alias gc='git commit -v'
+alias gca='git commit -v -a'
+alias gb='git branch'
+alias gba='git branch -a'
+
 #alias susyn = 'sudo synaptic'
 alias s='sudo bash'
 alias trash='mv -t ~/.local/share/Trash/files --backup=t'
@@ -222,6 +233,7 @@ netinfo ()
     /sbin/ifconfig | awk /'Bcast/ {print $3}'
     /sbin/ifconfig | awk /'inet addr/ {print $4}'
     /sbin/ifconfig | awk /'HWaddr/ {print $4,$5}'
+    echo -e "external ip: "; curl -s ip.appspot.com
     echo "---------------------------------------------------"
 }
 
@@ -239,11 +251,12 @@ detectlanguage()
 curl -s "http://ajax.googleapis.com/ajax/services/language/detect?v=1.0&q=$(echo "$@" | sed 's/ /%20/g')" | sed 's/{"responseData": {"language":"\([^"]*\)".*/\1\n/'
 }
         
-#·translate() 
-#taal = curl -s "http://ajax.googleapis.com/ajax/services/language/detect?v=1.0&q=$(echo "$1" | sed 's/ /%20/g')" | sed 's/{"responseData": {"language":"\([^"]*\)".*/\1\n/'
-#echo ${taal}
-#curl -s "http://ajax.googleapis.com/ajax/services/language/translate?v=1.0&q=$(echo "$1" | sed 's/ /%20/g')&langpair=${taal}%7C$2" | sed 's/{"responseData": {"translatedText":"\([^"]*\)"}, .*}/\1\n/'
-#}
+translate()
+{ 
+taal = curl -s "http://ajax.googleapis.com/ajax/services/language/detect?v=1.0&q=$(echo "$1" | sed 's/ /%20/g')" | sed 's/{"responseData": {"language":"\([^"]*\)".*/\1\n/'
+echo ${taal}
+curl -s "http://ajax.googleapis.com/ajax/services/language/translate?v=1.0&q=$(echo "$1" | sed 's/ /%20/g')&langpair=${taal}%7C$2" | sed 's/{"responseData": {"translatedText":"\([^"]*\)"}, .*}/\1\n/'
+}
 
 traductor()
 {
