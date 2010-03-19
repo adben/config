@@ -1,9 +1,9 @@
 #######################################################
-# Adolfo BenedettiDave Crouse's .bashrc file, 
+# Adolfo Benedetti's .bashrc file, 
 # based on Dave Crouse's .bashrc www.usalug.org
 # www.bashscripts.org
 #
-# Last Modified 03-08-2010
+# Last Modified 19-08-2010
 # Running on LinuxMint Helena
 #######################################################
 
