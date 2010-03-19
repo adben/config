@@ -3,7 +3,7 @@
 # based on Dave Crouse's .bashrc www.usalug.org
 # www.bashscripts.org
 #
-# Last Modified 19-08-2010
+# Last Modified 03-19-2010
 # Running on LinuxMint Helena
 #######################################################
 
