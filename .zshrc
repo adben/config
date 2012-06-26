@@ -26,7 +26,7 @@ COMPLETION_WAITING_DOTS="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(brew osx ant macports git git-flow github lighthouse maven-zsh-completion lein zsh-syntax-highlighting ssh-agent svn compleat dirpresist extract lein phing history-substring-search gnu-utils translate gas svn)
+plugins=(ant brew cake compleat dircycle dirpresist encode64 extract gas git git-flow github gnu-utils history-substring-search lein lighthouse macports mvn nyan osx pow phing screen sprunge ssh-agent sv svn translate zsh-syntax-highlighting)
 source $ZSH/oh-my-zsh.sh
 #macports preference
 #export PATH=$PATH:/opt/local/bin/
@@ -39,20 +39,22 @@ export M2_HOME=/Users/abenedetti/Dev/Soft/apache-maven-3.0.4
 #export PATH=$PATH:$M2_HOME/bin:$M2/bin
 export ANDROID_SDK_ROOT=/usr/local/Cellar/android-sdk/r18
 export GO_HOME=/usr/local/go/
-export LEININGEN_HOME=/Users/abenedetti/git/leiningen
+#export LEININGEN_HOME=/Users/abenedetti/git/leiningen
 ##Path##
 export PATH=/opt/local/bin
 export PATH=$PATH:$M2_HOME/bin
 #export PATH=/opt/local/bin
 export PATH=$PATH:/usr/local/bin
+export PATH=$PATH:/usr/texbin
 export PATH=$PATH:/bin
 export PATH=$PATH:/sbin
 export PATH=$PATH:/usr/bin
 export PATH=$PATH:/usr/sbin
 export PATH=$PATH:/usr/X11/bin
-export PATH=$PATH:$LEININGEN_HOME/bin
+#export PATH=$PATH:$LEININGEN_HOME/bin
 export PATH=$PATH:/Users/abenedetti/Dev/Soft/play
 export PATH=$PATH:/opt/local/libexec/gnubin
 export PATH=$PATH:$ANDROID_SDK_ROOT/bin
 export PATH=$PATH:$GO_HOME/bin
+export PATH=$PATH:~/bin/
 #update gits
