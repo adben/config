@@ -1,19 +1,19 @@
 #!/bin/zsh
+# updating macports
+echo "::: Updating macports :::"
+sudo port -v selfupdate;
+sudo port -v upgrade outdated;
 cd ~/git ; 
 echo ":::: Updated cloned git repositories ::::" ;
 for i in * ;
 do if [ -d $i ] ;
     then echo "::: Directory $i :::" ;
         cd $i ;
-        git pull ;
+        git smart-pull ;
         sleep 2; 
     fi 
     cd ~/git/;
 done ;
-# updating macports
-echo "::: Updating macports :::"
-sudo port selfupdate;
-sudo port upgrade outdated;
 ## updating brews 
 echo "::: Updating brews :::"
 brew update && brew upgrade && brew cleanup ; 

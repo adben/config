@@ -1,227 +1,62 @@
-/* Lion Toolbar Button */
-@import url("chrome://browser/skin/custom/toolbar-lion.css"); 
-/* Hide Discover (Get Add-ons) */
-@import url("chrome://browser/skin/custom/discover.css");
-/* Hide Open All Tabs */
-@import url("chrome://browser/skin/custom/remove-openalltabs.css");
+/* COLOR */
+/* HUD Location bar history drop-down */
+@import url("chrome://browser/skin/custom/hud_dropdown.css");
+
+/* Gray Favicon to Inactive tabs and Searchbar engine */
+@import url("chrome://browser/skin/custom/gray_favicon.css");
+
 /* Light Gray Sidebar */
 @import url("chrome://browser/skin/custom/lightsidebar.css");
-/* Restore Navigationbar to White 
-@import url("chrome://browser/skin/custom/navi-white.css");*/
+
+/* Restore Navigationbar to White */
+@import url("chrome://browser/skin/custom/navi-white.css");
+
 /* Dark Downloads Window */
 @import url("chrome://browser/skin/custom/darkdownload.css");
+
 /* Dark ScrapBook (add-ons) */
 @import url("chrome://browser/skin/custom/dark_scrapbook.css");
+
+
+/* HIDE */
+/* Hide Discover (Get Add-ons) */
+@import url("chrome://browser/skin/custom/discover.css");
+
+/* Hide Open All Tabs */
+@import url("chrome://browser/skin/custom/remove-openalltabs.css");
+
+/* Hide Sidebar Bookmarks Search */
+@import url("chrome://browser/skin/custom/sidebar_searchfield.css");
+
+
+/* SHOW */
+/* Show Bookmarks Toolbar Folder */
+@import url("chrome://browser/skin/custom/show_btb_folder.css");
+
+/* Show Sidebar Header */
+@import url("chrome://browser/skin/custom/sidebarheader.css");
+
+
+/* OTHERS */
+/* Tab Mix Plus - Tab Close Button Place on left side 
+@import url("chrome://browser/skin/custom/tabmixplus_left.css");
+When you choose "Tab Close Button" - "Place on left side", you must enable this option.*/
+
+/* New Tab Page Grid Two thirds Size (for large display) */
+@import url("chrome://browser/skin/custom/newtab_third.css");
+
+/* Tab Close Button on the Left
+@import url("chrome://browser/skin/custom/tabclose_left.css");*/
+
 /* Feed Toolbar Button in Locationbar */
 @import url("chrome://browser/skin/custom/feedtoolbar.css");
+Before adding code, you have to customize the position of feed button.
+
 /* Search History into Searchbar */
 @import url("chrome://browser/skin/custom/searchbarhistory.css");
-/* Status Panel in Addon-bar 
-@import url("chrome://browser/skin/custom/status-addonbar.css");*/
+
+/* Status Panel in Addon-bar */
+@import url("chrome://browser/skin/custom/status-addonbar.css");
+
 /* Firebug Inspect CMI Short Label */
 @import url("chrome://browser/skin/custom/fb_cmi_shortlabel.css");
-/* Remove separators between toolbars*/
-#toolbar-menubar {
-   min-height: 12px !important;
-   padding: 0px !important;
-   margin: 0px !important;
-   border: none !important;
-}
-#nav-bar {
-   border: none !important;
-   padding: 0px 0px 1px 0px !important;
-}
-#PersonalToolbar {
-   border: none !important;
-}
-#navigator-toolbox {
-   border-bottom-width: 0px !important;
-}
-
-/* Remove Bookmark Toolbar folder from the bookmarks menu */
-menu[label=”Bookmarks Toolbar Folder”] { display: none !important; }
-
-/* Add a keyword when adding a bookmark */
-#keywordRow { display: -moz-grid-line !important; }
-
-/* Move sidebar to bottom */
-#browser {-moz-box-orient: vertical; -moz-box-direction: reverse}
-#sidebar-box {-moz-box-orient: horizontal; -moz-box-direction: reverse}
-#appcontent {-moz-box-orient: horizontal}
-#sidebar {max-width: inherit !important; min-height: inherit !important}
-#sidebar-box > sidebarheader {
-   -moz-box-orient: vertical;
-   -moz-box-direction: reverse;
-   -moz-box-pack: end;
-   border-left: 1px solid ThreeDHighlight;
-   margin-left: 1px;
-}
-#sidebar-box .tabs-closebutton > .toolbarbutton-icon {
-   padding: 4px 2px !important
-}
-#sidebar-title {display: none}
-#sidebar-throbber {margin-left: 4px}
-
-/* Remove the close button on the tab bar and sidebar */
-.tabs-closebutton { display: none !important; }
-
-/* Hide Tabbar close Button */
-tabbrowser .tabs-closebutton-box {
-   display: none; }
-
-/* Remove Stop button when there’s nothing to Stop */
-#stop-button[disabled=”true”] { display: none; }
-
-/* Remove Back button when there’s nothing to go Back to */
-#back-button[disabled=”true”] { display: none; }
-
-/* Remove Forward button when there’s nothing to go Forward to */
-#forward-button[disabled=”true”] { display: none; }
-
-/* Multi-row bookmarks toolbar */
-#bookmarks-ptf {display:block}
-#bookmarks-ptf toolbarseparator { display:inline }
-
-/* Make the active tab not bold */
-tab[selected=”true”] { font-weight: normal !important; }
-
-/* Show tab favicon only on selected tab */
-tab:not([selected=”true”]) .tab-icon {
-   display: none !important; }
-
-/* Make inactive tabs hardly visible */
-#content tab:not([selected=”true”]) {
-   -moz-opacity: 0.5 !important; }
-
-/* Remove extra padding from the Navigation Bar */
-.toolbarbutton-1, .toolbarbutton-menubutton-button {
-   padding: 2px 3px !important;
-}
-.toolbarbutton-1[checked=”true”], .toolbarbutton-1[open=”true”],
-      .toolbarbutton-menubutton-button[checked=”true”],
-      .toolbarbutton-menubutton-button[open=”true”] {
-         padding: 4px 1px 1px 4px !important; }
-
-/* Remove focus rings (dotted rectangle) around active tabs */
-tab:focus > .tab-middle { -moz-outline: none !important }
-
-/* Remove white line under unfocused tab */
-tab{
-   -moz-appearance: none !important;
-   border-bottom: none !important; }
-
-/* Hide the Go menu */
-menu[label=”Go”] {
-   display: none !important; }
-
-/* Hide read mail from Tools Menus */
-menuitem[label=”Read Mail (0 new)”] { display: none; }
-menuitem[label=”Read Mail (0 new)”] + menuseparator { display: none; }
-menuitem[label=”New Message…”] { display: none; }
-menuitem[label=”New Message…”] + menuseparator { display: none; }
-
-/* Remove Web Search from Tools Menu */
-menuitem[label=”Web Search”] { display: none; }
-menuitem[label=”Web Search”] + menuseparator { display: none; }
-
-/* Hide For Internet Explorer Users & Release Notes from Help Menu */
-menuitem[label=”For Internet Explorer Users”] { display: none; }
-menuitem[label=”Release Notes”] { display: none; }
-
-/* Slightly rounded address and search bar corners */
-#urlbar {
-   -moz-appearance: none !important;
-   -moz-border-radius: 3px !important;
-   padding-right: 1px !important; }
-
-/* Remove the ‘Go’ button */
-#go-button {
-   display: none !important; }
-
-/* Remove the forward and back button dropdown arrows */
-#back-button .toolbarbutton-menubutton-dropmarker,
-      #forward-button .toolbarbutton-menubutton-dropmarker {
-         display: none !important; }
-
-/* Find Toolbar Changes enhancements*/
-#FindToolbar {
-   border: 0 !important;
-   border-top: 0px solid !important;
-}
-window:not([windowtype=”navigator:view-source”]) #FindToolbar {
-   border-bottom: 0px solid !important;
-}
-#FindToolbar #find-closebutton:hover {
-   border-color: transparent !important;
-   background-image: none !important;
-}
-#FindToolbar label[value=”Find:”] {
-   margin: 0 !important;
-   padding: 2px 2px 3px 5px !important;
-   border-left: 2px solid !important;
-   -moz-border-left-colors: ThreeDShadow ThreeDHighlight !important;
-}
-#FindToolbar #find-field-container {
-   margin: 0 2px !important;
-   padding: 0 !important;
-}
-#FindToolbar #find-field {
-   margin: 0 !important;
-   padding: 0 0 0 2px !important;
-   width: 200px !important;
-}
-#FindToolbar #find-field[status=”notfound”] {
-   color: rgb(0, 0, 0) !important;
-   background-color: rgb(255, 240, 224) !important;
-}
-#FindToolbar checkbox {
-   margin: 0 2px !important;
-   padding: 2px 0 1px 4px !important;
-   border: 0 !important;
-   border-left: 2px solid !important;
-   -moz-border-left-colors: ThreeDShadow ThreeDHighlight !important;
-}
-#FindToolbar checkbox .checkbox-label-box {
-   margin: 0 !important;
-   padding: 0 0 0 3px !important;
-}
-#FindToolbar #find-status-icon[status] {
-   margin: 0 0 0 2px !important;
-   padding: 1px 0 1px 4px !important;
-   width: 22px !important;
-   height: 18px !important;
-   border: 0 !important;
-   border-left: 2px solid !important;
-   -moz-border-left-colors: ThreeDShadow ThreeDHighlight !important;
-}
-#FindToolbar #find-status {
-   font-weight: bold !important; 
-}
-/*Icons on bookmarks*/
-#personal-bookmarks .toolbarbutton-icon {
-display: none !important;
-}
-#bookmarks-ptf toolbarbutton {
--moz-appearance: button !important;
-margin: 0 2px !important;
-}
-#bookmarks-ptf toolbarbutton:hover {
--moz-border-left-colors: none !important;
--moz-border-right-colors: none !important;
--moz-border-top-colors: none !important;
--moz-border-bottom-colors: none !important;
-}
-#personal-bookmarks .toolbarbutton-icon {
-display: none !important;
-}
-#personal-bookmarks .toolbarbutton-icon {
-display: none !important;
-}
-margin: 0 2px !important;
-}
-#bookmarks-ptf toolbarbutton:hover {
--moz-border-left-colors: none !important;
--moz-border-right-colors: none !important;
--moz-border-top-colors: none !important;
--moz-border-bottom-colors: none !important;
-}
