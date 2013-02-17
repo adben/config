@@ -16,7 +16,7 @@ do if [ -d $i ] ;
 done ;
 ## updating brews 
 echo "::: Updating brews :::"
-brew update && brew upgrade && brew cleanup ; 
+brew update && brew upgrade && brew cleanup && brew prune && brew doctor; 
 ## emacs from trunk 
 ##echo "::: Updating emacs from trunk :::"
 # Emacs is now installed with brews, the previous process will update emacs
