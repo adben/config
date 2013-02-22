@@ -10,6 +10,7 @@ do if [ -d $i ] ;
     then echo "::: Directory $i :::" ;
         cd $i ;
         git smart-pull ;
+	git gc --auto;
         sleep 2; 
     fi 
     cd ~/git/;
