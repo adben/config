@@ -1,8 +1,8 @@
 -Xss16m 
 -XX:PermSize=512m 
 -XX:MaxPermSize=1024m 
--Xms2048m 
--Xmx2048m 
+-Xms1024m 
+-Xmx1024m 
 -XX:+UseParallelOldGC 
 -XX:ParallelGCThreads=8
 -XX:+PrintGCDetails 
@@ -20,3 +20,4 @@
 -XX:+UseFastAccessorMethods 
 -XX:+UseLargePages 
 -XX:LargePageSizeInBytes=512m
+-Dawt.useSystemAAFontSettings=lcd
