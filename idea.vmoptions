@@ -1,8 +1,8 @@
 -Xss16m 
--XX:PermSize=512m 
--XX:MaxPermSize=1024m 
--Xms1024m 
--Xmx1024m 
+-XX:PermSize=1g 
+-XX:MaxPermSize=2g 
+-Xms2g
+-Xmx2g 
 -XX:+UseParallelOldGC 
 -XX:ParallelGCThreads=8
 -XX:+PrintGCDetails 
