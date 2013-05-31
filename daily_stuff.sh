@@ -9,15 +9,18 @@ for i in * ;
 do if [ -d $i ] ;
     then echo "::: Directory $i :::" ;
         cd $i ;
-        git smart-pull ;
-	git gc --auto;
-        sleep 2; 
+        do if [ -d .git ] || git rev-parse --git-dir > /dev/null 2>&1;
+        then git smart-pull ;
+	     git gc --auto;
+             sleep 2; 
+        fi
     fi 
     cd ~/git/;
 done ;
 ## updating brews 
 echo "::: Updating brews :::"
-brew update && brew upgrade && brew cleanup && brew prune && brew doctor; 
+brew -v update && brew -v upgrade && brew -v cleanup && brew -v prune && brew -v doctor
+##brew update && brew upgrade && brew cleanup && brew prune && brew doctor; 
 ## emacs from trunk 
 ##echo "::: Updating emacs from trunk :::"
 # Emacs is now installed with brews, the previous process will update emacs
