@@ -9,13 +9,11 @@ for i in * ;
 do if [ -d $i ] ;
     then echo "::: Directory $i :::" ;
         cd $i ;
-        do if [ -d .git ] || git rev-parse --git-dir > /dev/null 2>&1;
-        then git smart-pull ;
-	     git gc --auto;
-             sleep 2; 
-        fi
+        git smart-pull ;
+	git gc --auto;
+        sleep 2; 
+        cd .. ;
     fi 
-    cd ~/git/;
 done ;
 ## updating brews 
 echo "::: Updating brews :::"
@@ -40,22 +38,11 @@ brew -v update && brew -v upgrade && brew -v cleanup && brew -v prune && brew -v
 # fi;
 # mv /Applications/Emacs.app ~/.Trash/ ;
 # mv ./nextstep/Emacs.app /Applications/ ;
-# if [ -d  "~/Applications/Emacs.app/Contents" ] ;
-# then echo "::: Compiling .elc's :::" ;
-#     echo ":: Removing locally compiled .el configs ::";
-#     rm -rfv ~/.emacs.d/*.elc ;
-#     rm -rfv ~/.emacs.d/*/*.elc ;
-#     rm -rfv ~/.emacs.d/*/*/*.elc ;
-#     echo ":: Compiling lokaal .el configs ::";
-#     cd  ~/.emacs.d && ~/Applications/Emacs.app/Contents/MacOS/Emacs --batch --no-site-file --eval '(byte-recompile-directory "~/.emacs.d" 0 t)' ; 
-#     echo ":: Removing locally compiled .el configs for helm ::";
-#     rm -rfv  ~/git/helm/*.elc ;
-#     rm -rfv  ~/git/helm/*/*.elc ;
-#     echo ":: Compiling locally .el helm configs ::";
-#     cd ~/git/helm && ~/Applications/Emacs.app/Contents/MacOS/Emacs --batch --no-site-file --eval '(byte-recompile-directory "~/git/helm" 0 t)' ; 
-#     echo ":: Removing locally compiled .el configs for egg ::";
-#     rm -rfv  ~/git/egg/*.elc ;
-#     rm -rfv   ~/git/egg/*/*.elc ;
-#     echo ":: Compiling locally .el egg configs ::";
-#     cd ~/git/egg/ && ~/Applications/Emacs.app/Contents/MacOS/Emacs --batch --no-site-file --eval '(byte-recompile-directory "~/git/egg" 0 t)'
-# fi ;
+echo "::: Compiling .elc's :::" ;
+if [ -d  ~/.emacs.d/ ] ;
+then echo ":: Removing old compiled .el configs ::" ;
+    cd ~/.emacs.d/ && find . -type f -name "*.elc" -exec rm -fv {} \;
+    echo ":: Compiling lokaal .el configs ::" ;
+    cd  ~/.emacs.d && ~/Applications/Emacs.app/Contents/MacOS/Emacs --batch --no-site-file --eval '(byte-recompile-directory "~/.emacs.d" 0 t)' ; 
+fi ;
+echo "::: Done batchcompiling local elc's :::" ;

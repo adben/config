@@ -1,6 +1,50 @@
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
 
+# ===== Basics
+setopt no_beep # don't beep on error
+setopt interactive_comments # Allow comments even in interactive shells (especially for Muness)
+
+# ===== Changing Directories
+setopt auto_cd # If you type foo, and it isn't a command, and it is a directory in your cdpath, go there
+setopt cdablevarS # if argument to cd is the name of a parameter whose value is a valid directory, it will become the current directory
+setopt pushd_ignore_dups # don't push multiple copies of the same directory onto the directory stack
+
+# ===== Expansion and Globbing
+setopt extended_glob # treat #, ~, and ^ as part of patterns for filename generation
+
+# ===== History
+setopt append_history # Allow multiple terminal sessions to all append to one zsh command history
+setopt extended_history # save timestamp of command and duration
+setopt inc_append_history # Add comamnds as they are typed, don't wait until shell exit
+setopt hist_expire_dups_first # when trimming history, lose oldest duplicates first
+setopt hist_ignore_dups # Do not write events to history that are duplicates of previous events
+setopt hist_ignore_space # remove command line from history list when first character on the line is a space
+setopt hist_find_no_dups # When searching history don't display results already cycled through twice
+setopt hist_reduce_blanks # Remove extra blanks from each command line being added to history
+setopt hist_verify # don't execute, just expand history
+setopt share_history # imports new commands and appends typed commands to history
+
+# ===== Completion 
+setopt always_to_end # When completing from the middle of a word, move the cursor to the end of the word    
+setopt auto_menu # show completion menu on successive tab press. needs unsetop menu_complete to work
+setopt auto_name_dirs # any parameter that is set to the absolute name of a directory immediately becomes a name for that directory
+setopt complete_in_word # Allow completion from within a word/phrase
+
+unsetopt menu_complete # do not autoselect the first completion entry
+
+# ===== Correction
+setopt correct # spelling correction for commands
+setopt correctall # spelling correction for arguments
+
+# ===== Prompt
+setopt prompt_subst # Enable parameter expansion, command substitution, and arithmetic expansion in the prompt
+setopt transient_rprompt # only show the rprompt on the current prompt
+
+# ===== Scripts and Functions
+setopt multios # perform implicit tees or cats when multiple redirections are attempted
+
+
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
@@ -9,7 +53,7 @@ ZSH=$HOME/.oh-my-zsh
 #export ZSH_THEME="adben-new"
 #export ZSH_THEME="nanotech"
 #export ZSH_THEME="powerline"
-export ZSH_THEME="adben"
+export ZSH_THEME="agnoster"
 #export ZSH_THEME="kennethreitz"
 # export ZSH_THEME="kphoen"
 DEFAULT_USER="abenedetti"
@@ -18,7 +62,7 @@ DEFAULT_USER="abenedetti"
 # Colored cal output
 alias cal="cal | grep --color=auto -E '( |^)$(date +)|$'"
 # Example aliases
-alias emacs="/Applications/Emacs.app/Contents/MacOS/bin/emacsclient --alternate-editor /Applications/Emacs.app/Contents/MacOS/Emacs"
+alias emacs="/usr/local/Cellar/emacs/HEAD/bin/emacsclient --alternate-editor /usr/local/Cellar/emacs/HEAD/Emacs.app/Contents/MacOS/Emacs"
 alias zshconfig="emacs ~/.zshrc"
 alias ohmyzsh="emacs ~/.oh-my-zsh"
 alias lrtail="tail -f ~/Dev/liferay-portal-6.1.1-ce-ga2/tomcat-7.0.27/logs/catalina.out"
@@ -26,6 +70,9 @@ alias lrinit="sh ~/Dev/liferay-portal-6.1.1-ce-ga2/tomcat-7.0.27/bin/startup.sh 
 alias lrstop="sh ~/Dev/liferay-portal-6.1.1-ce-ga2/tomcat-7.0.27/bin/shutdown.sh &&  lrtail"
 alias lrrestart="sh ~/Dev/liferay-portal-6.1.1-ce-ga2/tomcat-7.0.27/bin/shutdown.sh ; sh ~/Dev/liferay-portal-6.1.1-ce-ga2/tomcat-7.0.27/bin/startup.sh && lrtail"
 alias lrmvndeploy="mvn clean package && mvn liferay:deploy"
+alias rmoldelc="cd ~/.emacs.d/ && find . -type f -name \"*.elc\" -exec rm -fv {} \;"
+alias compileelcs="cd ~/.emacs.d/ && /usr/local/Cellar/emacs/HEAD/Emacs.app/Contents/MacOS/Emacs --batch -f batch-byte-compile **/*.el ;"
+alias optimizeemacs="rmoldelc && sleep 4 && compileelcs"
 ## Git graph alias soruce http://stackoverflow.com/questions/1057564/pretty-git-branch-graphs
 ##alias lg1="git log --graph --all --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(bold white)— %an%C(reset)%C(bold yellow)%d%C(reset)' --abbrev-commit --date=relative"
 ##alias lg2="git log --graph --all --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(bold white)— %an%C(reset)' --abbrev-commit"
@@ -58,7 +105,7 @@ SVN_SHOW_BRANCH="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(ant brew cake compleat dircycle dirpresist encode64 extract gas git git-extras git-hubflow git-flow github git-remote-branch git-fast gnu-utils history history-substring-search lein lighthouse macports mvn nyan osx pip pow phing screen sprunge ssh-agent svn urltools zsh-syntax-highlighting)
+plugins=(ant brew cake compleat dircycle dirpresist encode64 extract gas git git-extras git-flow-avh git-hubflow git-flow github git-remote-branch git-fast gnu-utils history history-substring-search lein lighthouse macports mvn nyan osx pip pow phing screen sprunge ssh-agent svn urltools zsh-syntax-highlighting)
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs... #PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/local/go/bin:/Users/abenedetti/Dev/Soft/apache-maven-3.1.0/bin:/opt/local/bin:/usr/texbin:/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/sbin:/usr/X11/bin:/Users/abenedetti/Dev/Soft/play:/opt/local/libexec/gnubin:/usr/local/Cellar/android-sdk/r21/bin:/usr/local/go//bin:/Users/abenedetti/bin:/Users/abenedetti/bin/FDK/Tools/osx:/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin
@@ -67,7 +114,7 @@ source $ZSH/oh-my-zsh.sh
 #export JAVA_HOME=/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home
 #export JAVA_HOME=/Library/Java/JavaVirtualMachines/1.6.0_29-b11-402.jdk/Contents/Home
 #export JAVA_HOME=/Library/Java/JavaVirtualMachines/1.6.0_31-b04-415.jdk/Contents/Home
-export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.7.0_13.jdk/Contents/Home
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.7.0_21.jdk/Contents/Home
 #export JAVA_HOME=/Library/Java/JavaVirtualMachines/1.6.0_38-b04-436.jdk/Contents/Home
 #export JAVA_HOME=/Library/Java/JavaVirtualMachines/1.6.0_35-b10-428.jdk/Contents/Home
 #export M2_HOME=/usr/local/Cellar/maven/3.0.4/
@@ -75,8 +122,8 @@ export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.7.0_13.jdk/Contents/Home
 export M2_HOME=/Users/abenedetti/Dev/Soft/apache-maven-3.1.0
 #export PATH=$PATH:$M2_HOME/bin:$M2/bin
 export ANDROID_SDK_ROOT=/usr/local/Cellar/android-sdk/r21.0.1
-export GO_HOME=/usr/local/go/
-#export LEININGEN_HOME=/Users/abenedetti/git/leiningen
+export GO_HOME=/usr/local/Cellar/go/1.0.
+export LEININGEN_HOME=/Users/abenedetti/git/leiningen
 ##Path##
 export PATH=/usr/local/bin:$PATH
 export PATH=$PATH:$M2_HOME/bin
@@ -89,7 +136,7 @@ export PATH=$PATH:/usr/bin
 export PATH=$PATH:/usr/sbin
 export PATH=$PATH:/usr/local/sbin
 export PATH=$PATH:/usr/X11/bin
-#export PATH=$PATH:$LEININGEN_HOME/bin
+export PATH=$PATH:$LEININGEN_HOME/bin
 export PATH=$PATH:/Users/abenedetti/Dev/Soft/play
 export PATH=$PATH:/opt/local/libexec/gnubin
 export PATH=$PATH:$ANDROID_SDK_ROOT/bin
@@ -100,9 +147,12 @@ export PATH=$PATH:/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDef
 export PATH=$PATH:/Applications/Xcode.app/Contents/Developer/usr/bin
 export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 export PATH=$PATH:$HOME/git/depot_tools
+export PATH=$PATH:/usr/local/share/npm/bin
+export PATH=$PATH:/Users/abenedetti/Dev/Soft/mongodb-osx-x86_64-2.2.3/bin
+### Added by the Heroku Toolbelt
+export PATH=$PATH:/usr/local/heroku/bin
 #update gits
 #export EDITOR='/Applications/Emacs.app/Contents/MacOS/Emacs -Q -nw'
-export EDITOR="/Applications/Emacs.app/Contents/MacOS/bin/emacsclient --alternate-editor /Applications/Emacs.app/Contents/MacOS/Emacs"
+export EDITOR="emacsclient --alternate-editor /Applications/Emacs.app/Contents/MacOS/Emacs"
 export VISUAL=${EDITOR}
 export ALTERNATE_EDITOR="/Applications/Emacs.app/Contents/MacOS/Emacs"
-
