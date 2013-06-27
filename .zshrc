@@ -55,7 +55,7 @@ setopt multios # perform implicit tees or cats when multiple redirections are at
 #export ZSH_THEME="powerline"
 export ZSH_THEME="agnoster"
 #export ZSH_THEME="kennethreitz"
-# export ZSH_THEME="kphoen"
+#export ZSH_THEME="kphoen"
 DEFAULT_USER="abenedetti"
 
 #Aliases
@@ -105,29 +105,19 @@ SVN_SHOW_BRANCH="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(ant brew cake compleat dircycle dirpresist encode64 extract gas git git-extras git-flow-avh git-hubflow git-flow github git-remote-branch git-fast gnu-utils history history-substring-search lein lighthouse macports mvn nyan osx pip pow phing screen sprunge ssh-agent svn urltools zsh-syntax-highlighting)
+plugins=(profile ant brew cake compleat colored-man colorize cp cpanm dircycle dirpresist encode64 extract go git git-extras git-flow-avh git-hubflow git-flow github git-remote-branch git-fast gnu-utils history history-substring-search lein macports mvn node nyan osx pip rand-quote rsync screen sprunge ssh-agent svn urltools vagrant web-search)
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs... #PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/local/go/bin:/Users/abenedetti/Dev/Soft/apache-maven-3.1.0/bin:/opt/local/bin:/usr/texbin:/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/sbin:/usr/X11/bin:/Users/abenedetti/Dev/Soft/play:/opt/local/libexec/gnubin:/usr/local/Cellar/android-sdk/r21/bin:/usr/local/go//bin:/Users/abenedetti/bin:/Users/abenedetti/bin/FDK/Tools/osx:/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin
-#macports preference
-#export PATH=$PATH:/opt/local/bin/
-#export JAVA_HOME=/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home
-#export JAVA_HOME=/Library/Java/JavaVirtualMachines/1.6.0_29-b11-402.jdk/Contents/Home
-#export JAVA_HOME=/Library/Java/JavaVirtualMachines/1.6.0_31-b04-415.jdk/Contents/Home
-export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.7.0_21.jdk/Contents/Home
-#export JAVA_HOME=/Library/Java/JavaVirtualMachines/1.6.0_38-b04-436.jdk/Contents/Home
-#export JAVA_HOME=/Library/Java/JavaVirtualMachines/1.6.0_35-b10-428.jdk/Contents/Home
-#export M2_HOME=/usr/local/Cellar/maven/3.0.4/
-#export M2=/usr/local/Cellar/maven/3.0.4/
+
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.7.0_25.jdk/Contents/Home
 export M2_HOME=/Users/abenedetti/Dev/Soft/apache-maven-3.1.0
-#export PATH=$PATH:$M2_HOME/bin:$M2/bin
 export ANDROID_SDK_ROOT=/usr/local/Cellar/android-sdk/r21.0.1
-export GO_HOME=/usr/local/Cellar/go/1.0.
+export GO_HOME=/usr/local/Cellar/go/1.1.1
 export LEININGEN_HOME=/Users/abenedetti/git/leiningen
 ##Path##
 export PATH=/usr/local/bin:$PATH
 export PATH=$PATH:$M2_HOME/bin
-#export PATH=/opt/local/bin
 export PATH=$PATH:/opt/local/bin
 export PATH=$PATH:/usr/texbin
 export PATH=$PATH:/bin
@@ -148,7 +138,7 @@ export PATH=$PATH:/Applications/Xcode.app/Contents/Developer/usr/bin
 export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 export PATH=$PATH:$HOME/git/depot_tools
 export PATH=$PATH:/usr/local/share/npm/bin
-export PATH=$PATH:/Users/abenedetti/Dev/Soft/mongodb-osx-x86_64-2.2.3/bin
+export PATH=$PATH:/Users/abenedetti/Dev/Soft/mongodb-osx-x86_64-2.4.4/bin
 ### Added by the Heroku Toolbelt
 export PATH=$PATH:/usr/local/heroku/bin
 #update gits

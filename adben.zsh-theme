@@ -109,8 +109,8 @@ set_prompt () {
     fi 
     
     # ######### PROMPT #########
-    PROMPT='${PROMPT_HEAD}
-${RED_START}$(prompt_context)
+##    PROMPT='${PROMPT_HEAD}
+    PROMPT='${RED_START}$(prompt_context)
 ${GREEN_START_P1}'
     RPROMPT='${PR_RESET}$(git_prompt_info)$(svn_prompt_info)${PR_YELLOW}%D{%R.%S %a %b %d %Y} ${GREEN_END}${PR_RESET}'
     # Matching continuation prompt
