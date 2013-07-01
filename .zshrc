@@ -109,7 +109,8 @@ plugins=(profile ant brew cake compleat colored-man colorize cp cpanm dircycle d
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs... #PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/local/go/bin:/Users/abenedetti/Dev/Soft/apache-maven-3.1.0/bin:/opt/local/bin:/usr/texbin:/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/sbin:/usr/X11/bin:/Users/abenedetti/Dev/Soft/play:/opt/local/libexec/gnubin:/usr/local/Cellar/android-sdk/r21/bin:/usr/local/go//bin:/Users/abenedetti/bin:/Users/abenedetti/bin/FDK/Tools/osx:/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin
-
+# next line should be in the ~/.zshenv 
+#export ZSH_HIGHLIGHT_HIGHLIGHTERS_DIR=/usr/local/share/zsh-syntax-highlighting/highlighters
 export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.7.0_25.jdk/Contents/Home
 export M2_HOME=/Users/abenedetti/Dev/Soft/apache-maven-3.1.0
 export ANDROID_SDK_ROOT=/usr/local/Cellar/android-sdk/r21.0.1
@@ -146,3 +147,4 @@ export PATH=$PATH:/usr/local/heroku/bin
 export EDITOR="emacsclient --alternate-editor /Applications/Emacs.app/Contents/MacOS/Emacs"
 export VISUAL=${EDITOR}
 export ALTERNATE_EDITOR="/Applications/Emacs.app/Contents/MacOS/Emacs"
+source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
