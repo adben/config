@@ -1,0 +1,281 @@
+/*------------------------------------------------
+
+How to Install 怎麼安裝
+1. Download Custom.css
+2. Replace the Custom.css file in your "User Stylesheets" folder. Here is how to find Custom.css:
+
+Windows:
+%LOCALAPPDATA%\Google\Chrome\User Data\Default\User StyleSheets\Custom.css
+
+Linux:
+~/.config/chromium/Default/User StyleSheets/Custom.css
+
+Mac:
+~/Library/Application Support/Google/Chrome/Default/User StyleSheets/Custom.css
+
+------------------------------------------------*/
+
+/*	Inspect Triangle Style
+------------------------------------------------*/
+#console-messages .console-group-messages .section .header::before,
+#console-messages .properties-tree li.parent::before
+{
+	content: url(chrome-devtools://devtools/Images/treeRightTriangleBlack.png) !important;
+}
+
+#console-messages .console-group-messages .section.expanded .header::before,
+#console-messages .properties-tree li.parent.expanded::before
+{
+	content: url(chrome-devtools://devtools/Images/treeDownTriangleBlack.png) !important;
+}
+
+/*	Globe Typography
+------------------------------------------------*/
+#-webkit-web-inspector .source-code,
+#-webkit-web-inspector #main-panels .split-view-sidebar-right *,
+#-webkit-web-inspector #console-message,
+#-webkit-web-inspector .text-editor-contents,
+#-webkit-web-inspector #console-view * {
+	font-size: 12px !important;
+	line-height: 1.2em !important;
+	font-family: PragmataPro, "Consolas", monospace !important;
+}
+
+/*	Html inspect area
+------------------------------------------------*/
+#elements-content * {
+
+}
+
+/* animation settings */
+#elements-content .parent,
+#elements-content .parent * {
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+	        box-sizing: border-box;
+
+	-webkit-transition: background 150ms cubic-bezier(0.470, 0.000, 0.745, 0.715);
+	   -moz-transition: background 150ms cubic-bezier(0.470, 0.000, 0.745, 0.715);
+	    -ms-transition: background 150ms cubic-bezier(0.470, 0.000, 0.745, 0.715);
+	     -o-transition: background 150ms cubic-bezier(0.470, 0.000, 0.745, 0.715);
+	        transition: background 150ms cubic-bezier(0.470, 0.000, 0.745, 0.715); /* easeInSine */
+
+	-webkit-transition-timing-function: cubic-bezier(0.470, 0.000, 0.745, 0.715);
+	   -moz-transition-timing-function: cubic-bezier(0.470, 0.000, 0.745, 0.715);
+	    -ms-transition-timing-function: cubic-bezier(0.470, 0.000, 0.745, 0.715);
+	     -o-transition-timing-function: cubic-bezier(0.470, 0.000, 0.745, 0.715);
+	        transition-timing-function: cubic-bezier(0.470, 0.000, 0.745, 0.715); /* easeInSine */
+}
+
+/* style of line */
+#elements-content.source-code {
+	background: #fcfcfc !important;
+}
+
+#elements-content .parent {
+	border: 1px solid transparent;
+}
+
+#elements-content .parent::before {
+	content: url(chrome-devtools://devtools/Images/treeRightTriangleBlack.png) !important;
+	position: relative;
+	z-index: 999;
+}
+
+/* expand style */
+#elements-content .parent.expande {
+	background: #f1f1f1;
+}
+
+#elements-content .parent.expanded::before {
+	content: url(chrome-devtools://devtools/Images/treeDownTriangleBlack.png) !important;
+}
+
+/* select style */
+#elements-content .parent.selected {
+	background: #D0F3F3;
+	border-left: 1px solid #000;
+	border-radius: 3px;
+}
+
+#elements-content .highlight {
+  color: #d4d4d4;
+}
+
+/* current select line style */
+#-webkit-web-inspector .elements .selected {
+	background: #FAD165 !important;
+	border: 1px solid #aaa;
+}
+
+/* wrap expanded style */
+#elements-content .parent.selected + *.expanded
+{
+	background: #f1f1f1 !important;
+	border-left: 1px dashed #aaa;
+	border-bottom: 1px dashed #aaa;
+	border-right: 1px dashed #aaa;
+	border-radius: 0 0 3px 3px;
+	margin-bottom: 10px !important;
+}
+
+/*	------------------------------------------------
+ *	End of Html inspect area /
+
+
+/*	CSS Inspect
+------------------------------------------------*/
+.webkit-css-selector {
+	color: #BD3E4D !important;
+}
+
+.webkit-css-comment {
+	color: #4DA95F !important;
+	font-style: italic !important;
+	line-height: 1.6em !important;
+}
+
+.webkit-css-url, .webkit-css-color, .webkit-css-string, .webkit-css-keyword,
+.webkit-css-selector {
+    color: #389 !important;
+}
+
+.webkit-css-number {
+    color: #3F8EBB !important;
+}
+
+.webkit-css-important {
+	color: #0000FF !important;
+}
+
+.webkit-css-property,
+.webkit-css-at-rule {
+	color: #C84252 !important;
+}
+
+#-webkit-web-inspector .selector-matches {
+	color: #333 !important;
+	font-weight: bold;
+	background: #FAD165 !important;
+}
+
+/*	Inspect HTML style
+------------------------------------------------*/
+.webkit-html-comment {
+	color: #4DA95F !important;
+	font-style: italic !important;
+}
+
+.webkit-html-tag,
+.webkit-html-doctype {
+	color: #6B4E32 !important;
+}
+
+.webkit-html-text-node,
+.webkit-html-css-node,
+.webkit-html-js-node {
+	color: #333 !important;
+}
+.webkit-html-attribute-name {
+	color: #BD3E4D !important;
+}
+
+.webkit-html-attribute-value {
+	color: #0049B8 !important;
+}
+
+/*	JavaScript Style
+------------------------------------------------*/
+[class^="webkit-javascript"] {
+
+}
+
+.webkit-javascript-string {
+	color: #3F8EBB !important;
+}
+
+.webkit-javascript-comment {
+	color: #4DA95F !important;
+	font-style: italic !important;
+	line-height: 1.6em !important;
+}
+
+.webkit-javascript-number {
+    color: #429694 !important;
+}
+
+.webkit-javascript-ident {
+	color: #333 !important;
+}
+
+.webkit-javascript-keyword {
+	color: #C84252 !important;
+}
+
+/*	Console Style
+------------------------------------------------*/
+#-webkit-web-inspector .console-user-command > .console-message-text {
+	color: #333 !important;
+}
+
+#-webkit-web-inspector #console-messages a {
+	color: #389 !important;
+}
+
+#-webkit-web-inspector #console-messages a:hover {
+	color: blue !important;
+}
+
+#-webkit-web-inspector .console-formatted-boolean {
+	color: #CC6600 !important;
+}
+
+#-webkit-web-inspector .console-error-level .console-message-text,
+#-webkit-web-inspector .console-error-level .section .header .title {
+
+}
+
+#-webkit-web-inspector .console-error-level .children .source-code {
+
+}
+
+#-webkit-web-inspector .console-error-level .properties-tree {
+	font-weight: normal !important;
+}
+
+#-webkit-web-inspector .console-message,
+#-webkit-web-inspector .console-user-command {
+	border: 0px !important;
+	border-bottom:1px dashed #ddd !important;
+	padding: 3px 0 !important;
+	line-height: 1.2em !important;
+}
+
+#-webkit-web-inspector .console-message {
+}
+
+#-webkit-web-inspector .console .console-formatted-object {
+}
+
+#-webkit-web-inspector .console .console-formatted-string {
+	color: #007cbb !important;
+}
+
+#-webkit-web-inspector .console .name {
+	color: #BD3E4D !important;
+}
+
+
+/*  Source Code - Pane
+------------------------------------------------*/
+
+/* Generic */
+
+#-webkit-web-inspector #main-panels .pane > .title,
+#-webkit-web-inspector #main-panels .sidebar-separator,
+#-webkit-web-inspector #main-panels .sidebar-pane-subtitle {
+
+}
+
+#-webkit-web-inspector .split-view-sidebar-right .webkit-css-property {
+}
