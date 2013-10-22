@@ -1,8 +1,8 @@
 #!/bin/zsh
 # updating macports
 echo "::: Updating macports :::"
-sudo port -v selfupdate;
-sudo port -v upgrade outdated;
+#sudo port -v selfupdate;
+#sudo port -v upgrade outdated;
 cd ~/git ; 
 echo ":::: Updated cloned git repositories ::::" ;
 for i in * ;
