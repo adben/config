@@ -65,16 +65,26 @@ alias cal="cal | grep --color=auto -E '( |^)$(date +)|$'"
 alias emacs="/usr/local/Cellar/emacs/HEAD/bin/emacsclient --alternate-editor /usr/local/Cellar/emacs/HEAD/Emacs.app/Contents/MacOS/Emacs"
 alias zshconfig="emacs ~/.zshrc"
 alias ohmyzsh="emacs ~/.oh-my-zsh"
+#some project liferay
+alias lrsonytail="tail -f ~/Dev/liferay-portal-6.1.30-ee-ga3/tomcat-7.0.40/logs/catalina.out"
+alias lrsonyinit="sh ~/Dev/liferay-portal-6.1.30-ee-ga3/tomcat-7.0.40/bin/startup.sh && lrsonytail"
+alias lrsonystop="sh ~/Dev/liferay-portal-6.1.30-ee-ga3/tomcat-7.0.40/bin/shutdown.sh && lrsonytail"
+alias lrsonyrestart="sh ~/Dev/liferay-portal-6.1.30-ee-ga3/tomcat-7.0.40/bin/shutdown.sh ; sh ~/Dev/liferay-portal-6.1.1-ce-ga2/tomcat-7.0.27/bin/startup.sh && lrsonytail"
+#generic ce liferay
 alias lrtail="tail -f ~/Dev/liferay-portal-6.1.1-ce-ga2/tomcat-7.0.27/logs/catalina.out"
 alias lrinit="sh ~/Dev/liferay-portal-6.1.1-ce-ga2/tomcat-7.0.27/bin/startup.sh && lrtail"
 alias lrstop="sh ~/Dev/liferay-portal-6.1.1-ce-ga2/tomcat-7.0.27/bin/shutdown.sh &&  lrtail"
 alias lrrestart="sh ~/Dev/liferay-portal-6.1.1-ce-ga2/tomcat-7.0.27/bin/shutdown.sh ; sh ~/Dev/liferay-portal-6.1.1-ce-ga2/tomcat-7.0.27/bin/startup.sh && lrtail"
+#fo all liferay
 alias lrmvndeploy="mvn clean package && mvn liferay:deploy"
+#for emacs
 alias rmoldelc="cd ~/.emacs.d/ && find . -type f -name \"*.elc\" -exec rm -fv {} \;"
 alias compileelcs="cd ~/.emacs.d/ && /usr/local/Cellar/emacs/HEAD/Emacs.app/Contents/MacOS/Emacs --batch -f batch-byte-compile **/*.el ;"
 alias optimizeemacs="rmoldelc && sleep 4 && compileelcs"
 alias speedtest="wget -O /dev/null http://speedtest.wdc01.softlayer.com/downloads/test10.zip"
 alias bower="noglob bower"
+alias seleniumstart="java -jar /usr/local/Cellar/selenium-server-standalone/2.35.0/selenium-server-standalone-2.35.0.jar"
+##alias protractor="/usr/local/share/npm/bin/protractor"
 ## Git graph alias soruce http://stackoverflow.com/questions/1057564/pretty-git-branch-graphs
 ##alias lg1="git log --graph --all --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(bold white)— %an%C(reset)%C(bold yellow)%d%C(reset)' --abbrev-commit --date=relative"
 ##alias lg2="git log --graph --all --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(bold white)— %an%C(reset)' --abbrev-commit"
@@ -114,15 +124,17 @@ source $ZSH/oh-my-zsh.sh
 # next line should be in the ~/.zshenv 
 #export ZSH_HIGHLIGHT_HIGHLIGHTERS_DIR=/usr/local/share/zsh-syntax-highlighting/highlighters
 #export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.7.0_15.jdk/Contents/Home
-export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.7.0_25.jdk/Contents/Home
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home
 #export JAVA_HOME=/Library/Java/JavaVirtualMachines/1.6.0_51-b11-456.jdk/Contents/Home
 export M2_HOME=/Users/abenedetti/Dev/Soft/apache-maven
-export ANDROID_SDK_ROOT=/usr/local/Cellar/android-sdk/r21.0.1
+export ANDROID_SDK_ROOT=/usr/local/Cellar/android-sdk/22.2
 export GO_HOME=/usr/local/Cellar/go/1.1.1
 export LEININGEN_HOME=/Users/abenedetti/git/leiningen
+export SVN_HOME=/opt/subversion
 ##Path##
 export PATH=/usr/local/bin:$PATH
 export PATH=$PATH:$M2_HOME/bin
+export PATH=$PATH:$SVN_HOME/bin
 export PATH=$PATH:/opt/local/bin
 export PATH=$PATH:/usr/texbin
 export PATH=$PATH:/bin
