@@ -83,7 +83,7 @@ alias compileelcs="cd ~/.emacs.d/ && /usr/local/Cellar/emacs/HEAD/Emacs.app/Cont
 alias optimizeemacs="rmoldelc && sleep 4 && compileelcs"
 alias speedtest="wget -O /dev/null http://speedtest.wdc01.softlayer.com/downloads/test10.zip"
 alias bower="noglob bower"
-alias seleniumstart="java -jar /usr/local/Cellar/selenium-server-standalone/2.35.0/selenium-server-standalone-2.35.0.jar"
+alias seleniumstart="java -jar /usr/local/Cellar/selenium-server-standalone/2.37.0/selenium-server-standalone-2.37.0.jar -log /Users/abenedetti/log/selenium.log"
 ##alias protractor="/usr/local/share/npm/bin/protractor"
 ## Git graph alias soruce http://stackoverflow.com/questions/1057564/pretty-git-branch-graphs
 ##alias lg1="git log --graph --all --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(bold white)— %an%C(reset)%C(bold yellow)%d%C(reset)' --abbrev-commit --date=relative"
@@ -117,7 +117,7 @@ SVN_SHOW_BRANCH="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(profile ant brew cake compleat colored-man colorize cp cpanm dircycle dirpresist encode64 extract go git git-extras git-flow-avh git-hubflow git-flow github git-remote-branch git-fast gnu-utils history history-substring-search lein macports mvn node nyan osx pip rand-quote rsync screen sprunge ssh-agent svn urltools vagrant web-search)
+plugins=(ant apache2-macports battery bower brew bundler capistrano cloudapp coffee colored-man colorize command-not-found common-aliases compleat composer copydir copyfile cp cpanm dircycle dirpersist docker emoji-clock encode64 extract fabric fasd forklift gas gem git git-extras git-flow git-flow-avh git-hubflow git-prompt git-remote-branch gitfast github gitignore gnu-utils go golang gradle grails heroku history history-substring-search jake-node jira jump lein lighthouse lol macports mercurial mix mvn mysql-macports nanoc node nvm osx perl pj pod postgres pow python rand-quote redis-cli repo rsync safe-paste screen singlechar sprunge ssh-agent svn systemadmin terminalapp tmux tmuxinator torrent urltools vagrant wd web-search z)
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs... #PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/local/go/bin:/Users/abenedetti/Dev/Soft/apache-maven-3.1.0/bin:/opt/local/bin:/usr/texbin:/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/sbin:/usr/X11/bin:/Users/abenedetti/Dev/Soft/play:/opt/local/libexec/gnubin:/usr/local/Cellar/android-sdk/r21/bin:/usr/local/go//bin:/Users/abenedetti/bin:/Users/abenedetti/bin/FDK/Tools/osx:/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin
@@ -125,7 +125,7 @@ source $ZSH/oh-my-zsh.sh
 #export ZSH_HIGHLIGHT_HIGHLIGHTERS_DIR=/usr/local/share/zsh-syntax-highlighting/highlighters
 #export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.7.0_15.jdk/Contents/Home
 export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home
-#export JAVA_HOME=/Library/Java/JavaVirtualMachines/1.6.0_51-b11-456.jdk/Contents/Home
+#export JAVA_HOME=/Library/Java/JavaVirtualMachines/1.6.0_65-b14-462.jdk/Contents/Home
 export M2_HOME=/Users/abenedetti/Dev/Soft/apache-maven
 export ANDROID_SDK_ROOT=/usr/local/Cellar/android-sdk/22.2
 export GO_HOME=/usr/local/Cellar/go/1.1.1
