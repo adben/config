@@ -13,6 +13,7 @@
 -XX:ReservedCodeCacheSize=96m
 -XX:+UseCodeCacheFlushing
 -XX:+UseCompressedOops
+-XX:ParallelGCThreads=8
 -XX:+UseParNewGC
 -XX:+UseConcMarkSweepGC
 -XX:+DisableExplicitGC
@@ -34,5 +35,3 @@
 -XX:+UseStringCache 
 -XX:+UseFastAccessorMethods  
 -XX:+UnlockDiagnosticVMOptions
--Dawt.useSystemAAFontSettings=lcd
--Dswing.aatext=true
