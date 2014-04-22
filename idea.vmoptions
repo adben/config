@@ -1,10 +1,10 @@
 -ea
 -server
--Xms1g
--Xmx1g
+-Xms1G
+-Xmx2G
 -Xss16m
--XX:PermSize=256m
--XX:MaxPermSize=256m
+-XX:MaxMetaspaceSize=2G
+-XX:MetaspaceSize=1G
 -XX:+DoEscapeAnalysis
 -XX:+UseCompressedOops
 -XX:+UnlockExperimentalVMOptions
@@ -35,3 +35,4 @@
 -XX:+UseStringCache 
 -XX:+UseFastAccessorMethods  
 -XX:+UnlockDiagnosticVMOptions
+-XX:+HeapDumpOnOutOfMemoryError
