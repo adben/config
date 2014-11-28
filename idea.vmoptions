@@ -1,7 +1,7 @@
 -ea
 -server
--Xms1024m
--Xmx1024m
+-Xms1G
+-Xmx1G
 -Xss2m
 -XX:MaxMetaspaceSize=350m
 -XX:ReservedCodeCacheSize=225m
