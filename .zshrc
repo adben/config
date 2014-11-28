@@ -1,6 +1,6 @@
-# Path to your oh-my-zsh configuration.
-ZSH=$HOME/.oh-my-zsh
-
+. `brew --prefix`/etc/profile.d/z.sh
+# Path to your oh-my-zsh installation.
+export ZSH=$HOME/.oh-my-zsh
 # ===== Basics
 setopt no_beep # don't beep on error
 setopt interactive_comments # Allow comments even in interactive shells (especially for Muness)
@@ -55,12 +55,12 @@ setopt multios # perform implicit tees or cats when multiple redirections are at
 #export ZSH_THEME="adben-new"
 #export ZSH_THEME="nanotech"
 #export ZSH_THEME="powerline"
-export ZSH_THEME="agnoster"
+#export ZSH_THEME="agnoster"
 #export ZSH_THEME="kennethreitz"
 #export ZSH_THEME="kphoen"
 #export ZSH_THEME="adben"
-#export ZSH_THEME="pure"
-DEFAULT_USER="abenedetti"
+export ZSH_THEME="pure"
+DEFAULT_USER="adolfobenedetti"
 
 #Aliases
 # Colored cal output
@@ -72,10 +72,10 @@ alias zshconfig="emacs ~/.zshrc"
 alias ohmyzsh="emacs ~/.oh-my-zsh"
 #some project liferay
 LIFERAY_CURRENT="liferay-portal-6.1.2-ce-ga3"
-alias lrtail="multitail /Users/abenedetti/Dev/${LIFERAY_CURRENT}/logs/liferay.$(hoy).log /Users/abenedetti/Dev/${LIFERAY_CURRENT}/tomcat-7.0.40/logs/catalina.out "
-alias lrinit="sh /Users/abenedetti/Dev/${LIFERAY_CURRENT}/tomcat-7.0.40/bin/startup.sh"
-alias lrdebug="sh /Users/abenedetti/Dev/${LIFERAY_CURRENT}/tomcat-7.0.40/bin/debug.sh"
-alias lrstop="sh /Users/abenedetti/Dev/${LIFERAY_CURRENT}/tomcat-7.0.40/bin/shutdown.sh"
+alias lrtail="multitail /Users/adolfobenedetti/Dev/${LIFERAY_CURRENT}/logs/liferay.$(hoy).log /Users/adolfobenedetti/Dev/${LIFERAY_CURRENT}/tomcat-7.0.40/logs/catalina.out "
+alias lrinit="sh /Users/adolfobenedetti/Dev/${LIFERAY_CURRENT}/tomcat-7.0.40/bin/startup.sh"
+alias lrdebug="sh /Users/adolfobenedetti/Dev/${LIFERAY_CURRENT}/tomcat-7.0.40/bin/debug.sh"
+alias lrstop="sh /Users/adolfobenedetti/Dev/${LIFERAY_CURRENT}/tomcat-7.0.40/bin/shutdown.sh"
 alias lrrestart="lrstop && sleep 20 && lrinit"
 alias lrmvndeploy="mvn clean package && mvn liferay:deploy"
 #for emacs
@@ -84,7 +84,7 @@ alias compileelcs="cd ~/.emacs.d/ && /usr/local/Cellar/emacs/HEAD/Emacs.app/Cont
 alias optimizeemacs="rmoldelc && sleep 4 && compileelcs"
 alias speedtest="wget -O /dev/null http://speedtest.wdc01.softlayer.com/downloads/test10.zip"
 alias bower="noglob bower"
-alias seleniumstart="java -jar /usr/local/Cellar/selenium-server-standalone/2.39.0/selenium-server-standalone-2.39.0.jar -log /Users/abenedetti/log/selenium.log"
+alias seleniumstart="java -jar /usr/local/Cellar/selenium-server-standalone/2.39.0/selenium-server-standalone-2.39.0.jar -log /Users/adolfobenedetti/log/selenium.log"
 alias pginit="postgres -D /usr/local/var/postgres"
 ##alias protractor="/usr/local/share/npm/bin/protractor"
 ## Git graph alias soruce http://stackoverflow.com/questions/1057564/pretty-git-branch-graphs
@@ -119,30 +119,31 @@ SVN_SHOW_BRANCH="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-# plugins=(ant apache2-macports bower brew bundler capistrano coffee colored-man colorize command-not-found compleat composer copydir copyfile cp cpanm dircycle docker emoji-clock encode64 extract fabric fasd forklift gas gem git git-extras git-flow git-flow-avh git-hubflow gitfast github gitignore gnu-utils go golang gradle grails heroku history jake-node jira jump lein lighthouse lol macports mix mvn mysql-macports nanoc node nvm osx perl pod postgres pow python rand-quote redis-cli repo rsync safe-paste screen singlechar sprunge ssh-agent svn systemadmin terminalapp tmuxinator urltools vagrant wd web-search z)
+plugins=(atom bower brew colorize colored-man colorize command-not-found common-aliases cp dircycle dirhistory dirpersist emacs extract gem git git-extras git-flow git-flow-avh git-hubflow gitfast github git-prompt gnu-utils go golang heroku history history-substring-search lein lol macports mix mvn mysql-macports nanoc node nvm osx perl python pip redis-cli repo rsync scala sbt safe-paste screen singlechar sprunge ssh-agent terminalapp urltools vagrant web-search xcode zsh_reload)
 # plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
-# Customize to your needs... #PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/local/go/bin:/Users/abenedetti/Dev/Soft/apache-maven-3.1.0/bin:/opt/local/bin:/usr/texbin:/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/sbin:/usr/X11/bin:/Users/abenedetti/Dev/Soft/play:/opt/local/libexec/gnubin:/usr/local/Cellar/android-sdk/r21/bin:/usr/local/go//bin:/Users/abenedetti/bin:/Users/abenedetti/bin/FDK/Tools/osx:/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin
+# Customize to your needs... #PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/local/go/bin:/Users/adolfobenedetti/Dev/Soft/apache-maven-3.1.0/bin:/opt/local/bin:/usr/texbin:/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/sbin:/usr/X11/bin:/Users/adolfobenedetti/Dev/Soft/play:/opt/local/libexec/gnubin:/usr/local/Cellar/android-sdk/r21/bin:/usr/local/go//bin:/Users/adolfobenedetti/bin:/Users/adolfobenedetti/bin/FDK/Tools/osx:/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin
 # next line should be in the ~/.zshenv 
 #export ZSH_HIGHLIGHT_HIGHLIGHTERS_DIR=/usr/local/share/zsh-syntax-highlighting/highlighters
 #export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.7.0_15.jdk/Contents/Home
 #export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.7.0_51.jdk/Contents/Home
-export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0.jdk/Contents/Home
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_25.jdk/Contents/Home
 #export JAVA_HOME=/Library/Java/JavaVirtualMachines/1.6.0_65-b14-462.jdk/Contents/Home
 #export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.7.0_51.jdk/Contents/Home
-export M2_HOME=/Users/abenedetti/Dev/Soft/apache-maven
+export M2_HOME=/usr/local/Cellar/maven/3.2.3/libexec
+export M2=$M2_HOME/bin
 export ANDROID_SDK_ROOT=/usr/local/Cellar/android-sdk/22.2
-export GO_HOME=/usr/local/Cellar/go/1.2.1
-export GOPATH="/Users/abenedetti/go"
+export GO_HOME=/usr/local/Cellar/go/1.3.3
+export GOPATH="/Users/adolfobenedetti/go"
 export GORACE=""
 export GOROOT=$GO_HOME
 #export GOROOT="/usr/local/bin/go"
-export LEININGEN_HOME=/Users/abenedetti/git/leiningen
+export LEININGEN_HOME=/Users/adolfobenedetti/git/leiningen
 export SVN_HOME=/opt/subversion
 ##Path##
 export PATH=/usr/local/bin:$PATH
-export PATH=$PATH:$M2_HOME/bin
+export PATH=$PATH:$M2
 export PATH=$PATH:$SVN_HOME/bin
 export PATH=$PATH:/opt/local/bin
 export PATH=$PATH:/usr/texbin
@@ -153,18 +154,18 @@ export PATH=$PATH:/usr/sbin
 export PATH=$PATH:/usr/local/sbin
 export PATH=$PATH:/usr/X11/bin
 export PATH=$PATH:$LEININGEN_HOME/bin
-export PATH=$PATH:/Users/abenedetti/Dev/Soft/play
+export PATH=$PATH:/Users/adolfobenedetti/Dev/Soft/play
 export PATH=$PATH:/opt/local/libexec/gnubin
 export PATH=$PATH:$ANDROID_SDK_ROOT/bin
 export PATH=$PATH:$GO_HOME/bin
 export PATH=$PATH:~/bin
-export PATH=$PATH:/Users/abenedetti/bin/FDK/Tools/osx
+export PATH=$PATH:/Users/adolfobenedetti/bin/FDK/Tools/osx
 export PATH=$PATH:/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin
 export PATH=$PATH:/Applications/Xcode.app/Contents/Developer/usr/bin
 export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 export PATH=$PATH:$HOME/git/depot_tools
 export PATH=$PATH:/usr/local/share/npm/bin
-export PATH=$PATH:/Users/abenedetti/Dev/Soft/mongodb-osx-x86_64-2.4.4/bin
+export PATH=$PATH:/Users/adolfobenedetti/Dev/Soft/mongodb-osx-x86_64-2.4.4/bin
 ### Added by the Heroku Toolbelt
 export PATH=$PATH:/usr/local/heroku/bin
 #update gits
@@ -172,5 +173,6 @@ export PATH=$PATH:/usr/local/heroku/bin
 export EDITOR="emacsclient --alternate-editor /Applications/Emacs.app/Contents/MacOS/Emacs"
 export VISUAL=${EDITOR}
 export ALTERNATE_EDITOR="/Applications/Emacs.app/Contents/MacOS/Emacs"
-export CP_CONFIG="/Users/abenedetti/Documents/iprofs/shl/project/cp-config/src/main/resources/local-dev/"
-export CP_LOGS="/Users/abenedetti/Documents/iprofs/shl/current/logs/"
+export CP_CONFIG="/Users/adolfobenedetti/Documents/iprofs/shl/project/cp-config/src/main/resources/local-dev/"
+export CP_LOGS="/Users/adolfobenedetti/Documents/iprofs/shl/current/logs/"
+export SBT_OPTS="-XX:+CMSClassUnloadingEnabled -XX:MaxPermSize=256M"
