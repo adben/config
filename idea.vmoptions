@@ -3,6 +3,7 @@
 -Xms1G
 -Xmx1G
 -Xss2m
+-XX:MaxPermSize=350m
 -XX:MaxMetaspaceSize=350m
 -XX:ReservedCodeCacheSize=225m
 -XX:MetaspaceSize=512m
@@ -19,22 +20,21 @@
 -XX:+UseConcMarkSweepGC
 -XX:+DisableExplicitGC
 -XX:+ExplicitGCInvokesConcurrent
--XX:+PrintGCDetails 
+-XX:+PrintGCDetails
 -XX:+PrintFlagsFinal
 -XX:+AggressiveOpts
 -XX:+HeapDumpOnOutOfMemoryError
 -XX:+CMSClassUnloadingEnabled
--XX:+CMSPermGenSweepingEnabled 
 -XX:CMSInitiatingOccupancyFraction=60
 -XX:+CMSClassUnloadingEnabled
--XX:+CMSParallelRemarkEnabled 
+-XX:+CMSParallelRemarkEnabled
 -XX:+UseAdaptiveGCBoundary
--XX:+UseSplitVerifier 
--XX:CompileThreshold=10000 
--XX:+UseCompressedStrings 
+-XX:+UseSplitVerifier
+-XX:CompileThreshold=10000
+-XX:+UseCompressedStrings
 -XX:+OptimizeStringConcat
--XX:+UseStringCache 
--XX:+UseFastAccessorMethods  
+-XX:+UseStringCache
+-XX:+UseFastAccessorMethods
 -XX:+UnlockDiagnosticVMOptions
 -XX:+HeapDumpOnOutOfMemoryError
 -XX:+UseCompressedOops -agentlib:yjpagent=probe_disable=*,disablealloc,disabletracing,onlylocal,disableexceptiontelemetry,delay=10000,sessionname=IntelliJIdea14
