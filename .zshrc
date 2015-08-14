@@ -25,8 +25,8 @@ setopt hist_reduce_blanks # Remove extra blanks from each command line being add
 setopt hist_verify # don't execute, just expand history
 setopt share_history # imports new commands and appends typed commands to history
 
-# ===== Completion 
-setopt always_to_end # When completing from the middle of a word, move the cursor to the end of the word    
+# ===== Completion
+setopt always_to_end # When completing from the middle of a word, move the cursor to the end of the word
 setopt auto_menu # show completion menu on successive tab press. needs unsetop menu_complete to work
 setopt auto_name_dirs # any parameter that is set to the absolute name of a directory immediately becomes a name for that directory
 setopt complete_in_word # Allow completion from within a word/phrase
@@ -68,8 +68,8 @@ alias cal="cal | grep --color=auto -E '( |^)$(date +)|$'"
 alias hoy="date +%F"
 # Example aliases
 alias emacs="/usr/local/Cellar/emacs/HEAD/bin/emacsclient --alternate-editor /usr/local/Cellar/emacs/HEAD/Emacs.app/Contents/MacOS/Emacs"
-alias zshconfig="emacs ~/.zshrc"
-alias ohmyzsh="emacs ~/.oh-my-zsh"
+alias zshconfig="atom ~/.zshrc"
+alias ohmyzsh="atom ~/.oh-my-zsh"
 #some project liferay
 LIFERAY_CURRENT="liferay-portal-6.1.2-ce-ga3"
 alias lrtail="multitail /Users/adolfobenedetti/Dev/${LIFERAY_CURRENT}/logs/liferay.$(hoy).log /Users/adolfobenedetti/Dev/${LIFERAY_CURRENT}/tomcat-7.0.40/logs/catalina.out "
@@ -124,19 +124,16 @@ plugins=(atom bower brew colorize colored-man colorize command-not-found common-
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs... #PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/local/go/bin:/Users/adolfobenedetti/Dev/Soft/apache-maven-3.1.0/bin:/opt/local/bin:/usr/texbin:/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/sbin:/usr/X11/bin:/Users/adolfobenedetti/Dev/Soft/play:/opt/local/libexec/gnubin:/usr/local/Cellar/android-sdk/r21/bin:/usr/local/go//bin:/Users/adolfobenedetti/bin:/Users/adolfobenedetti/bin/FDK/Tools/osx:/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin
-# next line should be in the ~/.zshenv 
+# next line should be in the ~/.zshenv
 #export ZSH_HIGHLIGHT_HIGHLIGHTERS_DIR=/usr/local/share/zsh-syntax-highlighting/highlighters
-#export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.7.0_15.jdk/Contents/Home
-#export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.7.0_51.jdk/Contents/Home
-export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_25.jdk/Contents/Home
-#export JAVA_HOME=/Library/Java/JavaVirtualMachines/1.6.0_65-b14-462.jdk/Contents/Home
-#export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.7.0_51.jdk/Contents/Home
-export M2_HOME=/usr/local/Cellar/maven/3.2.3/libexec
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_51.jdk/Contents/Home
+export M2_HOME=/usr/local/Cellar/maven/3.3.3/libexec
 export M2=$M2_HOME/bin
 export ANDROID_SDK_ROOT=/usr/local/Cellar/android-sdk/22.2
-export GO_HOME=/usr/local/Cellar/go/1.3.3
+export GO_HOME=/usr/local/opt/go/libexec/
 export GOPATH="/Users/adolfobenedetti/go"
 export GORACE=""
+
 export GOROOT=$GO_HOME
 #export GOROOT="/usr/local/bin/go"
 export LEININGEN_HOME=/Users/adolfobenedetti/git/leiningen
@@ -160,19 +157,23 @@ export PATH=$PATH:$ANDROID_SDK_ROOT/bin
 export PATH=$PATH:$GO_HOME/bin
 export PATH=$PATH:~/bin
 export PATH=$PATH:/Users/adolfobenedetti/bin/FDK/Tools/osx
-export PATH=$PATH:/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin
-export PATH=$PATH:/Applications/Xcode.app/Contents/Developer/usr/bin
+export PATH=$PATH:/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin
+export PATH=$PATH:/Applications/Xcode-beta.app/Contents/Developer/usr/bin
 export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+export PATH=$PATH:$HOME/.rbenv/versions/2.2.2/bin
 export PATH=$PATH:$HOME/git/depot_tools
 export PATH=$PATH:/usr/local/share/npm/bin
-export PATH=$PATH:/Users/adolfobenedetti/Dev/Soft/mongodb-osx-x86_64-2.4.4/bin
 ### Added by the Heroku Toolbelt
 export PATH=$PATH:/usr/local/heroku/bin
 #update gits
 #export EDITOR='/Applications/Emacs.app/Contents/MacOS/Emacs -Q -nw'
-export EDITOR="emacsclient --alternate-editor /Applications/Emacs.app/Contents/MacOS/Emacs"
+export EDITOR='atom'
+#export EDITOR="emacsclient --alternate-editor /Applications/Emacs.app/Contents/MacOS/Emacs"
 export VISUAL=${EDITOR}
-export ALTERNATE_EDITOR="/Applications/Emacs.app/Contents/MacOS/Emacs"
-export CP_CONFIG="/Users/adolfobenedetti/Documents/iprofs/shl/project/cp-config/src/main/resources/local-dev/"
-export CP_LOGS="/Users/adolfobenedetti/Documents/iprofs/shl/current/logs/"
+#export ALTERNATE_EDITOR="/Applications/Emacs.app/Contents/MacOS/Emacs"
+#export CP_CONFIG="/Users/adolfobenedetti/Documents/iprofs/shl/project/cp-config/src/main/resources/local-dev/"
+#export CP_LOGS="/Users/adolfobenedetti/Documents/iprofs/shl/current/logs/"
 export SBT_OPTS="-XX:+CMSClassUnloadingEnabled -XX:MaxPermSize=256M"
+#AWS
+source /usr/local/share/zsh/site-functions/_aws
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
