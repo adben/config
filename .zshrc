@@ -45,6 +45,8 @@ setopt transient_rprompt # only show the rprompt on the current prompt
 setopt multios # perform implicit tees or cats when multiple redirections are attempted
 # ===== debug
 # setopt XTRACE VERBOSE
+# Helps whith the quotes problem
+setopt rcquotes
 
 
 # Set name of the theme to load.
@@ -70,14 +72,6 @@ alias hoy="date +%F"
 alias emacs="/usr/local/Cellar/emacs/HEAD/bin/emacsclient --alternate-editor /usr/local/Cellar/emacs/HEAD/Emacs.app/Contents/MacOS/Emacs"
 alias zshconfig="atom ~/.zshrc"
 alias ohmyzsh="atom ~/.oh-my-zsh"
-#some project liferay
-LIFERAY_CURRENT="liferay-portal-6.1.2-ce-ga3"
-alias lrtail="multitail /Users/adolfobenedetti/Dev/${LIFERAY_CURRENT}/logs/liferay.$(hoy).log /Users/adolfobenedetti/Dev/${LIFERAY_CURRENT}/tomcat-7.0.40/logs/catalina.out "
-alias lrinit="sh /Users/adolfobenedetti/Dev/${LIFERAY_CURRENT}/tomcat-7.0.40/bin/startup.sh"
-alias lrdebug="sh /Users/adolfobenedetti/Dev/${LIFERAY_CURRENT}/tomcat-7.0.40/bin/debug.sh"
-alias lrstop="sh /Users/adolfobenedetti/Dev/${LIFERAY_CURRENT}/tomcat-7.0.40/bin/shutdown.sh"
-alias lrrestart="lrstop && sleep 20 && lrinit"
-alias lrmvndeploy="mvn clean package && mvn liferay:deploy"
 #for emacs
 alias rmoldelc="cd ~/.emacs.d/ && find . -type f -name \"*.elc\" -exec rm -fv {} \;"
 alias compileelcs="cd ~/.emacs.d/ && /usr/local/Cellar/emacs/HEAD/Emacs.app/Contents/MacOS/Emacs --batch -f batch-byte-compile **/*.el ;"
@@ -126,10 +120,10 @@ source $ZSH/oh-my-zsh.sh
 # Customize to your needs... #PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/local/go/bin:/Users/adolfobenedetti/Dev/Soft/apache-maven-3.1.0/bin:/opt/local/bin:/usr/texbin:/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/sbin:/usr/X11/bin:/Users/adolfobenedetti/Dev/Soft/play:/opt/local/libexec/gnubin:/usr/local/Cellar/android-sdk/r21/bin:/usr/local/go//bin:/Users/adolfobenedetti/bin:/Users/adolfobenedetti/bin/FDK/Tools/osx:/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin
 # next line should be in the ~/.zshenv
 #export ZSH_HIGHLIGHT_HIGHLIGHTERS_DIR=/usr/local/share/zsh-syntax-highlighting/highlighters
-export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_51.jdk/Contents/Home
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_60.jdk/Contents/Home
 export M2_HOME=/usr/local/Cellar/maven/3.3.3/libexec
 export M2=$M2_HOME/bin
-export ANDROID_SDK_ROOT=/usr/local/Cellar/android-sdk/22.2
+export ANDROID_SDK_ROOT=/usr/local/Cellar/android-sdk/24.3.4
 export GO_HOME=/usr/local/opt/go/libexec/
 export GOPATH="/Users/adolfobenedetti/go"
 export GORACE=""
@@ -175,5 +169,6 @@ export VISUAL=${EDITOR}
 #export CP_LOGS="/Users/adolfobenedetti/Documents/iprofs/shl/current/logs/"
 export SBT_OPTS="-XX:+CMSClassUnloadingEnabled -XX:MaxPermSize=256M"
 #AWS
+export EC2_REGION="eu-west-1"
 source /usr/local/share/zsh/site-functions/_aws
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
