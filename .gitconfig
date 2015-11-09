@@ -1,8 +1,13 @@
 [user]
 	name = Adolfo Benedetti
-        email = adolfo.benedetti@gmail.com
+	email = adolfo.benedetti@gmail.com
 [core]
-	autocrlf = false
+	editor = emacs
+       	autocrlf = false
+[filter "lfs"]
+	clean = git-lfs clean %f
+	smudge = git-lfs smudge %f
+	required = true
 [alias]
 	co = checkout
 	# Log display from screencast, with train tracks.
