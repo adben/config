@@ -1,4 +1,4 @@
-. `brew --prefix`/etc/profile.d/z.sh
+# `brew --prefix`/etc/profile.d/z.sh
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 # ===== Basics
@@ -62,7 +62,7 @@ setopt rcquotes
 #export ZSH_THEME="kphoen"
 #export ZSH_THEME="adben"
 export ZSH_THEME="pure"
-DEFAULT_USER="adolfobenedetti"
+DEFAULT_USER="adben"
 
 #Aliases
 # Colored cal output
@@ -73,12 +73,12 @@ alias emacs="/usr/local/Cellar/emacs/HEAD/bin/emacsclient --alternate-editor /us
 alias zshconfig="atom ~/.zshrc"
 alias ohmyzsh="atom ~/.oh-my-zsh"
 #for emacs
-alias rmoldelc="cd ~/.emacs.d/ && find . -type f -name \"*.elc\" -exec rm -fv {} \;"
+alias rmoldelc="cd ~/.emacs.d/ && find . -type f -name \'*.elc\' -exec rm -fv {} \;"
 alias compileelcs="cd ~/.emacs.d/ && /usr/local/Cellar/emacs/HEAD/Emacs.app/Contents/MacOS/Emacs --batch -f batch-byte-compile **/*.el ;"
 alias optimizeemacs="rmoldelc && sleep 4 && compileelcs"
 alias speedtest="wget -O /dev/null http://speedtest.wdc01.softlayer.com/downloads/test10.zip"
 alias bower="noglob bower"
-alias seleniumstart="java -jar /usr/local/Cellar/selenium-server-standalone/2.39.0/selenium-server-standalone-2.39.0.jar -log /Users/adolfobenedetti/log/selenium.log"
+alias seleniumstart="java -jar /usr/local/Cellar/selenium-server-standalone/2.39.0/selenium-server-standalone-2.39.0.jar -log /Users/adben/log/selenium.log"
 alias pginit="postgres -D /usr/local/var/postgres"
 ##alias protractor="/usr/local/share/npm/bin/protractor"
 ## Git graph alias soruce http://stackoverflow.com/questions/1057564/pretty-git-branch-graphs
@@ -120,20 +120,27 @@ source $ZSH/oh-my-zsh.sh
 # Customize to your needs... #PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/local/go/bin:/Users/adolfobenedetti/Dev/Soft/apache-maven-3.1.0/bin:/opt/local/bin:/usr/texbin:/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/sbin:/usr/X11/bin:/Users/adolfobenedetti/Dev/Soft/play:/opt/local/libexec/gnubin:/usr/local/Cellar/android-sdk/r21/bin:/usr/local/go//bin:/Users/adolfobenedetti/bin:/Users/adolfobenedetti/bin/FDK/Tools/osx:/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin
 # next line should be in the ~/.zshenv
 #export ZSH_HIGHLIGHT_HIGHLIGHTERS_DIR=/usr/local/share/zsh-syntax-highlighting/highlighters
-export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_60.jdk/Contents/Home
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_66.jdk/Contents/Home
 export M2_HOME=/usr/local/Cellar/maven/3.3.3/libexec
 export M2=$M2_HOME/bin
-export ANDROID_SDK_ROOT=/usr/local/Cellar/android-sdk/24.3.4
+export ANDROID_HOME=/usr/local/opt/android-sdk
+#export ANDROID_SDK_ROOT=/usr/local/Cellar/android-sdk/24.3.4
 export GO_HOME=/usr/local/opt/go/libexec/
-export GOPATH="/Users/adolfobenedetti/go"
+export GOPATH="/Users/adben/go"
 export GORACE=""
+export NODE_PATH="/usr/local/lib/node_modules/"
 
 export GOROOT=$GO_HOME
 #export GOROOT="/usr/local/bin/go"
-export LEININGEN_HOME=/Users/adolfobenedetti/git/leiningen
 export SVN_HOME=/opt/subversion
 ##Path##
 export PATH=/usr/local/bin:$PATH
+
+export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+export PATH=$PATH:$HOME/.rbenv/versions/2.2.2/bin
+export PATH=$PATH:$HOME/.gem/ruby/2.2.0/bin
+export PATH=$PATH:$(ruby -rubygems -e 'puts Gem.user_dir')/bin
+export PATH=$PATH:$GO_HOME/bin
 export PATH=$PATH:$M2
 export PATH=$PATH:$SVN_HOME/bin
 export PATH=$PATH:/opt/local/bin
@@ -143,30 +150,23 @@ export PATH=$PATH:/sbin
 export PATH=$PATH:/usr/bin
 export PATH=$PATH:/usr/sbin
 export PATH=$PATH:/usr/local/sbin
-export PATH=$PATH:/usr/X11/bin
-export PATH=$PATH:$LEININGEN_HOME/bin
-export PATH=$PATH:/Users/adolfobenedetti/Dev/Soft/play
 export PATH=$PATH:/opt/local/libexec/gnubin
-export PATH=$PATH:$ANDROID_SDK_ROOT/bin
-export PATH=$PATH:$GO_HOME/bin
+export PATH=$PATH:$ANDROID_HOME/bin
+export PATH=$PATH:$ANDROID_HOME/platform-tools
 export PATH=$PATH:~/bin
-export PATH=$PATH:/Users/adolfobenedetti/bin/FDK/Tools/osx
-export PATH=$PATH:/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin
-export PATH=$PATH:/Applications/Xcode-beta.app/Contents/Developer/usr/bin
-export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-export PATH=$PATH:$HOME/.rbenv/versions/2.2.2/bin
+export PATH=$PATH:/Users/adben/bin/FDK/Tools/osx
+export PATH=$PATH:/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin
+export PATH=$PATH:/Applications/Xcode.app/Contents/Developer/usr/bin
 export PATH=$PATH:$HOME/git/depot_tools
 export PATH=$PATH:/usr/local/share/npm/bin
 ### Added by the Heroku Toolbelt
 export PATH=$PATH:/usr/local/heroku/bin
 #update gits
-#export EDITOR='/Applications/Emacs.app/Contents/MacOS/Emacs -Q -nw'
-export EDITOR='atom'
-#export EDITOR="emacsclient --alternate-editor /Applications/Emacs.app/Contents/MacOS/Emacs"
+export EDITOR='/Applications/Emacs.app/Contents/MacOS/Emacs -Q -nw'
+#export EDITOR='atom'
+export EDITOR="emacsclient --alternate-editor /Applications/Emacs.app/Contents/MacOS/Emacs"
 export VISUAL=${EDITOR}
-#export ALTERNATE_EDITOR="/Applications/Emacs.app/Contents/MacOS/Emacs"
-#export CP_CONFIG="/Users/adolfobenedetti/Documents/iprofs/shl/project/cp-config/src/main/resources/local-dev/"
-#export CP_LOGS="/Users/adolfobenedetti/Documents/iprofs/shl/current/logs/"
+export ALTERNATE_EDITOR="/Applications/Emacs.app/Contents/MacOS/Emacs"
 export SBT_OPTS="-XX:+CMSClassUnloadingEnabled -XX:MaxPermSize=256M"
 #AWS
 export EC2_REGION="eu-west-1"
