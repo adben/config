@@ -3,7 +3,6 @@
 -Xms1G
 -Xmx2048M
 -Xss2m
--XX:+UseParallelOldGC
 -XX:MaxMetaspaceSize=350m
 -XX:ReservedCodeCacheSize=225m
 -XX:MetaspaceSize=512m
@@ -32,4 +31,4 @@
 -XX:+UseFastAccessorMethods
 -XX:+UnlockDiagnosticVMOptions
 -XX:+HeapDumpOnOutOfMemoryError
--XX:+UseCompressedOops -agentlib:yjpagent=probe_disable=*,disablealloc,disabletracing,onlylocal,disableexceptiontelemetry,delay=10000,sessionname=IntelliJIdea14
+-XX:+UseCompressedOops -agentlib:yjpagent=probe_disable=*,disablealloc,disabletracing,onlylocal,disableexceptiontelemetry,delay=10000,sessionname=IntelliJIdea15
