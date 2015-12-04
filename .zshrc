@@ -121,7 +121,7 @@ source $ZSH/oh-my-zsh.sh
 # next line should be in the ~/.zshenv
 #export ZSH_HIGHLIGHT_HIGHLIGHTERS_DIR=/usr/local/share/zsh-syntax-highlighting/highlighters
 export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_66.jdk/Contents/Home
-export M2_HOME=/usr/local/Cellar/maven/3.3.3/libexec
+export M2_HOME=/usr/local/Cellar/maven/3.3.9/libexec
 export M2=$M2_HOME/bin
 export ANDROID_HOME=/usr/local/opt/android-sdk
 #export ANDROID_SDK_ROOT=/usr/local/Cellar/android-sdk/24.3.4
@@ -155,10 +155,11 @@ export PATH=$PATH:$ANDROID_HOME/bin
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 export PATH=$PATH:~/bin
 export PATH=$PATH:/Users/adben/bin/FDK/Tools/osx
-export PATH=$PATH:/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin
-export PATH=$PATH:/Applications/Xcode.app/Contents/Developer/usr/bin
+export PATH=$PATH:/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin
+export PATH=$PATH:/Applications/Xcode-beta.app/Contents/Developer/usr/bin
 export PATH=$PATH:$HOME/git/depot_tools
 export PATH=$PATH:/usr/local/share/npm/bin
+export PATH=/Library/Developer/Toolchains/swift-latest.xctoolchain/usr/bin:"${PATH}"
 ### Added by the Heroku Toolbelt
 export PATH=$PATH:/usr/local/heroku/bin
 #update gits
