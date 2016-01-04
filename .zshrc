@@ -19,7 +19,7 @@ setopt extended_history # save timestamp of command and duration
 setopt inc_append_history # Add comamnds as they are typed, don't wait until shell exit
 setopt hist_expire_dups_first # when trimming history, lose oldest duplicates first
 setopt hist_ignore_dups # Do not write events to history that are duplicates of previous events
-setopt hist_ignore_space # remove command line from history list when first character on the line is a space
+setopt hist_ignore_space # remove command line from history list when firPURE_PROMPT_SYMBOLst character on the line is a space
 setopt hist_find_no_dups # When searching history don't display results already cycled through twice
 setopt hist_reduce_blanks # Remove extra blanks from each command line being added to history
 setopt hist_verify # don't execute, just expand history
@@ -47,6 +47,12 @@ setopt multios # perform implicit tees or cats when multiple redirections are at
 # setopt XTRACE VERBOSE
 # Helps whith the quotes problem
 setopt rcquotes
+
+# ===== pure theme
+# https://github.com/sindresorhus/pure
+set PURE_PROMPT_SYMBOL= "❯";
+
+
 
 
 # Set name of the theme to load.
@@ -173,3 +179,6 @@ export SBT_OPTS="-XX:+CMSClassUnloadingEnabled -XX:MaxPermSize=256M"
 export EC2_REGION="eu-west-1"
 source /usr/local/share/zsh/site-functions/_aws
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+# Avoids the ValueError: unknown locale: UTF-8 at localy.py
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
