@@ -25,7 +25,6 @@
 -XX:+UseAdaptiveGCBoundary
 -XX:+UseSplitVerifier
 -XX:CompileThreshold=10000
--XX:+UseCompressedStrings
 -XX:+OptimizeStringConcat
 -XX:+UseStringCache
 -XX:+UseFastAccessorMethods
