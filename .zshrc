@@ -52,7 +52,9 @@ setopt rcquotes
 # https://github.com/sindresorhus/pure
 set PURE_PROMPT_SYMBOL= "❯";
 
-
+# Circumvent https://github.com/direnv/direnv/issues/210
+#
+#shell_session_update() { :; }
 
 
 # Set name of the theme to load.
@@ -75,12 +77,12 @@ DEFAULT_USER="adben"
 alias cal="cal | grep --color=auto -E '( |^)$(date +)|$'"
 alias hoy="date +%F"
 # Example aliases
-alias emacs="/usr/local/Cellar/emacs/HEAD/bin/emacsclient --alternate-editor /usr/local/Cellar/emacs/HEAD/Emacs.app/Contents/MacOS/Emacs"
+alias emacs="/Applications/Emacs.app/Contents/MacOS/bin/emacsclient --alternate-editor /Applications/Emacs.app/Contents/MacOS/Emacs"
 alias zshconfig="atom ~/.zshrc"
 alias ohmyzsh="atom ~/.oh-my-zsh"
 #for emacs
 alias rmoldelc="cd ~/.emacs.d/ && find . -type f -name \'*.elc\' -exec rm -fv {} \;"
-alias compileelcs="cd ~/.emacs.d/ && /usr/local/Cellar/emacs/HEAD/Emacs.app/Contents/MacOS/Emacs --batch -f batch-byte-compile **/*.el ;"
+alias compileelcs="cd ~/.emacs.d/ && /Applications/Emacs.app/Contents/MacOS/Emacs --batch -f batch-byte-compile **/*.el ;"
 alias optimizeemacs="rmoldelc && sleep 4 && compileelcs"
 alias speedtest="wget -O /dev/null http://speedtest.wdc01.softlayer.com/downloads/test10.zip"
 alias bower="noglob bower"
@@ -143,7 +145,7 @@ export SVN_HOME=/opt/subversion
 export PATH=/usr/local/bin:$PATH
 
 export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-export PATH=$PATH:$HOME/.rbenv/versions/2.2.2/bin
+export PATH=$PATH:$HOME/.rbenv/versions/2.1.5/bin
 export PATH=$PATH:$HOME/.gem/ruby/2.2.0/bin
 export PATH=$PATH:$(ruby -rubygems -e 'puts Gem.user_dir')/bin
 export PATH=$PATH:$GO_HOME/bin
@@ -169,7 +171,7 @@ export PATH=/Library/Developer/Toolchains/swift-latest.xctoolchain/usr/bin:"${PA
 ### Added by the Heroku Toolbelt
 export PATH=$PATH:/usr/local/heroku/bin
 #update gits
-export EDITOR='/Applications/Emacs.app/Contents/MacOS/Emacs -Q -nw'
+#export EDITOR='/Applications/Emacs.app/Contents/MacOS/Emacs -Q -nw'
 #export EDITOR='atom'
 export EDITOR="emacsclient --alternate-editor /Applications/Emacs.app/Contents/MacOS/Emacs"
 export VISUAL=${EDITOR}
