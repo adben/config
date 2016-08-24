@@ -3,7 +3,7 @@
 ;; It must be stored in your home directory.
 
 ;;Byte recompile to force emacs version compatibility
-;;(byte-recompile-directory (expand-file-name "~/.emacs.d") 0)
+;; (byte-recompile-directory (expand-file-name "~/.emacs.d") 0)
 
 (defun dotspacemacs/layers ()
   "Configuration Layers declaration.
@@ -41,6 +41,10 @@ values."
           git-gutter-use-fringe t
           git-magit-status-fullscreen nil
           git-enable-github-support t)
+     (go :variables
+         go-tab-width 4
+         gofmt-command "goimports"
+         go-use-gometalinter t)
      org
      spell-checking
      syntax-checking
@@ -65,7 +69,7 @@ values."
    ;; wrapped in a layer. If you need some configuration for these
    ;; packages, then consider creating a layer. You can also put the
    ;; configuration in `dotspacemacs/user-config'.
-   dotspacemacs-additional-packages '()
+   dotspacemacs-additional-packages '(darktooth-theme)
    ;; A list of packages and/or extensions that will not be install and loaded.
    dotspacemacs-excluded-packages '()
    ;; If non-nil spacemacs will delete any orphan packages, i.e. packages that
@@ -120,7 +124,8 @@ values."
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press <SPC> T n to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
-   dotspacemacs-themes '(spacemacs-dark
+   dotspacemacs-themes '(darktooth
+                         spacemacs-dark
                          spacemacs-light
                          solarized-light
                          solarized-dark
@@ -280,7 +285,7 @@ you should place your code here."
   (setq-default js-indent-level 2)
 
   ;;Themes
-  ;;(setq-default dotspacemacs-themes '(solarized-light leuven zenburn))
+  (setq-default dotspacemacs-themes '(darktooth))
 
   (setq clojure-enable-fancify-symbols t)
   ;;(spacemacs/set-font "PragmataPro Mono" 12)
