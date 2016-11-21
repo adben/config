@@ -1,10 +1,10 @@
--ea
+2-ea
 -server
 -Xms1G
 -Xmx2048M
 -Xss2m
--XX:MaxMetaspaceSize=350m
--XX:ReservedCodeCacheSize=225m
+-XX:MaxMetaspaceSize=512m
+-XX:ReservedCodeCacheSize=240m
 -XX:MetaspaceSize=512m
 -XX:+DoEscapeAnalysis
 -XX:+UnlockExperimentalVMOptions
@@ -30,4 +30,5 @@
 -XX:+UseFastAccessorMethods
 -XX:+UnlockDiagnosticVMOptions
 -XX:+HeapDumpOnOutOfMemoryError
--XX:+UseCompressedOops -agentlib:yjpagent=probe_disable=*,disablealloc,disabletracing,onlylocal,disableexceptiontelemetry,delay=10000,sessionname=IntelliJIdea15
+-XX:+UseCompressedOops
+-agentlib:yjpagent=probe_disable=*,disablealloc,disabletracing,onlylocal,disableexceptiontelemetry,delay=10000,sessionname=IntelliJIdea16
