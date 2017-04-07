@@ -50,7 +50,7 @@ setopt rcquotes
 
 # ===== pure theme
 # https://github.com/sindresorhus/pure
-set PURE_PROMPT_SYMBOL= "❯";
+set PURE_PROMPT_SYMBOL= "";
 
 # Circumvent https://github.com/direnv/direnv/issues/210
 #
@@ -69,8 +69,8 @@ set PURE_PROMPT_SYMBOL= "❯";
 #export ZSH_THEME="kennethreitz"
 #export ZSH_THEME="kphoen"
 #export ZSH_THEME="adben"
-export ZSH_THEME="pure"
-DEFAULT_USER="adben"
+export ZSH_THEME="refined"
+DEFAULT_USER="adolfo"
 
 #Aliases
 # Colored cal output
@@ -134,7 +134,9 @@ export SBT_OPTS="-XX:+CMSClassUnloadingEnabled -XX:MaxPermSize=256M"
 #AWS
 export EC2_REGION="eu-west-1"
 source /usr/local/share/zsh/site-functions/_aws
+source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 # Avoids the ValueError: unknown locale: UTF-8 at localy.py
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
+export PATH="/usr/local/opt/tomcat@7/bin:$PATH"
