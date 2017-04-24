@@ -15,8 +15,8 @@ export PHANTOMJS_BIN="/usr/local/lib/node_modules/phantomjs"
 
 export GOROOT=$GO_HOME
 #export GOROOT="/usr/local/bin/go"
-##Path##
-export PATH=$HOME/bin/anaconda3/bin:/usr/local/bin:$PATH
+#Disabled anaconda, brew compatibility
+#export PATH=$HOME/bin/anaconda3/bin
 
 export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 export PATH=$PATH:$HOME/.rbenv/versions/2.1.5/bin
@@ -26,6 +26,7 @@ export PATH=$PATH:$GO_HOME/bin
 export PATH=$PATH:$M2
 export PATH=$PATH:$SVN_HOME/bin
 export PATH=$PATH:/opt/local/bin
+export PATH=$PATH:/usr/local/bin
 export PATH=$PATH:/usr/texbin
 export PATH=$PATH:/bin
 export PATH=$PATH:/sbin
@@ -38,8 +39,8 @@ export PATH=$PATH:$ANDROID_HOME/platform-tools
 export PATH=$PATH:~/bin
 export PATH=$PATH:/usr/local/m-cli
 export PATH=$PATH:/Users/adolfo/bin/FDK/Tools/osx
-export PATH=$PATH:/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin
-export PATH=$PATH:/Applications/Xcode-beta.app/Contents/Developer/usr/bin
+export PATH=$PATH:/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin
+export PATH=$PATH:/Applications/Xcode.app/Contents/Developer/usr/bin
 export PATH=$PATH:$HOME/git/depot_tools
 export PATH=$PATH:/usr/local/share/npm/bin
 export PATH=/Library/Developer/Toolchains/swift-latest.xctoolchain/usr/bin:"${PATH}"
