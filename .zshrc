@@ -78,8 +78,8 @@ alias cal="cal | grep --color=auto -E '( |^)$(date +)|$'"
 alias hoy="date +%F"
 # Example aliases
 alias emacs="/Applications/Emacs.app/Contents/MacOS/bin/emacsclient --alternate-editor /Applications/Emacs.app/Contents/MacOS/Emacs"
-alias zshconfig="atom ~/.zshrc"
-alias ohmyzsh="atom ~/.oh-my-zsh"
+alias zshconfig="emacsclient ~/.zshrc"
+alias ohmyzsh="emacsclient ~/.oh-my-zsh"
 #for emacs
 alias rmoldelc="cd ~/.emacs.d/ && find . -type f -name \'*.elc\' -exec rm -fv {} \;"
 alias compileelcs="cd ~/.emacs.d/ && /Applications/Emacs.app/Contents/MacOS/Emacs --batch -f batch-byte-compile **/*.el ;"
@@ -101,7 +101,7 @@ alias pginit="postgres -D /usr/local/var/postgres"
 # DISABLE_AUTO_UPDATE="true"
 
 # Uncomment to change how many often would you like to wait before auto-updates occur? (in days)
-export UPDATE_ZSH_DAYS=10
+export UPDATE_ZSH_DAYS=5
 
 # Uncomment following line if you want to disable colors in ls
 # DISABLE_LS_COLORS="true"
@@ -121,22 +121,8 @@ SVN_SHOW_BRANCH="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(atom bower brew colorize colored-man colorize command-not-found common-aliases cp dircycle dirhistory dirpersist emacs extract gem git git-extras git-flow git-flow-avh git-hubflow gitfast github git-prompt gnu-utils go golang heroku history history-substring-search lein lol macports mix mvn mysql-macports nanoc node nvm osx perl python pip redis-cli repo rsync scala sbt safe-paste screen singlechar sprunge ssh-agent terminalapp urltools vagrant web-search xcode zsh_reload)
+plugins=(atom bower brew colorize colored-man colorize command-not-found common-aliases cp dircycle dirhistory dirpersist emacs extract gem git git-extras git-hubflow gitfast github git-prompt gnu-utils go golang heroku history history-substring-search lein lol macports mix mvn mysql-macports nanoc node nvm osx perl python pip redis-cli repo rsync scala sbt safe-paste screen singlechar sprunge ssh-agent terminalapp urltools vagrant web-search xcode zsh_reload)
 # plugins=(git)
 source $ZSH/oh-my-zsh.sh
 #update gits
-#export EDITOR='/Applications/Emacs.app/Contents/MacOS/Emacs -Q -nw'
-#export EDITOR='atom'
-export EDITOR="emacsclient --alternate-editor /Applications/Emacs.app/Contents/MacOS/Emacs"
-export VISUAL=${EDITOR}
-export ALTERNATE_EDITOR="/Applications/Emacs.app/Contents/MacOS/Emacs"
-export SBT_OPTS="-XX:+CMSClassUnloadingEnabled -XX:MaxPermSize=256M"
-#AWS
-export EC2_REGION="eu-west-1"
-source /usr/local/share/zsh/site-functions/_aws
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
-# Avoids the ValueError: unknown locale: UTF-8 at localy.py
-export LC_ALL=en_US.UTF-8
-export LANG=en_US.UTF-8
-export PATH="/usr/local/opt/tomcat@7/bin:$PATH"
+

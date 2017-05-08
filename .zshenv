@@ -17,7 +17,7 @@ export GOROOT=$GO_HOME
 #export GOROOT="/usr/local/bin/go"
 #Disabled anaconda, brew compatibility
 #export PATH=$HOME/bin/anaconda3/bin
-
+export PATH=/usr/local/opt/node@6/bin:$PATH
 export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 export PATH=$PATH:$HOME/.rbenv/versions/2.1.5/bin
 export PATH=$PATH:$HOME/.gem/ruby/2.2.0/bin
@@ -43,9 +43,22 @@ export PATH=$PATH:/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDef
 export PATH=$PATH:/Applications/Xcode.app/Contents/Developer/usr/bin
 export PATH=$PATH:$HOME/git/depot_tools
 export PATH=$PATH:/usr/local/share/npm/bin
-export PATH=/Library/Developer/Toolchains/swift-latest.xctoolchain/usr/bin:"${PATH}"
-### Added by the Heroku Toolbelt
-export PATH=$PATH:/usr/local/heroku/bin
+export PATH=$PATH:/Library/Developer/Toolchains/swift-latest.xctoolchain/usr/bin
+export PATH=$PATH:/usr/local/opt/tomcat@7/bin
+#export EDITOR='/Applications/Emacs.app/Contents/MacOS/Emacs -Q -nw'
+#export EDITOR='atom'
+export EDITOR="emacsclient --alternate-editor /Applications/Emacs.app/Contents/MacOS/Emacs"
+export VISUAL=${EDITOR}
+export ALTERNATE_EDITOR="/Applications/Emacs.app/Contents/MacOS/Emacs"
+export SBT_OPTS="-XX:+CMSClassUnloadingEnabled -XX:MaxPermSize=256M"
+#AWS
+export EC2_REGION="eu-west-1"
+source /usr/local/share/zsh/site-functions/_aws
+source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+# Avoids the ValueError: unknown locale: UTF-8 at localy.py
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/Users/adolfo/Downloads/google-cloud-sdk/path.zsh.inc' ]; then source '/Users/adolfo/Downloads/google-cloud-sdk/path.zsh.inc'; fi
