@@ -34,12 +34,13 @@ values."
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
    '(
-     python
      ;; ----------------------------------------------------------------
      ;; Example of useful layers you may want to use right away.
      ;; Uncomment some layer names and press <SPC f e R> (Vim style) or
      ;; <M-m f e R> (Emacs style) to install them.
      ;; ----------------------------------------------------------------
+     helm
+     osx
      auto-completion
      html
      (javascript :variables
@@ -69,10 +70,12 @@ values."
            web-mode-code-indent-offset 2
            web-mode-markup-indent-offset 2
            web-mode-css-indent-offset 2)
-     osx
-     helm
      git
      markdown
+     (python :variables
+             python-sort-imports-on-save t
+             python-enable-yapf-format-on-save t
+             python-test-runner '(pytest nose))
      ;; (shell :variables
      ;;        shell-default-height 30
      ;;        shell-default-position 'bottom)
@@ -162,8 +165,8 @@ values."
    dotspacemacs-colorize-cursor-according-to-state t
    ;; Default font. `powerline-scale' allows to quickly tweak the mode-line
    ;; size to make separators look not too crappy.
-   dotspacemacs-default-font '("PragmataPro Mono"
-                               :size 15
+   dotspacemacs-default-font '("SF Mono"
+                               :size 13
                                :weight normal
                                :width normal
                                :powerline-scale 1.2)
@@ -428,3 +431,4 @@ the next chapter, open Dired so you can find it manually."
  ;; If there is more than one, they won't work right.
  '(company-tooltip-common ((t (:inherit company-tooltip :weight bold :underline nil))))
  '(company-tooltip-common-selection ((t (:inherit company-tooltip-selection :weight bold :underline nil)))))
+  
