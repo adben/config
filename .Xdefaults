@@ -1,0 +1,114 @@
+URxvt*termName: rxvt
+
+!!URxvt.reverseVideo: true
+URxvt.perl-ext-common: selection-to-clipboard
+
+
+## borderless and no scrollbar
+! URxvt*scrollBar_right: false
+! URxvt*scrollBar: false
+! URxvt*borderLess: false
+
+URxvt.scrollstyle:      plain
+
+URxvt.borderColor:      #000030
+URxvt.internalBorder:   1
+
+URxvt.saveLines:        4095
+
+
+## teh transparency stuff
+URxvt*inheritPixmap: true
+URxvt*tintColor: white
+URxvt*shading: 100
+
+##
+## These 3 lines make links clickable
+##
+URxvt.url-Launcher: /usr/bin/xdg-open
+URxvt.matcher.button: 1
+URxvt.perl-ext-common: matcher,readline
+
+## geometry and font
+URxvt*geometry: 80×15
+URxvt*font: xft:Fira Code:pixelsize=25
+
+! Pointer
+URxvt.pointerBlank:         true
+
+!! https://gist.github.com/yevgenko/1167205
+!!Source http://github.com/altercation/solarized
+
+*background: #002b36
+*foreground: #657b83
+!!*fading: 40
+*fadeColor: #002b36
+*cursorColor: #93a1a1
+*pointerColorBackground: #586e75
+*pointerColorForeground: #93a1a1
+
+!! black dark/light
+*color0: #073642
+*color8: #002b36
+
+!! red dark/light
+*color1: #dc322f
+*color9: #cb4b16
+
+!! green dark/light
+*color2: #859900
+*color10: #586e75
+
+!! yellow dark/light
+*color3: #b58900
+*color11: #657b83
+
+!! blue dark/light
+*color4: #268bd2
+*color12: #839496
+
+!! magenta dark/light
+*color5: #d33682
+*color13: #6c71c4
+
+!! cyan dark/light
+*color6: #2aa198
+*color14: #93a1a1
+
+!! white dark/light
+*color7: #eee8d5
+*color15: #fdf6e3
+
+! ## change default colors
+! URxvt*background: #000000
+! URxvt*foreground: #A8A8A8
+! URxvt*color0: #000000
+! URxvt*color1: #A80000
+
+! ## URxvt*color2: #00A800
+! URxvt*color2: #ED254F
+
+! URxvt*color3: #A85400
+! ## main bars in irssi
+! URxvt*color4: #020202
+! URxvt*color5: #A800A8
+! URxvt*color6: #00A8A8
+! URxvt*color7: #A8A8A8
+! URxvt*color8: #545054
+! URxvt*color9: #F85450
+
+
+! ## Time in Irssi
+! URxvt*color10: #ED254F
+! ## URxvt*color10: #50FC50
+
+! ## URxvt*color11: #F2FC50
+! URxvt*color11: #ED254F
+
+! URxvt*color12: #5054F8
+
+! URxvt*color13: #ED254F
+! ## URxvt*color13: #F854F8
+
+! URxvt*color14: #50FCF8
+! URxvt*color15: #F8FCF8
