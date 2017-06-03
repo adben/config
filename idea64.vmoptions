@@ -1,15 +1,19 @@
+# custom IntelliJ IDEA VM options
+
 -ea
 -server
--Xms1G
--Xmx2048M
+-Xms2G
+-Xmx4096M
 -Xss2m
 -XX:MaxMetaspaceSize=1536m
 -XX:ReservedCodeCacheSize=240m
 -XX:MetaspaceSize=512m
 -XX:+DoEscapeAnalysis
+-XX:SoftRefLRUPolicyMSPerMB=50
 -XX:+UnlockExperimentalVMOptions
+-Djava.net.preferIPv4Stack=true
+-Dsun.io.useCanonCaches=false
 -XX:LargePageSizeInBytes=256m
--XX:ReservedCodeCacheSize=96m
 -XX:+UseCodeCacheFlushing
 -XX:ParallelGCThreads=8
 -XX:+DisableExplicitGC
@@ -17,7 +21,6 @@
 -XX:+PrintGCDetails
 -XX:+PrintFlagsFinal
 -XX:+AggressiveOpts
--XX:+HeapDumpOnOutOfMemoryError
 -XX:+CMSClassUnloadingEnabled
 -XX:CMSInitiatingOccupancyFraction=60
 -XX:+CMSClassUnloadingEnabled
@@ -31,4 +34,7 @@
 -XX:+UnlockDiagnosticVMOptions
 -XX:+HeapDumpOnOutOfMemoryError
 -XX:+UseCompressedOops
--agentlib:yjpagent=probe_disable=*,disablealloc,disabletracing,onlylocal,disableexceptiontelemetry,delay=10000,sessionname=IntelliJIdea16
+-XX:-OmitStackTraceInFastThrow
+-Dawt.useSystemAAFontSettings=lcd
+
+-Dsun.java2d.renderer=sun.java2d.marlin.MarlinRenderingEngine
