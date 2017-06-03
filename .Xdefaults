@@ -1,8 +1,8 @@
 URxvt*termName: rxvt
+URxvt.perl-ext-common: default,matcher,readline,selection-to-clipboard,tabbedex,searchable-scrollback<M-s>
 
 !!URxvt.reverseVideo: true
-URxvt.perl-ext-common: selection-to-clipboard
-
+!!URxvt.perl-ext-common: selection-to-clipboard
 
 ## borderless and no scrollbar
 ! URxvt*scrollBar_right: false
@@ -16,18 +16,29 @@ URxvt.internalBorder:   1
 
 URxvt.saveLines:        4095
 
+! URxvt*iconFile:        /usr/share/icons/Paper/32x32/apps/gnome-terminal.png
 
-## teh transparency stuff
+## transparency
 URxvt*inheritPixmap: true
 URxvt*tintColor: white
 URxvt*shading: 100
 
-##
-## These 3 lines make links clickable
-##
+## URL follow
 URxvt.url-Launcher: /usr/bin/xdg-open
 URxvt.matcher.button: 1
-URxvt.perl-ext-common: matcher,readline
+
+##tabs
+! URxvt.keysym.Control-Alt-t:	perl:tabbedex:new_tab
+! URxvt.keysym.Shift-Right:	perl:tabbedex:next_tab
+! URxvt.keysym.Shift-Left:	perl:tabbedex:prev_tab
+URxvt.colorUL: #4682B4
+URxvt.tabbed.tabbar-fg: 2
+URxvt.tabbed.tabbar-bg: 0
+URxvt.tabbed.tab-fg: 2
+URxvt.tabbed.tab-bg: 0
+URxvt.tabbed.autohide:  yes
+URxvt.tabbed.new-button:  no
+URxvt.tabbed.title: yes
 
 ## geometry and font
 URxvt*geometry: 80×15
@@ -78,37 +89,3 @@ URxvt.pointerBlank:         true
 !! white dark/light
 *color7: #eee8d5
 *color15: #fdf6e3
-
-! ## change default colors
-! URxvt*background: #000000
-! URxvt*foreground: #A8A8A8
-! URxvt*color0: #000000
-! URxvt*color1: #A80000
-
-! ## URxvt*color2: #00A800
-! URxvt*color2: #ED254F
-
-! URxvt*color3: #A85400
-! ## main bars in irssi
-! URxvt*color4: #020202
-! URxvt*color5: #A800A8
-! URxvt*color6: #00A8A8
-! URxvt*color7: #A8A8A8
-! URxvt*color8: #545054
-! URxvt*color9: #F85450
-
-
-! ## Time in Irssi
-! URxvt*color10: #ED254F
-! ## URxvt*color10: #50FC50
-
-! ## URxvt*color11: #F2FC50
-! URxvt*color11: #ED254F
-
-! URxvt*color12: #5054F8
-
-! URxvt*color13: #ED254F
-! ## URxvt*color13: #F854F8
-
-! URxvt*color14: #50FCF8
-! URxvt*color15: #F8FCF8
