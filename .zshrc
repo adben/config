@@ -70,7 +70,7 @@ set PURE_PROMPT_SYMBOL= "";
 #export ZSH_THEME="kphoen"
 #export ZSH_THEME="adben"
 export ZSH_THEME="refined"
-DEFAULT_USER="adolfo"
+DEFAULT_USER="adben"
 
 #Aliases
 # Colored cal output

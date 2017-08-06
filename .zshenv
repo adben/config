@@ -8,7 +8,7 @@ export M2=$M2_HOME/bin
 export ANDROID_HOME=/usr/local/opt/android-sdk
 #export ANDROID_SDK_ROOT=/usr/local/Cellar/android-sdk/24.3.4
 export GO_HOME=/usr/local/opt/go/libexec/
-export GOPATH="/Users/adolfo/go"
+export GOPATH="/Users/adben/go"
 export GORACE=""
 export NODE_PATH="/usr/local/lib/node_modules/"
 export PHANTOMJS_BIN="/usr/local/lib/node_modules/phantomjs"
@@ -38,13 +38,13 @@ export PATH=$PATH:$ANDROID_HOME/bin
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 export PATH=$PATH:~/bin
 export PATH=$PATH:/usr/local/m-cli
-export PATH=$PATH:/Users/adolfo/bin/FDK/Tools/osx
-export PATH=$PATH:/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin
-export PATH=$PATH:/Applications/Xcode.app/Contents/Developer/usr/bin
+#export PATH=$PATH:/Users/adben/bin/FDK/Tools/osx
+export PATH=$PATH:/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin
+export PATH=$PATH:/Applications/Xcode-beta.app/Contents/Developer/usr/bin
 export PATH=$PATH:$HOME/git/depot_tools
 export PATH=$PATH:/usr/local/share/npm/bin
-export PATH=$PATH:/Library/Developer/Toolchains/swift-latest.xctoolchain/usr/bin
-export PATH=$PATH:/usr/local/opt/tomcat@7/bin
+# export PATH=$PATH:/Library/Developer/Toolchains/swift-latest.xctoolchain/usr/bin
+#export PATH=$PATH:/usr/local/opt/tomcat@7/bin
 #export EDITOR='/Applications/Emacs.app/Contents/MacOS/Emacs -Q -nw'
 #export EDITOR='atom'
 export EDITOR="emacsclient --alternate-editor /Applications/Emacs.app/Contents/MacOS/Emacs"
@@ -53,15 +53,15 @@ export ALTERNATE_EDITOR="/Applications/Emacs.app/Contents/MacOS/Emacs"
 export SBT_OPTS="-XX:+CMSClassUnloadingEnabled -XX:MaxPermSize=256M"
 #AWS
 export EC2_REGION="eu-west-1"
-source /usr/local/share/zsh/site-functions/_aws
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+#source /usr/local/share/zsh/site-functions/_aws
+#source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 # Avoids the ValueError: unknown locale: UTF-8 at localy.py
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
 # The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/adolfo/Downloads/google-cloud-sdk/path.zsh.inc' ]; then source '/Users/adolfo/Downloads/google-cloud-sdk/path.zsh.inc'; fi
+#if [ -f '/Users/adben/Downloads/google-cloud-sdk/path.zsh.inc' ]; then source '/Users/adben/Downloads/google-cloud-sdk/path.zsh.inc'; fi
 
 # The next line enables shell command completion for gcloud.
-if [ -f '/Users/adolfo/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then source '/Users/adolfo/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
+#if [ -f '/Users/adben/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then source '/Users/adben/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
