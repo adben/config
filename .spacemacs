@@ -77,6 +77,7 @@ values."
              python-sort-imports-on-save t
              python-enable-yapf-format-on-save t
              python-test-runner '(pytest nose))
+     asciidoc
      ;; (shell :variables
      ;;        shell-default-height 30
      ;;        shell-default-position 'bottom)
@@ -341,28 +342,6 @@ before packages are loaded. If you are unsure, you should try in setting them in
 `dotspacemacs/user-config' first."
   )
 
-;;Clojure cookbook
-(defun increment-clojure-cookbook ()
-  "When reading the Clojure cookbook, find the next section, and
-close the buffer. If the next section is a sub-directory or in
-the next chapter, open Dired so you can find it manually."
-  (interactive)
-  (let* ((cur (buffer-name))
-         (split-cur (split-string cur "[-_]"))
-         (chap (car split-cur))
-         (rec (car (cdr split-cur)))
-         (rec-num (string-to-number rec))
-         (next-rec-num (1+ rec-num))
-         (next-rec-s (number-to-string next-rec-num))
-         (next-rec (if (< next-rec-num 10)
-                       (concat "0" next-rec-s)
-                     next-rec-s))
-         (target (file-name-completion (concat chap "-" next-rec) "")))
-    (progn 
-      (if (equal target nil)
-          (dired (file-name-directory (buffer-file-name)))
-        (find-file target))
-      (kill-buffer cur))))
 ;;; Fira code
 ;; This works when using emacs --daemon + emacsclient
 ;; (add-hook 'after-make-frame-functions (lambda (frame) (set-fontset-font t '(#Xe100 . #Xe16f) "Fira Code Symbol")))
@@ -496,6 +475,29 @@ the next chapter, open Dired so you can find it manually."
 ;; (add-hook 'prog-mode-hook
 ;;           #'add-fira-code-symbol-keywords) 
 
+;;Clojure cookbook
+(defun increment-clojure-cookbook ()
+  "When reading the Clojure cookbook, find the next section, and
+close the buffer. If the next section is a sub-directory or in
+the next chapter, open Dired so you can find it manually."
+  (interactive)
+  (let* ((cur (buffer-name))
+         (split-cur (split-string cur "[-_]"))
+         (chap (car split-cur))
+         (rec (car (cdr split-cur)))
+         (rec-num (string-to-number rec))
+         (next-rec-num (1+ rec-num))
+         (next-rec-s (number-to-string next-rec-num))
+         (next-rec (if (< next-rec-num 10)
+                       (concat "0" next-rec-s)
+                     next-rec-s))
+         (target (file-name-completion (concat chap "-" next-rec) "")))
+    (progn 
+      (if (equal target nil)
+          (dired (file-name-directory (buffer-file-name)))
+        (find-file target))
+      (kill-buffer cur))))
+
 (defun dotspacemacs/user-config ()
   "Configuration function for user code.
 This function is called at the very end of Spacemacs initialization after
@@ -504,7 +506,12 @@ This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
 
-  ;;(define-key adoc-mode-map (kbd "M-+") 'increment-clojure-cookbook)
+  ;;Reading adoc files
+  (require 'adoc-mode)
+  (setq auto-mode-alist (append '(("\\.asciidoc$" . adoc-mode))
+                                auto-mode-alist))
+  ;;Clojure cookbook
+  (define-key adoc-mode-map (kbd "M-+") 'increment-clojure-cookbook)
 
   ;;JS mode
   (setq-default js2-basic-offset 2)
