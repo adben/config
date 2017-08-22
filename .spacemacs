@@ -43,7 +43,11 @@ values."
      helm
      osx
      auto-completion
-     html
+     (html :variables
+           css-indent-offset 2
+           web-mode-code-indent-offset 2
+           web-mode-markup-indent-offset 2
+           web-mode-css-indent-offset 2)
      (javascript :variables
                  javascript-disable-tern-port-files nil)
      react
@@ -66,11 +70,6 @@ values."
      syntax-checking
      version-control
      gtags
-     (html :variables
-           css-indent-offset 2
-           web-mode-code-indent-offset 2
-           web-mode-markup-indent-offset 2
-           web-mode-css-indent-offset 2)
      git
      markdown
      (python :variables
@@ -167,8 +166,8 @@ values."
    dotspacemacs-colorize-cursor-according-to-state t
    ;; Default font. `powerline-scale' allows to quickly tweak the mode-line
    ;; size to make separators look not too crappy.
-   dotspacemacs-default-font '("PragmataPro"
-                               :size 16
+   dotspacemacs-default-font '("Fira Code"
+                               :size 15
                                :weight normal
                                :width normal
                                :powerline-scale 1.3)
