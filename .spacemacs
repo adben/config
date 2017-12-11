@@ -35,7 +35,7 @@ values."
    dotspacemacs-configuration-layers
    '(
      yaml
-     ;; ----------------------------------------------------------------
+     ;; ---------------------------------------------------------------
      ;; Example of useful layers you may want to use right away.
      ;; Uncomment some layer names and press <SPC f e R> (Vim style) or
      ;; <M-m f e R> (Emacs style) to install them.
@@ -71,6 +71,7 @@ values."
      version-control
      gtags
      git
+     github
      markdown
      (python :variables
              python-sort-imports-on-save t
@@ -157,17 +158,14 @@ values."
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press <SPC> T n to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
-   dotspacemacs-themes '(base16-eighties
-                         spacemacs-dark
-                         spacemacs-light
-                         solarized-light
+   dotspacemacs-themes '(spacemacs-dark
                          solarized-dark)
    ;; If non nil the cursor color matches the state color in GUI Emacs.
    dotspacemacs-colorize-cursor-according-to-state t
    ;; Default font. `powerline-scale' allows to quickly tweak the mode-line
    ;; size to make separators look not too crappy.
-   dotspacemacs-default-font '("Fira Code"
-                               :size 15
+   dotspacemacs-default-font '("PragmataPro Mono"
+                               :size 14
                                :weight normal
                                :width normal
                                :powerline-scale 1.3)
@@ -329,7 +327,7 @@ values."
    ;; https://github.com/chriskempson/base16
    ;; https://github.com/belak/base16-emacs
    ;; https://github.com/syl20bnr/spacemacs/issues/1851 
-   dotspacemacs-additional-packages '(base16-theme)
+   ;; dotspacemacs-additional-packages '(base16-theme)
    ))
 
 (defun dotspacemacs/user-init ()
@@ -341,8 +339,8 @@ before packages are loaded. If you are unsure, you should try in setting them in
 `dotspacemacs/user-config' first."
   )
 
-;;; Fira code
-;; This works when using emacs --daemon + emacsclient
+;; ;;; Fira code
+;; ;;; Fira code;; This works when using emacs --daemon + emacsclient
 ;; (add-hook 'after-make-frame-functions (lambda (frame) (set-fontset-font t '(#Xe100 . #Xe16f) "Fira Code Symbol")))
 ;; ;; This works when using emacs without server/client
 ;; (set-fontset-font t '(#Xe100 . #Xe16f) "Fira Code Symbol")
@@ -472,7 +470,11 @@ before packages are loaded. If you are unsure, you should try in setting them in
 ;;   (font-lock-add-keywords nil fira-code-font-lock-keywords-alist))
 
 ;; (add-hook 'prog-mode-hook
-;;           #'add-fira-code-symbol-keywords) 
+;;           #'add-fira-code-symbol-keywords)
+
+;; (set-language-environment "UTF-8")
+;; (set-default-coding-systems 'utf-8)
+;; (mac-auto-operator-composition-mode)
 
 ;;Clojure cookbook
 (defun increment-clojure-cookbook ()
@@ -550,7 +552,7 @@ you should place your code here."
     ("7bfd38733dc58478d2104c30114022a88ddb92540fa4fb7516f79e55967a348d" "fa2b58bb98b62c3b8cf3b6f02f058ef7827a8e497125de0254f56e373abee088" default)))
  '(package-selected-packages
    (quote
-    (org-category-capture yaml-mode gntp parent-mode gitignore-mode fringe-helper git-gutter+ pos-tip flx evil-unimpaired goto-chg edn peg eval-sexp-fu queue pkg-info epl popup diminish yapfify pyvenv pytest pyenv-mode py-isort pip-requirements live-py-mode hy-mode helm-pydoc cython-mode company-anaconda anaconda-mode pythonic base16-theme winum unfill fuzzy paredit log4e packed adoc-mode markup-faces bind-key bind-map powerline spinner org highlight pcache projectile go-eldoc git-gutter iedit company-go hydra inflections multiple-cursors cider seq clojure-mode yasnippet auto-complete company anzu smartparens evil undo-tree flycheck go-mode request helm helm-core avy markdown-mode alert magit magit-popup git-commit with-editor async dash s hide-comnt go-guru uuidgen pug-mode osx-dictionary org-projectile org-download mwim livid-mode skewer-mode simple-httpd link-hint git-link flyspell-correct-helm flyspell-correct flycheck-gometalinter eyebrowse evil-visual-mark-mode evil-ediff dumb-jump f column-enforce-mode clojure-snippets darktooth-theme xkcd web-mode web-beautify tagedit slim-mode scss-mode sass-mode rvm ruby-tools ruby-test-mode rubocop rspec-mode robe reveal-in-osx-finder rbenv pbcopy osx-trash lua-mode less-css-mode launchctl json-mode json-snatcher json-reformat js2-refactor js2-mode js-doc jade-mode helm-gtags helm-css-scss haml-mode ggtags emmet-mode company-web web-completion-data company-tern dash-functional tern coffee-mode chruby bundler inf-ruby helm-dash dash-at-point xterm-color ws-butler window-numbering which-key volatile-highlights vi-tilde-fringe use-package toc-org spacemacs-theme spaceline smooth-scrolling smeargle shell-pop restart-emacs rainbow-delimiters quelpa popwin persp-mode pcre2el paradox page-break-lines orgit org-repo-todo org-present org-pomodoro org-plus-contrib org-bullets open-junk-file neotree multi-term move-text mmm-mode markdown-toc magit-gitflow macrostep lorem-ipsum linum-relative leuven-theme info+ indent-guide ido-vertical-mode hungry-delete htmlize hl-todo highlight-parentheses highlight-numbers highlight-indentation help-fns+ helm-themes helm-swoop helm-projectile helm-mode-manager helm-make helm-gitignore helm-flyspell helm-flx helm-descbinds helm-company helm-c-yasnippet helm-ag google-translate golden-ratio gnuplot gitconfig-mode gitattributes-mode git-timemachine git-messenger git-gutter-fringe git-gutter-fringe+ gh-md flycheck-pos-tip flx-ido fill-column-indicator fancy-battery expand-region exec-path-from-shell evil-visualstar evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-magit evil-lisp-state evil-indent-plus evil-iedit-state evil-exchange evil-escape evil-args evil-anzu eshell-prompt-extras esh-help elisp-slime-nav diff-hl define-word company-statistics company-quickhelp clj-refactor clean-aindent-mode cider-eval-sexp-fu buffer-move bracketed-paste auto-yasnippet auto-highlight-symbol auto-dictionary auto-compile aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line ac-ispell)))
+    (ghub let-alist magit-gh-pulls github-search github-clone github-browse-file gist gh marshal logito ht org-category-capture yaml-mode gntp parent-mode gitignore-mode fringe-helper git-gutter+ pos-tip flx evil-unimpaired goto-chg edn peg eval-sexp-fu queue pkg-info epl popup diminish yapfify pyvenv pytest pyenv-mode py-isort pip-requirements live-py-mode hy-mode helm-pydoc cython-mode company-anaconda anaconda-mode pythonic base16-theme winum unfill fuzzy paredit log4e packed adoc-mode markup-faces bind-key bind-map powerline spinner org highlight pcache projectile go-eldoc git-gutter iedit company-go hydra inflections multiple-cursors cider seq clojure-mode yasnippet auto-complete company anzu smartparens evil undo-tree flycheck go-mode request helm helm-core avy markdown-mode alert magit magit-popup git-commit with-editor async dash s hide-comnt go-guru uuidgen pug-mode osx-dictionary org-projectile org-download mwim livid-mode skewer-mode simple-httpd link-hint git-link flyspell-correct-helm flyspell-correct flycheck-gometalinter eyebrowse evil-visual-mark-mode evil-ediff dumb-jump f column-enforce-mode clojure-snippets darktooth-theme xkcd web-mode web-beautify tagedit slim-mode scss-mode sass-mode rvm ruby-tools ruby-test-mode rubocop rspec-mode robe reveal-in-osx-finder rbenv pbcopy osx-trash lua-mode less-css-mode launchctl json-mode json-snatcher json-reformat js2-refactor js2-mode js-doc jade-mode helm-gtags helm-css-scss haml-mode ggtags emmet-mode company-web web-completion-data company-tern dash-functional tern coffee-mode chruby bundler inf-ruby helm-dash dash-at-point xterm-color ws-butler window-numbering which-key volatile-highlights vi-tilde-fringe use-package toc-org spacemacs-theme spaceline smooth-scrolling smeargle shell-pop restart-emacs rainbow-delimiters quelpa popwin persp-mode pcre2el paradox page-break-lines orgit org-repo-todo org-present org-pomodoro org-plus-contrib org-bullets open-junk-file neotree multi-term move-text mmm-mode markdown-toc magit-gitflow macrostep lorem-ipsum linum-relative leuven-theme info+ indent-guide ido-vertical-mode hungry-delete htmlize hl-todo highlight-parentheses highlight-numbers highlight-indentation help-fns+ helm-themes helm-swoop helm-projectile helm-mode-manager helm-make helm-gitignore helm-flyspell helm-flx helm-descbinds helm-company helm-c-yasnippet helm-ag google-translate golden-ratio gnuplot gitconfig-mode gitattributes-mode git-timemachine git-messenger git-gutter-fringe git-gutter-fringe+ gh-md flycheck-pos-tip flx-ido fill-column-indicator fancy-battery expand-region exec-path-from-shell evil-visualstar evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-magit evil-lisp-state evil-indent-plus evil-iedit-state evil-exchange evil-escape evil-args evil-anzu eshell-prompt-extras esh-help elisp-slime-nav diff-hl define-word company-statistics company-quickhelp clj-refactor clean-aindent-mode cider-eval-sexp-fu buffer-move bracketed-paste auto-yasnippet auto-highlight-symbol auto-dictionary auto-compile aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line ac-ispell)))
  '(safe-local-variable-values
    (quote
     ((eval when
