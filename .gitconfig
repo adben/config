@@ -3,7 +3,7 @@
 	email = adolfo.benedetti@gmail.com
 [core]
 	editor = emacs
-       	autocrlf = false
+	autocrlf = false
 [filter "lfs"]
 	clean = git-lfs clean %f
 	smudge = git-lfs smudge %f
@@ -35,3 +35,5 @@
 [push]
 	# Only push branches that have been set up to track a remote branch.
 	default = current
+[github]
+	user = adben
