@@ -41,8 +41,8 @@ export PATH=$PATH:$NODE_HOME/bin
 export PATH=$PATH:$KINDLEGEN_HOME/kindlegen
 export PATH=$PATH:/usr/local/m-cli
 export PATH=$PATH:/Applications/Xcode.app/Contents/Developer/usr/bin
-#export EDITOR='/Applications/Emacs.app/Contents/MacOS/Emacs -Q -nw'
-export EDITOR="emacsclient --alternate-editor /Applications/Emacs.app/Contents/MacOS/Emacs"
+export EDITOR='/Applications/Emacs.app/Contents/MacOS/Emacs -nw'
+#export EDITOR="emacsclient --alternate-editor /Applications/Emacs.app/Contents/MacOS/Emacs"
 export VISUAL=${EDITOR}
 export ALTERNATE_EDITOR="/Applications/Emacs.app/Contents/MacOS/Emacs"
 export SBT_OPTS="-XX:+CMSClassUnloadingEnabled -XX:MaxPermSize=256M"
@@ -51,3 +51,4 @@ export EC2_REGION="eu-west-1"
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
+ 
