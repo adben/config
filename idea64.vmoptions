@@ -24,7 +24,6 @@
 -XX:+AggressiveOpts
 -XX:+CMSClassUnloadingEnabled
 -XX:CMSInitiatingOccupancyFraction=60
--XX:+CMSClassUnloadingEnabled
 -XX:+CMSParallelRemarkEnabled
 -XX:+UseAdaptiveGCBoundary
 -XX:+UseSplitVerifier
