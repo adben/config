@@ -125,3 +125,6 @@ plugins=(atom bower brew colorize colored-man colorize command-not-found common-
 source $ZSH/oh-my-zsh.sh
 #update gits
 
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+

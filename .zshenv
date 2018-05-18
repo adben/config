@@ -3,7 +3,7 @@
 # next line should be in the ~/.zshenv
 #export ZSH_HIGHLIGHT_HIGHLIGHTERS_DIR=/usr/local/share/zsh-syntax-highlighting/highlighters
 #export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk-9.jdk/Contents/Home
-export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_152.jdk/Contents/Home
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_172.jdk/Contents/Home
 export NODE_HOME=/usr/local/opt/node
 export ANT_HOME=/usr/local/opt/ant
 export MAVEN_HOME=/usr/local/opt/maven
@@ -19,12 +19,14 @@ export KINDLEGEN_HOME=/Users/adben/Downloads/KindleGen_Mac_i386_v2_9
 export GOROOT=$GO_HOME
 export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 export PATH=$PATH:$HOME/.rbenv/versions/2.1.5/bin
+
 export PATH=$PATH:$HOME/.gem/ruby/2.2.0/bin
 export PATH=$PATH:$(ruby -rubygems -e 'puts Gem.user_dir')/bin
 export PATH=$PATH:$GO_HOME/bin
 export PATH=$PATH:/opt/local/bin
 export PATH=$PATH:/usr/local/bin
 export PATH=$PATH:/usr/texbin
+
 export PATH=$PATH:/bin
 export PATH=$PATH:/sbin
 export PATH=$PATH:/usr/bin
@@ -51,4 +53,3 @@ export EC2_REGION="eu-west-1"
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
- 

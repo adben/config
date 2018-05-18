@@ -77,7 +77,8 @@ values."
              python-enable-yapf-format-on-save t
              python-test-runner '(pytest nose))
      asciidoc
-     yalm
+     ;; yalm
+
      ;; (shell :variables
      ;;        shell-default-height 30
      ;;        shell-default-position 'bottom)
@@ -176,14 +177,15 @@ values."
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press <SPC> T n to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
-   dotspacemacs-themes '(spacemacs-dark
+   dotspacemacs-themes '(base16-tomorrow-night
+                         spacemacs-dark
                          spacemacs-light)
    ;; If non nil the cursor color matches the state color in GUI Emacs.
    dotspacemacs-colorize-cursor-according-to-state t
    ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
    ;; quickly tweak the mode-line size to make separators look not too crappy.
-   dotspacemacs-default-font '("Source Code Pro"
-                               :size 13
+   dotspacemacs-default-font '("Operator Mono"
+                               :size 17
                                :weight normal
                                :width normal
                                :powerline-scale 1.1)
@@ -205,6 +207,7 @@ values."
    dotspacemacs-major-mode-emacs-leader-key "C-M-m"
    ;; These variables control whether separate commands are bound in the GUI to
    ;; the key pairs C-i, TAB and C-m, RET.
+
    ;; Setting it to a non-nil value, allows for separate commands under <C-i>
    ;; and TAB or <C-m> and RET.
    ;; In the terminal, these pairs are generally indistinguishable, so this only
@@ -549,7 +552,7 @@ you should place your code here."
   (setq cljr-suppress-middleware-warnings t)
 
   ;;Themes
-  (setq-default dotspacemacs-themes '(darktooth))
+  (setq-default dotspacemacs-themes '(base16-tomorrow-night))
 
   (setq clojure-enable-fancify-symbols t)
   ;;(spacemacs/set-font "PragmataPro Mono" 12)
@@ -576,7 +579,8 @@ you should place your code here."
  ;; If there is more than one, they won't work right.
  '(custom-safe-themes
    (quote
-    ("7bfd38733dc58478d2104c30114022a88ddb92540fa4fb7516f79e55967a348d" "fa2b58bb98b62c3b8cf3b6f02f058ef7827a8e497125de0254f56e373abee088" default)))
+    ("80930c775cef2a97f2305bae6737a1c736079fdcc62a6fdf7b55de669fbbcd13" "3380a2766cf0590d50d6366c5a91e976bdc3c413df963a0ab9952314b4577299" "7bfd38733dc58478d2104c30114022a88ddb92540fa4fb7516f79e55967a348d" "fa2b58bb98b62c3b8cf3b6f02f058ef7827a8e497125de0254f56e373abee088" default)))
+ '(evil-want-Y-yank-to-eol nil)
  '(package-selected-packages
    (quote
     (circe prettier-js nord-theme eslint-fix org-mime solarized-theme oneonone hexrgb ng2-mode typescript-mode graphql-mode dracula-theme atom-one-dark-theme all-the-icons-dired all-the-icons memoize font-lock+ ghub let-alist magit-gh-pulls github-search github-clone github-browse-file gist gh marshal logito ht org-category-capture yaml-mode gntp parent-mode gitignore-mode fringe-helper git-gutter+ pos-tip flx evil-unimpaired goto-chg edn peg eval-sexp-fu queue pkg-info epl popup diminish yapfify pyvenv pytest pyenv-mode py-isort pip-requirements live-py-mode hy-mode helm-pydoc cython-mode company-anaconda anaconda-mode pythonic base16-theme winum unfill fuzzy paredit log4e packed adoc-mode markup-faces bind-key bind-map powerline spinner org highlight pcache projectile go-eldoc git-gutter iedit company-go hydra inflections multiple-cursors cider seq clojure-mode yasnippet auto-complete company anzu smartparens evil undo-tree flycheck go-mode request helm helm-core avy markdown-mode alert magit magit-popup git-commit with-editor async dash s hide-comnt go-guru uuidgen pug-mode osx-dictionary org-projectile org-download mwim livid-mode skewer-mode simple-httpd link-hint git-link flyspell-correct-helm flyspell-correct flycheck-gometalinter eyebrowse evil-visual-mark-mode evil-ediff dumb-jump f column-enforce-mode clojure-snippets darktooth-theme xkcd web-mode web-beautify tagedit slim-mode scss-mode sass-mode rvm ruby-tools ruby-test-mode rubocop rspec-mode robe reveal-in-osx-finder rbenv pbcopy osx-trash lua-mode less-css-mode launchctl json-mode json-snatcher json-reformat js2-refactor js2-mode js-doc jade-mode helm-gtags helm-css-scss haml-mode ggtags emmet-mode company-web web-completion-data company-tern dash-functional tern coffee-mode chruby bundler inf-ruby helm-dash dash-at-point xterm-color ws-butler window-numbering which-key volatile-highlights vi-tilde-fringe use-package toc-org spacemacs-theme spaceline smooth-scrolling smeargle shell-pop restart-emacs rainbow-delimiters quelpa popwin persp-mode pcre2el paradox page-break-lines orgit org-repo-todo org-present org-pomodoro org-plus-contrib org-bullets open-junk-file neotree multi-term move-text mmm-mode markdown-toc magit-gitflow macrostep lorem-ipsum linum-relative leuven-theme info+ indent-guide ido-vertical-mode hungry-delete htmlize hl-todo highlight-parentheses highlight-numbers highlight-indentation help-fns+ helm-themes helm-swoop helm-projectile helm-mode-manager helm-make helm-gitignore helm-flyspell helm-flx helm-descbinds helm-company helm-c-yasnippet helm-ag google-translate golden-ratio gnuplot gitconfig-mode gitattributes-mode git-timemachine git-messenger git-gutter-fringe git-gutter-fringe+ gh-md flycheck-pos-tip flx-ido fill-column-indicator fancy-battery expand-region exec-path-from-shell evil-visualstar evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-magit evil-lisp-state evil-indent-plus evil-iedit-state evil-exchange evil-escape evil-args evil-anzu eshell-prompt-extras esh-help elisp-slime-nav diff-hl define-word company-statistics company-quickhelp clj-refactor clean-aindent-mode cider-eval-sexp-fu buffer-move bracketed-paste auto-yasnippet auto-highlight-symbol auto-dictionary auto-compile aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line ac-ispell)))
