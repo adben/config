@@ -37,3 +37,9 @@
 	default = current
 [github]
 	user = adben
+[magithub]
+	online = false
+[magithub "status"]
+	includeStatusHeader = false
+	includePullRequestsSection = false
+	includeIssuesSection = false

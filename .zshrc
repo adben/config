@@ -87,9 +87,16 @@ alias optimizeemacs="rmoldelc && sleep 4 && compileelcs"
 alias speedtest="wget -O /dev/null http://speedtest.wdc01.softlayer.com/downloads/test10.zip"
 alias bower="noglob bower"
 alias pginit="postgres -D /usr/local/var/postgres"
+#Tasks
+alias brewup="brew -v update && brew -v upgrade && brew -v cleanup && brew -v prune && brew -v doctor"
+alias pipup="pip3 list --outdated --format=freeze | grep -v '^\\-e' | cut -d = -f 1 | xargs -n1 pip3 install -U"
+alias goup="go get -u -v all"
+alias lc="colorls -lA --sd"
+source $(dirname $(gem which colorls))/tab_complete.sh
 ##alias protractor="/usr/local/share/npm/bin/protractor"
 ## Git graph alias soruce http://stackoverflow.com/questions/1057564/pretty-git-branch-graphs
 ##alias lg1="git log --graph --all --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(bold white)— %an%C(reset)%C(bold yellow)%d%C(reset)' --abbrev-commit --date=relative"
+
 ##alias lg2="git log --graph --all --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(bold white)— %an%C(reset)' --abbrev-commit"
 #alias lg=!"git lg1"
 
@@ -120,10 +127,11 @@ SVN_SHOW_BRANCH="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(atom bower brew colorize colored-man colorize command-not-found common-aliases cp dircycle dirhistory dirpersist emacs extract gem git git-extras git-hubflow gitfast github git-prompt gnu-utils go golang heroku history history-substring-search lein lol macports mix mvn mysql-macports nanoc node nvm osx perl python pip redis-cli repo rsync scala sbt safe-paste screen singlechar sprunge ssh-agent terminalapp urltools vagrant web-search xcode zsh_reload)
+plugins=(atom bower brew colorize colored-man colorize command-not-found common-aliases cp dash dircycle dirhistory dirpersist emacs extract gem git git-extras git-hubflow gitfast github git-prompt gnu-utils go golang heroku history history-substring-search lein lol macports mix mvn mysql-macports nanoc node nvm osx perl python pip redis-cli repo rsync scala sbt safe-paste screen singlechar sprunge ssh-agent terminalapp urltools vagrant web-search xcode zsh_reload)
 # plugins=(git)
 source $ZSH/oh-my-zsh.sh
 #update gits
+
 
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
