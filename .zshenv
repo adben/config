@@ -61,5 +61,3 @@ export PIPS='pip3 list --outdated --format=freeze | grep -v '^\-e' | cut -d = -f
 export GOS='go get -u -v all'
 #ENV
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
-
-export HOMEBREW_GITHUB_API_TOKEN="dff752fa1dc99962acdb3d6739401621f16db026"
