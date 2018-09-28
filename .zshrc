@@ -77,7 +77,8 @@ DEFAULT_USER="adben"
 alias cal="cal | grep --color=auto -E '( |^)$(date +)|$'"
 alias hoy="date +%F"
 # Example aliases
-alias emacs="/Applications/Emacs.app/Contents/MacOS/bin/emacsclient --alternate-editor /Applications/Emacs.app/Contents/MacOS/Emacs"
+#alias emacs="/Applications/Emacs.app/Contents/MacOS/bin/emacsclient --alternate-editor /Applications/Emacs.app/Contents/MacOS/Emacs"
+alias emacs="/Applications/Emacs.app/Contents/MacOS/Emacs -nw"
 alias zshconfig="emacsclient ~/.zshrc"
 alias ohmyzsh="emacsclient ~/.oh-my-zsh"
 #for emacs
@@ -91,7 +92,11 @@ alias pginit="postgres -D /usr/local/var/postgres"
 alias brewup="brew -v update && brew -v upgrade && brew -v cleanup && brew -v prune && brew -v doctor"
 alias pipup="pip3 list --outdated --format=freeze | grep -v '^\\-e' | cut -d = -f 1 | xargs -n1 pip3 install -U"
 alias goup="go get -u -v all"
+alias npmup="ncu -g"
 alias lc="colorls -lA --sd"
+alias gtc="colorls --git-status --tree"
+alias tc="colorls -lA --tree"
+
 source $(dirname $(gem which colorls))/tab_complete.sh
 ##alias protractor="/usr/local/share/npm/bin/protractor"
 ## Git graph alias soruce http://stackoverflow.com/questions/1057564/pretty-git-branch-graphs
