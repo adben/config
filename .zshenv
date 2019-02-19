@@ -3,13 +3,14 @@
 # next line should be in the ~/.zshenv
 #export ZSH_HIGHLIGHT_HIGHLIGHTERS_DIR=/usr/local/share/zsh-syntax-highlighting/highlighters
 #export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk-11.jdk/Contents/Home
-export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_181.jdk/Contents/Home
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_192.jdk/Contents/Home
 export NODE_HOME=/usr/local/opt/node
 export ANT_HOME=/usr/local/opt/ant
 export MAVEN_HOME=/usr/local/opt/maven
 export GRADLE_HOME=/usr/local/opt/gradle
 export ANDROID_HOME=/usr/local/share/android-sdk
 export ANDROID_NDK_HOME=/usr/local/share/android-ndk
+export ANDROID_SDK_ROOT=/usr/local/share/android-sdk
 export INTEL_HAXM_HOME=/usr/local/Caskroom/intel-haxm
 export GO_HOME=/usr/local/opt/go/libexec/
 export PYTHON_HOME=/usr/local/opt/python/libexec/
@@ -18,9 +19,8 @@ export GORACE=''
 export KINDLEGEN_HOME=/Users/adben/Downloads/KindleGen_Mac_i386_v2_9
 export GOROOT=$GO_HOME
 export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-export PATH=$PATH:$HOME/.rbenv/versions/2.1.5/bin
+export PATH=$PATH:/usr/local/lib/ruby/gems/2.5.0/bin
 
-export PATH=$PATH:$HOME/.gem/ruby/2.2.0/bin
 export PATH=$PATH:$(ruby -rubygems -e 'puts Gem.user_dir')/bin
 export PATH=$PATH:$GO_HOME/bin
 export PATH=$PATH:$GOPATH/bin
@@ -46,6 +46,11 @@ export PATH=$PATH:$KINDLEGEN_HOME/kindlegen
 export PATH=$PATH:/usr/local/m-cli
 export PATH=$PATH:/usr/local/opt/qt/bin
 export PATH=$PATH:/Applications/Xcode.app/Contents/Developer/usr/bin
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
 #export EDITOR='/Applications/Emacs.app/Contents/MacOS/Emacs -nw'
 export EDITOR='vim'
 #export EDITOR="emacsclient --alternate-editor /Applications/Emacs.app/Contents/MacOS/Emacs"
