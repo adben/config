@@ -57,6 +57,7 @@ export EDITOR='vim'
 #export VISUAL=${EDITOR}
 #export ALTERNATE_EDITOR='/Applications/Emacs.app/Contents/MacOS/Emacs'
 export SBT_OPTS='-XX:+CMSClassUnloadingEnabled -XX:MaxPermSize=256M'
+
 #AWS
 export EC2_REGION='eu-west-1'
 export LC_ALL=en_US.UTF-8
