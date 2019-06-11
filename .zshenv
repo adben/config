@@ -46,6 +46,7 @@ export PATH=$PATH:$KINDLEGEN_HOME/kindlegen
 export PATH=$PATH:/usr/local/m-cli
 export PATH=$PATH:/usr/local/opt/qt/bin
 export PATH=$PATH:/Applications/Xcode.app/Contents/Developer/usr/bin
+export PATH=$HOME/.gem/ruby/2.6.0/bin:$PATH
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm

@@ -2,7 +2,7 @@
 	name = Adolfo Benedetti
 	email = adolfo.benedetti@gmail.com
 [core]
-	editor = emacs
+	editor = vim
 	autocrlf = false
 [filter "lfs"]
 	clean = git-lfs clean %f
