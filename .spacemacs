@@ -61,7 +61,7 @@
      clojure
      markdown
      (dash :variables
-           dash-at-point-legacy-mode t)
+                   dash-at-point-legacy-mode t)
      (git :variables
           git-gutter-use-fringe t
           git-magit-status-fullscreen nil
@@ -145,6 +145,7 @@
    ;; EXPERIMENTAL.org at to root of the git repository.
    ;; (default nil)
    dotspacemacs-enable-emacs-pdumper nil
+
 
    ;; File path pointing to emacs 27.1 executable compiled with support
    ;; for the portable dumper (this is currently the branch pdumper).
@@ -236,10 +237,11 @@
    dotspacemacs-initial-scratch-message nil
 
    ;; List of themes, the first of the list is loaded when spacemacs starts.
-   ;; Press `SPC T n' to cycle to the next theme in the list (works great
+   ;;qPress `SPC T n' to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
-   dotspacemacs-themes '(spacemacs-dark
-                         spacemacs-light)
+   dotspacemacs-themes '(gruvbox
+                         solarized-light
+                         )
 
    ;; Set the theme for the Spaceline. Supported themes are `spacemacs',
    ;; `all-the-icons', `custom', `doom', `vim-powerline' and `vanilla'. The
@@ -257,7 +259,7 @@
    ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
    ;; quickly tweak the mode-line size to make separators look not too crappy.
    dotspacemacs-default-font '("Pragmata Pro Mono"
-                               :size 13
+                               :size 16
                                :weight normal
                                :width normal)
 

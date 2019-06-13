@@ -132,7 +132,7 @@ SVN_SHOW_BRANCH="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(atom bower brew colorize colored-man colorize command-not-found common-aliases cp dash dircycle dirhistory dirpersist emacs extract gem git git-extras git-hubflow gitfast github git-prompt gnu-utils go golang heroku history history-substring-search lein lol macports mix mvn mysql-macports nanoc node nvm osx perl python pip redis-cli repo rsync scala sbt safe-paste screen singlechar sprunge ssh-agent terminalapp urltools vagrant web-search xcode zsh_reload)
+plugins=(bower brew colorize colorize command-not-found common-aliases cp dash dircycle dirhistory dirpersist emacs extract gem git git-extras git-hubflow gitfast github git-prompt gnu-utils go golang heroku history history-substring-search lein lol macports mix mvn mysql-macports nanoc node nvm osx perl python pip redis-cli repo rsync scala sbt safe-paste screen singlechar sprunge ssh-agent terminalapp urltools vagrant web-search xcode zsh_reload)
 # plugins=(git)
 source $ZSH/oh-my-zsh.sh
 #update gits
