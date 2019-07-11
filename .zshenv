@@ -3,7 +3,7 @@
 # next line should be in the ~/.zshenv
 #export ZSH_HIGHLIGHT_HIGHLIGHTERS_DIR=/usr/local/share/zsh-syntax-highlighting/highlighters
 #export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk-11.jdk/Contents/Home
-export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_192.jdk/Contents/Home
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/adoptopenjdk-8-openj9.jdk/Contents/Home
 export NODE_HOME=/usr/local/opt/node
 export ANT_HOME=/usr/local/opt/ant
 export MAVEN_HOME=/usr/local/opt/maven
@@ -21,7 +21,7 @@ export GOROOT=$GO_HOME
 export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 export PATH=$PATH:/usr/local/lib/ruby/gems/2.5.0/bin
 
-export PATH=$PATH:$(ruby -rubygems -e 'puts Gem.user_dir')/bin
+export PATH=$PATH:$(ruby -r rubygems -e 'puts Gem.user_dir')/bin
 export PATH=$PATH:$GO_HOME/bin
 export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:/opt/local/bin
