@@ -1,3 +1,9 @@
+# DEBUG ZSH: Performance see bottom 
+zmodload zsh/zprof # top of your .zshrc file
+
+#ssh-agent plugin see https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/ssh-agent
+zstyle :omz:plugins:ssh-agent agent-forwarding on
+
 # `brew --prefix`/etc/profile.d/z.sh
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
@@ -78,26 +84,52 @@ alias cal="cal | grep --color=auto -E '( |^)$(date +)|$'"
 alias hoy="date +%F"
 # Example aliases
 #alias emacs="/Applications/Emacs.app/Contents/MacOS/bin/emacsclient --alternate-editor /Applications/Emacs.app/Contents/MacOS/Emacs"
-alias emacs="/Applications/Emacs.app/Contents/MacOS/Emacs -nw"
+alias emc="/Applications/Emacs.app/Contents/MacOS/Emacs -nw"
 alias zshconfig="emacsclient ~/.zshrc"
 alias ohmyzsh="emacsclient ~/.oh-my-zsh"
 #for emacs
 alias rmoldelc="cd ~/.emacs.d/ && find . -type f -name \'*.elc\' -exec rm -fv {} \;"
 alias compileelcs="cd ~/.emacs.d/ && /Applications/Emacs.app/Contents/MacOS/Emacs --batch -f batch-byte-compile **/*.el ;"
 alias optimizeemacs="rmoldelc && sleep 4 && compileelcs"
+
 alias speedtest="wget -O /dev/null http://speedtest.wdc01.softlayer.com/downloads/test10.zip"
 alias bower="noglob bower"
 alias pginit="postgres -D /usr/local/var/postgres"
 #Tasks
-alias brewup="brew -v update && brew -v upgrade && brew -v cleanup && brew -v cleanup --prune-prefix && brew -v doctor"
+alias brewup="brew -v update && brew -v upgrade && brew -v cleanup --prune-prefix && brew cask reinstall `brew cask outdated` && brew -v doctor"
 alias pipup="pip3 list --outdated --format=freeze | grep -v '^\\-e' | cut -d = -f 1 | xargs -n1 pip3 install -U"
 alias goup="go get -u -v all"
 alias npmup="ncu -g"
+
+# Enable tab completion of flags
+source $(dirname $(gem which colorls))/tab_complete.sh
+# other colorls aliases some from https://gist.github.com/rjhilgefort/51ea47dd91bcd90cd6d9b3b199188c16
 alias lc="colorls -lA --sd"
 alias gtc="colorls --git-status --tree"
 alias tc="colorls -lA --tree"
+# Move standard ls
+alias ols="ls"
+# Base formats
+alias ls="colorls -A"           # short, multi-line
+alias ll="colorls -1A"          # list, 1 per line
+alias ld="ll"
+alias la="colorls -lA"          # list w/ info
+# [d] Sort output with directories first
+alias lsd="ls --sort-dirs"
+alias lld="ll --sort-dirs"
+alias ldd="ld --sort-dirs"
+alias lad="la --sort-dirs"
+# [t] Sort output with recent modified first
+alias lst="ls -t"
+alias llt="ll -t"
+alias ldt="ld -t"
+alias lat="la -t"
+# [g] Add git status of each item in output
+alias lsg="ls --git-status"
+alias llg="ll --git-status"
+alias ldg="ld --git-status"
+alias lag="la --git-status"
 
-source $(dirname $(gem which colorls))/tab_complete.sh
 ##alias protractor="/usr/local/share/npm/bin/protractor"
 ## Git graph alias soruce http://stackoverflow.com/questions/1057564/pretty-git-branch-graphs
 ##alias lg1="git log --graph --all --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(bold white)— %an%C(reset)%C(bold yellow)%d%C(reset)' --abbrev-commit --date=relative"
@@ -112,7 +144,7 @@ source $(dirname $(gem which colorls))/tab_complete.sh
 # DISABLE_AUTO_UPDATE="true"
 
 # Uncomment to change how many often would you like to wait before auto-updates occur? (in days)
-export UPDATE_ZSH_DAYS=5
+export UPDATE_ZSH_DAYS=30
 
 # Uncomment following line if you want to disable colors in ls
 # DISABLE_LS_COLORS="true"
@@ -132,17 +164,15 @@ SVN_SHOW_BRANCH="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(bower brew colorize colorize command-not-found common-aliases cp dash dircycle dirhistory dirpersist emacs extract gem git git-extras git-hubflow gitfast github git-prompt gnu-utils go golang heroku history history-substring-search lein lol macports mix mvn mysql-macports nanoc node nvm osx perl python pip redis-cli repo rsync scala sbt safe-paste screen singlechar sprunge ssh-agent terminalapp urltools vagrant web-search xcode zsh_reload)
+plugins=(bower brew colorize command-not-found common-aliases cp dash dircycle dirhistory dirpersist docker emacs extract gem git gitignore git-extras git-hubflow gitfast github git-prompt gnu-utils go golang history history-substring-search httpie jenv jsontools kubectl last-working-dir lein lol mvn nmap npm nvm oc osx percol perl python pip pipenv repo rsync ruby rust scala sbt safe-paste screen singlechar spring sudo ssh-agent svcat swiftpm thefuck themes tmux transfer urltools vscode web-search wd xcode yarn zsh-navigation-tools zsh_reload)
 # plugins=(git)
 source $ZSH/oh-my-zsh.sh
 #update gits
 
-
-
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
+#see brew install zsh-completions
+fpath=(/usr/local/share/zsh-completions $fpath)
 
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
-export PATH="/usr/local/opt/gnu-getopt/bin:$PATH"
-export PATH="/usr/local/opt/gettext/bin:$PATH"
+# DEBUG ZSH: uncomment This needs to be at the bottom
+zprof

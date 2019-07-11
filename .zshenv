@@ -39,6 +39,7 @@ export PATH=$GRADLE_HOME/bin:$PATH
 export PATH=$ANDROID_HOME/tools:$PATH
 export PATH=$ANDROID_HOME/platform-tools:$PATH
 export PATH=$PATH:$PYTHON_HOME/bin
+export PATH=$HOME/.jenv/bin:$PATH
 
 # export PATH=$ANDROID_HOME/build-tools/23.0.1:$PATH
 export PATH=$PATH:$NODE_HOME/bin
@@ -47,6 +48,11 @@ export PATH=$PATH:/usr/local/m-cli
 export PATH=$PATH:/usr/local/opt/qt/bin
 export PATH=$PATH:/Applications/Xcode.app/Contents/Developer/usr/bin
 export PATH=$HOME/.gem/ruby/2.6.0/bin:$PATH
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH=$PATH:$HOME/.rvm/bin
+export PATH="/usr/local/opt/gnu-getopt/bin:$PATH"
+export PATH="/usr/local/opt/gettext/bin:$PATH" 
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -63,9 +69,6 @@ export SBT_OPTS='-XX:+CMSClassUnloadingEnabled -XX:MaxPermSize=256M'
 export EC2_REGION='eu-west-1'
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
-#Tasks
-export BREWS='brew -v update && brew -v upgrade && brew -v cleanup && brew -v prune && brew -v doctor'
-export PIPS='pip3 list --outdated --format=freeze | grep -v '^\-e' | cut -d = -f 1 | xargs -n1 pip3 install -U'
-export GOS='go get -u -v all'
+
 #ENV
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
