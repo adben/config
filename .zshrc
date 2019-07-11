@@ -1,5 +1,20 @@
-# DEBUG ZSH: Performance see bottom 
-zmodload zsh/zprof # top of your .zshrc file
+# # DEBUG ZSH: Performance see bottom 
+# zmodload zsh/zprof # top of your .zshrc file
+
+# Loading Pure from NPM not from OhMyZSH see https://github.com/sindresorhus/pure
+autoload -U promptinit; promptinit
+# optionally define some options
+PURE_CMD_MAX_EXEC_TIME=10
+PURE_PROMPT_SYMBOL=❯
+PURE_GIT_DELAY_DIRTY_CHECK=500
+PURE_GIT_PULL=0
+# # change the path color
+# zstyle :prompt:pure:path color white
+
+# change the color for both `prompt:success` and `prompt:error`
+zstyle ':prompt:pure:prompt:*' color cyan
+
+prompt pure
 
 #ssh-agent plugin see https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/ssh-agent
 zstyle :omz:plugins:ssh-agent agent-forwarding on
@@ -53,29 +68,8 @@ setopt multios # perform implicit tees or cats when multiple redirections are at
 # setopt XTRACE VERBOSE
 # Helps whith the quotes problem
 setopt rcquotes
-
-# ===== pure theme
-# https://github.com/sindresorhus/pure
-set PURE_PROMPT_SYMBOL= "";
-
-# Circumvent https://github.com/direnv/direnv/issues/210
-#
-#shell_session_update() { :; }
-
-
-# Set name of the theme to load.
-# Look in ~/.oh-my-zsh/themes/
-# Optionally, if you set this to "random", it'll load a random theme each
-# time that oh-my-zsh is loaded.
-# export ZSH_THEME="robbyrussell"
-#export ZSH_THEME="adben-new"
-#export ZSH_THEME="nanotech"
-#export ZSH_THEME="powerline"
-#export ZSH_THEME="agnoster"
-#export ZSH_THEME="kennethreitz"
-#export ZSH_THEME="kphoen"
-#export ZSH_THEME="adben"
-export ZSH_THEME="refined"
+#Loading theme via NPM(pure)
+export ZSH_THEME=""
 DEFAULT_USER="adben"
 
 #Aliases
@@ -167,12 +161,11 @@ SVN_SHOW_BRANCH="true"
 plugins=(bower brew colorize command-not-found common-aliases cp dash dircycle dirhistory dirpersist docker emacs extract gem git gitignore git-extras git-hubflow gitfast github git-prompt gnu-utils go golang history history-substring-search httpie jenv jsontools kubectl last-working-dir lein lol mvn nmap npm nvm oc osx percol perl python pip pipenv repo rsync ruby rust scala sbt safe-paste screen singlechar spring sudo ssh-agent svcat swiftpm thefuck themes tmux transfer urltools vscode web-search wd xcode yarn zsh-navigation-tools zsh_reload)
 # plugins=(git)
 source $ZSH/oh-my-zsh.sh
-#update gits
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 #see brew install zsh-completions
 fpath=(/usr/local/share/zsh-completions $fpath)
 
-# DEBUG ZSH: uncomment This needs to be at the bottom
-zprof
+# # DEBUG ZSH: uncomment This needs to be at the bottom
+# zprof
