@@ -173,3 +173,6 @@ fpath=(/usr/local/share/zsh-completions $fpath)
 # webassembly
 # see https://webassembly.org/getting-started/developers-guide/
 source ${HOME}/l/emsdk/emsdk_env.sh
+
+# Cargo
+source $HOME/.cargo/env

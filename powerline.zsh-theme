@@ -1,1 +1,0 @@
-/Users/abenedetti/git/oh-my-zsh-powerline-theme/powerline.zsh-theme
