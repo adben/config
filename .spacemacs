@@ -593,10 +593,10 @@
   (setq company-minimum-prefix-length 1)
 
   ;; Set path to racer binary
-  (setq racer-cmd "/usr/local/bin/racer")
+  ;; (setq racer-cmd "/usr/local/bin/racer")
 
   ;; Set path to rust src directory
-  (setq racer-rust-src-path "/Users/jasomyer/.rust/src/")
+  ;; (setq racer-rust-src-path "/Users/jasomyer/.rust/src/")
 
   ;; Load rust-mode when you open `.rs` files
   (add-to-list 'auto-mode-alist '("\\.rs\\'" . rust-mode))
