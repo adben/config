@@ -18,7 +18,8 @@ export CARGO_HOME=$HOME/.cargo
 ## RUST
 typeset -U path
 path+=(~/.cargo/bin)
-export RUST_SRC_PATH=$(rustc --print sysroot)/lib/rustlib/src/rust/src
+#export RUST_SRC_PATH=$(rustc --print sysroot)/lib/rustlib/src/rust/src
+export RUST_SRC_PATH=$HOME/.rustup/toolchains/nightly-x86_64-apple-darwin/lib/rustlib/src/rust/src
 export GOPATH=$HOME/go
 export GORACE=''
 export KINDLEGEN_HOME=/Users/adben/Downloads/KindleGen_Mac_i386_v2_9

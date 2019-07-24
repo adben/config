@@ -90,7 +90,8 @@ alias speedtest="wget -O /dev/null http://speedtest.wdc01.softlayer.com/download
 alias bower="noglob bower"
 alias pginit="postgres -D /usr/local/var/postgres"
 #Tasks
-alias brewup="brew -v update && brew -v upgrade && brew -v cleanup --prune-prefix && brew cask reinstall `brew cask outdated` && brew -v doctor"
+alias caskold="brew cask outdated"
+alias brewup="brew -v update && brew -v upgrade && brew -v cleanup --prune-prefix && brew cask reinstall $(caskold) && brew -v doctor"
 alias pipup="pip3 list --outdated --format=freeze | grep -v '^\\-e' | cut -d = -f 1 | xargs -n1 pip3 install -U"
 alias goup="go get -u -v all"
 alias npmup="ncu -g"
