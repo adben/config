@@ -365,7 +365,7 @@
    ;; If non-nil the frame is maximized when Emacs starts up.
    ;; Takes effect only if `dotspacemacs-fullscreen-at-startup' is nil.
    ;; (default nil) (Emacs 24.4+ only)
-   dotspacemacs-maximized-at-startup nil
+   dotspacemacs-maximized-at-startup t
 
    ;; A value from the range (0..100), in increasing opacity, which describes
    ;; the transparency level of a frame when it's active or selected.
@@ -484,7 +484,7 @@
    ;; Run `spacemacs/prettify-org-buffer' when
    ;; visiting README.org files of Spacemacs.
    ;; (default nil)
-   dotspacemacs-pretty-docs nil))
+   dotspacemacs-pretty-docs t))
 
 (defun dotspacemacs/user-env ()
   "Environment variables setup.
@@ -561,7 +561,7 @@
   ;; Don't forget to install the fonts https://github.com/domtronn/all-the-icons.el
   (require 'all-the-icons)
   (setq neo-theme 'icons
-        ;;(if (display-graphic-p) 'icons 'arrow)
+        ;; (if (display-graphic-p) 'icons 'arrow)
         neo-banner-message "")
   (setq neo-smart-open t)
   (setq projectile-switch-project-action 'neotree-projectile-action)
@@ -578,8 +578,8 @@
   ;; https://www.emacswiki.org/emacs/NeoTree
   ;;If you use the find-file-in-project (ffip) library,
   ;;you can open NeoTree at your directory root by adding this code to your .emacs.d:
-  (define-key map (kbd "C-c C-p") 'neotree-project-dir)
-  (global-set-key [f8] 'neotree-project-dir)
+  ;; (define-key map (kbd "C-c C-p") 'neotree-project-dir)
+  ;; (global-set-key [f8] 'neotree-project-dir)
 
 
   ;; Add all-the-icons to dired-mode
