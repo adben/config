@@ -2,15 +2,15 @@
 
 -ea
 -server
--Xms2G
--Xmx4096M
+-Xms1024m
+-Xmx4096m
 -Xss16m
 -XX:MaxMetaspaceSize=2G
--XX:MetaspaceSize=512m
--XX:ConcGCThreads=6
--XX:ParallelGCThreads=6
--XX:NewRatio=3
--XX:ReservedCodeCacheSize=240m
+-XX:MetaspaceSize=1G
+-XX:ConcGCThreads=8
+-XX:ParallelGCThreads=8
+-XX:NewRatio=1
+-XX:ReservedCodeCacheSize=512m
 -XX:+AlwaysPreTouch
 -XX:+UseConcMarkSweepGC
 -XX:+DoEscapeAnalysis
