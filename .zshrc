@@ -12,12 +12,12 @@ PURE_GIT_PULL=0
 # zstyle :prompt:pure:path color white
 
 # change the color for both `prompt:success` and `prompt:error`
-zstyle ':prompt:pure:prompt:*' color cyan
+zstyle ":prompt:pure:prompt:*" color cyan
 
 prompt pure
 
 #ssh-agent plugin see https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/ssh-agent
-zstyle :omz:plugins:ssh-agent agent-forwarding on
+# zstyle :omz:plugins:ssh-agent agent-forwarding on
 
 # `brew --prefix`/etc/profile.d/z.sh
 # Path to your oh-my-zsh installation.
@@ -76,12 +76,11 @@ DEFAULT_USER="adben"
 # Colored cal output
 alias cal="cal | grep --color=auto -E '( |^)$(date +)|$'"
 alias hoy="date +%F"
-# Example aliases
+#for emacs
 #alias emacs="/Applications/Emacs.app/Contents/MacOS/bin/emacsclient --alternate-editor /Applications/Emacs.app/Contents/MacOS/Emacs"
 alias emc="/Applications/Emacs.app/Contents/MacOS/Emacs -nw"
 alias zshconfig="emacsclient ~/.zshrc"
 alias ohmyzsh="emacsclient ~/.oh-my-zsh"
-#for emacs
 alias rmoldelc="cd ~/.emacs.d/ && find . -type f -name \'*.elc\' -exec rm -fv {} \;"
 alias compileelcs="cd ~/.emacs.d/ && /Applications/Emacs.app/Contents/MacOS/Emacs --batch -f batch-byte-compile **/*.el ;"
 alias optimizeemacs="rmoldelc && sleep 4 && compileelcs"
@@ -159,7 +158,7 @@ SVN_SHOW_BRANCH="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(bower brew colorize command-not-found common-aliases cp dash dircycle dirhistory dirpersist docker emacs extract gem git gitignore git-extras git-hubflow gitfast github git-prompt gnu-utils go golang history history-substring-search httpie jenv jsontools kubectl last-working-dir lein lol mvn nmap npm nvm oc osx percol perl python pip pipenv repo rsync ruby rust scala sbt safe-paste screen singlechar spring sudo ssh-agent svcat swiftpm thefuck themes tmux transfer urltools vscode web-search wd xcode yarn zsh-navigation-tools zsh_reload)
+plugins=(bower brew colorize command-not-found common-aliases cp dash dircycle dirhistory dirpersist docker emacs extract gem git gitignore git-extras git-hubflow gitfast github git-prompt gnu-utils go golang history history-substring-search httpie jenv jsontools kubectl last-working-dir lein lol mvn nmap npm nvm oc osx percol perl python pip pipenv repo rsync ruby rust scala sbt safe-paste screen singlechar spring sudo svcat swiftpm thefuck themes tmux transfer urltools vscode web-search wd xcode yarn zsh-navigation-tools zsh_reload)
 # plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
@@ -173,7 +172,7 @@ fpath=(/usr/local/share/zsh-completions $fpath)
 
 # webassembly
 # see https://webassembly.org/getting-started/developers-guide/
-source ${HOME}/l/emsdk/emsdk_env.sh
+# source ${HOME}/l/emsdk/emsdk_env.sh
 
 # Cargo
 source $HOME/.cargo/env

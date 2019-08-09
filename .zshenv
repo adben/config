@@ -25,7 +25,7 @@ export GORACE=''
 export KINDLEGEN_HOME=/Users/adben/Downloads/KindleGen_Mac_i386_v2_9
 export GOROOT=$GO_HOME
 export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-export PATH=$PATH:/usr/local/lib/ruby/gems/2.5.0/bin
+export PATH=$PATH:/usr/local/lib/ruby/gems/2.6.0/bin
 
 export PATH=$PATH:$(ruby -r rubygems -e 'puts Gem.user_dir')/bin
 export PATH=$PATH:$GO_HOME/bin
