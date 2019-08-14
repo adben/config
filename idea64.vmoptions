@@ -10,11 +10,11 @@
 -XX:ConcGCThreads=8
 -XX:ParallelGCThreads=8
 -XX:NewRatio=1
--XX:ReservedCodeCacheSize=512m
+-XX:ReservedCodeCacheSize=240m
 -XX:+AlwaysPreTouch
--XX:+UseConcMarkSweepGC
+-XX:+UseG1GC
 -XX:+DoEscapeAnalysis
--XX:+TieredCompilation
+-XX:+TieredCompilationUseG1GC
 -XX:SoftRefLRUPolicyMSPerMB=50
 -XX:+UnlockExperimentalVMOptions
 -Djava.net.preferIPv4Stack=true
