@@ -268,11 +268,11 @@ It should only modify the values of Spacemacs settings."
 
    ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
    ;; quickly tweak the mode-line size to make separators look not too crappy.
-   dotspacemacs-default-font '("Pragmata pro mono"
+   dotspacemacs-default-font '("Operator Mono"
                                :size 16
                                :weight normal
                                :width normal
-                               :powerline-offset 2)
+                               :powerline-offset 1)
 
    ;; The leader key (default "SPC")
    dotspacemacs-leader-key "SPC"
@@ -662,8 +662,7 @@ dump."
   (add-hook 'scheme-mode-hook #'enable-paredit-mode)
   )
 
-;; Do not write anything past this comment. This is where Emacs w
-ill
+;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
