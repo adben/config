@@ -7,7 +7,7 @@
 
 (defun dotspacemacs/layers ()
   "Layer configuration:
-     This function should only modify configuration layer settings."
+This function should only modify configuration layer settings."
   (setq-default
    ;; Base distribution to use. This is a layer contained in the directory
    ;; `+distribution'. For now available distributions are `spacemacs-base'
@@ -36,7 +36,7 @@
 
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
-   '(yaml
+   '(
      ;; ----------------------------------------------------------------
      ;; Example of useful layers you may want to use right away.
      ;; Uncomment some layer names and press `SPC f e R' (Vim style) or
@@ -54,7 +54,10 @@
                  javascript-disable-tern-port-files nil)
      react
      ;;tilde
-     haskell
+     (haskell :variables
+              haskell-enable-hindent-style "johan-tibell"
+              haskell-process-type 'stack-ghci
+              haskell-completion-backend 'intero)
      better-defaults
      emacs-lisp
      clojure
@@ -72,7 +75,7 @@
      org
      spell-checking
      syntax-checking
-     version-control
+b     version-control
      gtags
      git
      github
@@ -84,7 +87,7 @@
      asciidoc
      rust
      elm
-     ;; yalm
+     yalm
      ;;multiple-cursors
      neotree
      ;; (shell :variables
@@ -136,9 +139,9 @@
 
 (defun dotspacemacs/init ()
   "Initialization:
-     This function is called at the very beginning of Spacemacs startup,
-     before layer configuration.
-     It should only modify the values of Spacemacs settings."
+This function is called at the very beginning of Spacemacs startup,
+before layer configuration.
+It should only modify the values of Spacemacs settings."
   ;; This setq-default sexp is an exhaustive list of all the supported
   ;; spacemacs settings.
   (setq-default
@@ -146,13 +149,12 @@
    ;; to compile Emacs 27 from source following the instructions in file
    ;; EXPERIMENTAL.org at to root of the git repository.
    ;; (default nil)
-   dotspacemacs-enable-emacs-pdumper t
+   dotspacemacs-enable-emacs-pdumper nil
 
-
-   ;; File path pointing to emacs 27.1 executable compiled with support
-   ;; for the portable dumper (this is currently the branch pdumper).
-   ;; (default "emacs-27.0.50")
-   dotspacemacs-emacs-pdumper-executable-file "emacs-27.0.50"
+   ;; Name of executable file pointing to emacs 27+. This executable must be
+   ;; in your PATH.
+   ;; (default "emacs")
+   dotspacemacs-emacs-pdumper-executable-file "emacs"
 
    ;; Name of the Spacemacs dump file. This is the file will be created by the
    ;; portable dumper in the cache directory under dumps sub-directory.
@@ -168,11 +170,11 @@
    ;; This variable has no effect if Emacs is launched with the parameter
    ;; `--insecure' which forces the value of this variable to nil.
    ;; (default t)
-   dotspacemacs-elpa-https nil
+   dotspacemacs-elpa-https t
 
    ;; Maximum allowed time in seconds to contact an ELPA repository.
    ;; (default 5)
-   dotspacemacs-elpa-timeout 25
+   dotspacemacs-elpa-timeout 5
 
    ;; Set `gc-cons-threshold' and `gc-cons-percentage' when startup finishes.
    ;; This is an advanced option and should not be changed unless you suspect
@@ -186,8 +188,8 @@
    dotspacemacs-use-spacelpa nil
 
    ;; If non-nil then verify the signature for downloaded Spacelpa archives.
-   ;; (default nil)
-   dotspacemacs-verify-spacelpa-archives nil
+   ;; (default t)
+   dotspacemacs-verify-spacelpa-archives t
 
    ;; If non-nil then spacemacs will check for updates at startup
    ;; when the current branch is not `develop'. Note that checking for
@@ -231,6 +233,11 @@
    ;; True if the home buffer should respond to resize events. (default t)
    dotspacemacs-startup-buffer-responsive t
 
+   ;; Default major mode for a new empty buffer. Possible values are mode
+   ;; names such as `text-mode'; and `nil' to use Fundamental mode.
+   ;; (default `text-mode')
+   dotspacemacs-new-empty-buffer-major-mode 'text-mode
+
    ;; Default major mode of the scratch buffer (default `text-mode')
    dotspacemacs-scratch-mode 'text-mode
 
@@ -239,7 +246,7 @@
    dotspacemacs-initial-scratch-message nil
 
    ;; List of themes, the first of the list is loaded when spacemacs starts.
-   ;;qPress `SPC T n' to cycle to the next theme in the list (works great
+   ;; Press `SPC T n' to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
    dotspacemacs-themes '(gruvbox
                          solarized-light)
@@ -273,7 +280,6 @@
    ;; The key used for Emacs commands `M-x' (after pressing on the leader key).
    ;; (default "SPC")
    dotspacemacs-emacs-command-key "SPC"
-
 
    ;; The key used for Vim Ex commands (default ":")
    dotspacemacs-ex-command-key ":"
@@ -365,7 +371,12 @@
    ;; If non-nil the frame is maximized when Emacs starts up.
    ;; Takes effect only if `dotspacemacs-fullscreen-at-startup' is nil.
    ;; (default nil) (Emacs 24.4+ only)
-   dotspacemacs-maximized-at-startup t
+   dotspacemacs-maximized-at-startup nil
+
+   ;; If non-nil the frame is undecorated when Emacs starts up. Combine this
+   ;; variable with `dotspacemacs-maximized-at-startup' in OSX to obtain
+   ;; borderless fullscreen. (default nil)
+   dotspacemacs-undecorated-at-startup nil
 
    ;; A value from the range (0..100), in increasing opacity, which describes
    ;; the transparency level of a frame when it's active or selected.
@@ -394,10 +405,14 @@
    dotspacemacs-smooth-scrolling t
 
    ;; Control line numbers activation.
-   ;; If set to `t' or `relative' line numbers are turned on in all `prog-mode' and
-   ;; `text-mode' derivatives. If set to `relative', line numbers are relative.
+   ;; If set to `t', `relative' or `visual' then line numbers are enabled in all
+   ;; `prog-mode' and `text-mode' derivatives. If set to `relative', line
+   ;; numbers are relative. If set to `visual', line numbers are also relative,
+   ;; but lines are only visual lines are counted. For example, folded lines
+   ;; will not be counted and wrapped lines are counted as multiple lines.
    ;; This variable can also be set to a property list for finer control:
    ;; '(:relative nil
+   ;;   :visual nil
    ;;   :disabled-for-modes dired-mode
    ;;                       doc-view-mode
    ;;                       markdown-mode
@@ -417,7 +432,7 @@
    dotspacemacs-smartparens-strict-mode nil
 
    ;; If non-nil pressing the closing parenthesis `)' key in insert mode passes
-   ;; over any automatically added closing parenthesis, bracket, quote, etc…
+   ;; over any automatically added closing parenthesis, bracket, quote, etc...
    ;; This can be temporary disabled by pressing `C-q' before `)'. (default nil)
    dotspacemacs-smart-closing-parenthesis nil
 
@@ -480,18 +495,17 @@
    ;; number of seconds. (default nil)
    dotspacemacs-zone-out-when-idle nil
 
-
    ;; Run `spacemacs/prettify-org-buffer' when
    ;; visiting README.org files of Spacemacs.
    ;; (default nil)
-   dotspacemacs-pretty-docs t))
+   dotspacemacs-pretty-docs nil))
 
 (defun dotspacemacs/user-env ()
   "Environment variables setup.
-     This function defines the environment variables for your Emacs session. By
-     default it calls `spacemacs/load-spacemacs-env' which loads the environment
-     variables declared in `~/.spacemacs.env' or `~/.spacemacs.d/.spacemacs.env'.
-     See the header of this file for more information."
+This function defines the environment variables for your Emacs session. By
+default it calls `spacemacs/load-spacemacs-env' which loads the environment
+variables declared in `~/.spacemacs.env' or `~/.spacemacs.d/.spacemacs.env'.
+See the header of this file for more information."
   (spacemacs/load-spacemacs-env))
 
 (defun dotspacemacs/user-init ()
@@ -532,9 +546,9 @@
 
 (defun dotspacemacs/user-load ()
   "Library to load while dumping.
-     This function is called only while dumping Spacemacs configuration. You can
-     `require' or `load' the libraries of your choice that will be included in the
-     dump."
+This function is called only while dumping Spacemacs configuration. You can
+`require' or `load' the libraries of your choice that will be included in the
+dump."
   )
 
 (defun dotspacemacs/user-config ()
@@ -648,8 +662,8 @@
   (add-hook 'scheme-mode-hook #'enable-paredit-mode)
   )
 
-
-;; Do not write anything past this comment. This is where Emacs will
+;; Do not write anything past this comment. This is where Emacs w
+ill
 ;; auto-generate custom variable definitions.
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
