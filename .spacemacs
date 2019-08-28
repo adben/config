@@ -57,7 +57,8 @@ This function should only modify configuration layer settings."
      (haskell :variables
               haskell-enable-hindent-style "johan-tibell"
               haskell-process-type 'stack-ghci
-              haskell-completion-backend 'intero)
+              haskell-completion-backend 'dante
+              haskell-stylish-on-save t)
      better-defaults
      emacs-lisp
      clojure
@@ -75,7 +76,7 @@ This function should only modify configuration layer settings."
      org
      spell-checking
      syntax-checking
-b     version-control
+     version-control
      gtags
      git
      github
@@ -268,11 +269,12 @@ It should only modify the values of Spacemacs settings."
 
    ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
    ;; quickly tweak the mode-line size to make separators look not too crappy.
-   dotspacemacs-default-font '("Operator Mono"
-                               :size 16
+   dotspacemacs-default-font '("FantasqueSansMono Nerd Font"
+                               :size 17
                                :weight normal
                                :width normal
-                               :powerline-offset 1)
+                               :powerline-offset 1
+                               )
 
    ;; The leader key (default "SPC")
    dotspacemacs-leader-key "SPC"
@@ -557,6 +559,12 @@ dump."
      configuration.
      Put your configuration code here, except for variables that should be set
      before packages are loaded."
+
+
+  ;; Haskell Dante mode see https://www.fosskers.ca/blog/nix-en.html
+  (add-hook 'dante-mode-hook 'flycheck-mode)
+  ;; Haskell Dante https://github.com/jyp/dante#installation
+  ;; (add-to-list 'tramp-remote-path 'tramp-own-remote-path)
 
   (require 'gruvbox)
   (global-company-mode t)
