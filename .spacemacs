@@ -88,9 +88,10 @@ This function should only modify configuration layer settings."
      asciidoc
      rust
      elm
-     yalm
+     yaml
      ;;multiple-cursors
      neotree
+     nixos
      ;; (shell :variables
      ;;        shell-default-height 30
      ;;        shell-default-position 'bottom)
@@ -269,7 +270,7 @@ It should only modify the values of Spacemacs settings."
 
    ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
    ;; quickly tweak the mode-line size to make separators look not too crappy.
-   dotspacemacs-default-font '("FantasqueSansMono Nerd Font"
+   dotspacemacs-default-font '("FantasqueSansMono Nerd Font Mono"
                                :size 17
                                :weight normal
                                :width normal
