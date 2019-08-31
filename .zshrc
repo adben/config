@@ -4,6 +4,24 @@
 #ssh-agent plugin see https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/ssh-agent
 zstyle :omz:plugins:ssh-agent agent-forwarding on
 
+export BULLETTRAIN_PROMPT_ORDER=(
+    time
+    dir
+    screen
+    perl
+    virtualenv
+    java
+    ruby
+    nvm
+    aws
+    go
+    rust
+    elixir
+    git
+    hg
+    cmd_exec_time
+)
+
 # `brew --prefix`/etc/profile.d/z.sh
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
@@ -161,3 +179,7 @@ fpath=(/usr/local/share/zsh-completions $fpath)
 
 # Cargo
 source $HOME/.cargo/env
+
+#pyenv see https://github.com/pyenv/pyenv/blob/master/COMMANDS.md#pyenv-shell
+eval "$(pyenv init -)"
+ 
