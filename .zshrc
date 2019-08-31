@@ -1,23 +1,8 @@
 # # DEBUG ZSH: Performance see bottom 
 # zmodload zsh/zprof # top of your .zshrc file
 
-# Loading Pure from NPM not from OhMyZSH see https://github.com/sindresorhus/pure
-autoload -U promptinit; promptinit
-# optionally define some options
-PURE_CMD_MAX_EXEC_TIME=10
-PURE_PROMPT_SYMBOL=❯
-PURE_GIT_DELAY_DIRTY_CHECK=500
-PURE_GIT_PULL=0
-# # change the path color
-# zstyle :prompt:pure:path color white
-
-# change the color for both `prompt:success` and `prompt:error`
-zstyle ":prompt:pure:prompt:*" color cyan
-
-prompt pure
-
 #ssh-agent plugin see https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/ssh-agent
-# zstyle :omz:plugins:ssh-agent agent-forwarding on
+zstyle :omz:plugins:ssh-agent agent-forwarding on
 
 # `brew --prefix`/etc/profile.d/z.sh
 # Path to your oh-my-zsh installation.
@@ -40,7 +25,7 @@ setopt extended_history # save timestamp of command and duration
 setopt inc_append_history # Add comamnds as they are typed, don't wait until shell exit
 setopt hist_expire_dups_first # when trimming history, lose oldest duplicates first
 setopt hist_ignore_dups # Do not write events to history that are duplicates of previous events
-setopt hist_ignore_space # remove command line from history list when firPURE_PROMPT_SYMBOLst character on the line is a space
+setopt hist_ignore_space # remove command line from history list when first character on the line is a space
 setopt hist_find_no_dups # When searching history don't display results already cycled through twice
 setopt hist_reduce_blanks # Remove extra blanks from each command line being added to history
 setopt hist_verify # don't execute, just expand history
@@ -68,9 +53,9 @@ setopt multios # perform implicit tees or cats when multiple redirections are at
 # setopt XTRACE VERBOSE
 # Helps whith the quotes problem
 setopt rcquotes
-#Loading theme via NPM(pure)
-export ZSH_THEME=""
-DEFAULT_USER="adben"
+# custom theme, see https://github.com/caiogondim/bullet-train.zsh
+export ZSH_THEME="bullet-train"
+export DEFAULT_USER="adben"
 
 #Aliases
 # Colored cal output
@@ -79,8 +64,8 @@ alias hoy="date +%F"
 #for emacs
 #alias emacs="/Applications/Emacs.app/Contents/MacOS/bin/emacsclient --alternate-editor /Applications/Emacs.app/Contents/MacOS/Emacs"
 alias emc="/Applications/Emacs.app/Contents/MacOS/Emacs -nw"
-alias zshconfig="emacsclient ~/.zshrc"
-alias ohmyzsh="emacsclient ~/.oh-my-zsh"
+alias zshconfig="emc ~/.zshrc"
+alias ohmyzsh="em ~/.oh-my-zsh"
 alias rmoldelc="cd ~/.emacs.d/ && find . -type f -name \'*.elc\' -exec rm -fv {} \;"
 alias compileelcs="cd ~/.emacs.d/ && /Applications/Emacs.app/Contents/MacOS/Emacs --batch -f batch-byte-compile **/*.el ;"
 alias optimizeemacs="rmoldelc && sleep 4 && compileelcs"
