@@ -1,5 +1,5 @@
-# # DEBUG ZSH: Performance see bottom 
-# zmodload zsh/zprof # top of your .zshrc file
+## DEBUG ZSH: Performance see bottom 
+## zmodload zsh/zprof # top of the .zshrc file
 
 #ssh-agent plugin see https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/ssh-agent
 zstyle :omz:plugins:ssh-agent agent-forwarding on
@@ -9,9 +9,8 @@ export BULLETTRAIN_PROMPT_ORDER=(
     dir
     screen
     perl
-    virtualenv
     java
-    ruby
+    virtualenv
     nvm
     aws
     go
@@ -83,7 +82,7 @@ alias hoy="date +%F"
 #alias emacs="/Applications/Emacs.app/Contents/MacOS/bin/emacsclient --alternate-editor /Applications/Emacs.app/Contents/MacOS/Emacs"
 alias emc="/Applications/Emacs.app/Contents/MacOS/Emacs -nw"
 alias zshconfig="emc ~/.zshrc"
-alias ohmyzsh="em ~/.oh-my-zsh"
+alias ohmyzsh="emc ~/.oh-my-zsh"
 alias rmoldelc="cd ~/.emacs.d/ && find . -type f -name \'*.elc\' -exec rm -fv {} \;"
 alias compileelcs="cd ~/.emacs.d/ && /Applications/Emacs.app/Contents/MacOS/Emacs --batch -f batch-byte-compile **/*.el ;"
 alias optimizeemacs="rmoldelc && sleep 4 && compileelcs"
@@ -126,6 +125,8 @@ alias lsg="ls --git-status"
 alias llg="ll --git-status"
 alias ldg="ld --git-status"
 alias lag="la --git-status"
+# bat i.p.v. cat
+alias cat="bat --paging=never"
 
 ##alias protractor="/usr/local/share/npm/bin/protractor"
 ## Git graph alias soruce http://stackoverflow.com/questions/1057564/pretty-git-branch-graphs
@@ -161,7 +162,7 @@ SVN_SHOW_BRANCH="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(bower brew colorize command-not-found common-aliases cp dash dircycle dirhistory dirpersist docker emacs extract gem git gitignore git-extras git-hubflow gitfast github git-prompt gnu-utils go golang history history-substring-search httpie jenv jsontools kubectl last-working-dir lein lol mvn nmap npm nvm oc osx percol perl python pip pipenv repo rsync ruby rust scala sbt safe-paste screen singlechar spring sudo svcat swiftpm thefuck themes tmux transfer urltools vscode web-search wd xcode yarn zsh-navigation-tools zsh_reload)
+plugins=(bower brew colorize command-not-found common-aliases cp dash dircycle dirhistory dirpersist docker emacs extract gem git gitignore git-extras git-hubflow gitfast github git-prompt gnu-utils go golang history history-substring-search httpie jenv jsontools last-working-dir lein lol mvn nmap npm nvm oc osx percol perl python pip pipenv repo rsync ruby rust scala sbt safe-paste screen singlechar spring sudo svcat swiftpm thefuck themes tmux transfer urltools vscode web-search wd xcode yarn zsh-navigation-tools zsh_reload)
 # plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
@@ -169,9 +170,6 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 
 #see brew install zsh-completions
 fpath=(/usr/local/share/zsh-completions $fpath)
-
-# # DEBUG ZSH: uncomment This needs to be at the bottom
-# zprof
 
 # webassembly
 # see https://webassembly.org/getting-started/developers-guide/
@@ -182,4 +180,6 @@ source $HOME/.cargo/env
 
 #pyenv see https://github.com/pyenv/pyenv/blob/master/COMMANDS.md#pyenv-shell
 eval "$(pyenv init -)"
- 
+
+# # DEBUG ZSH: uncomment This.. needs to be at the bottom
+# zprof

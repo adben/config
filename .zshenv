@@ -55,12 +55,22 @@ export PATH=$PATH:$KINDLEGEN_HOME/kindlegen
 export PATH=$PATH:/usr/local/m-cli
 export PATH=$PATH:/usr/local/opt/qt/bin
 export PATH=$PATH:/Applications/Xcode.app/Contents/Developer/usr/bin
+## RUBY see brew formule
+## If you need to have ruby first in your PATH run:
+export PATH=$PATH:/usr/local/opt/ruby/bin
 export PATH=$HOME/.gem/ruby/2.6.0/bin:$PATH
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH=$PATH:$HOME/.rvm/bin
 export PATH=/usr/local/opt/gnu-getopt/bin:$PATH
 export PATH=/usr/local/opt/gettext/bin:$PATH
+
+## For compilers to find ruby you may need to set:
+export LDFLAGS="-L/usr/local/opt/ruby/lib"
+export CPPFLAGS="-I/usr/local/opt/ruby/include"
+
+## For pkg-config to find ruby you may need to set:
+export PKG_CONFIG_PATH="/usr/local/opt/ruby/lib/pkgconfig"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -75,6 +85,8 @@ export SBT_OPTS='-XX:+CMSClassUnloadingEnabled -XX:MaxPermSize=256M'
 
 #AWS
 export EC2_REGION='eu-west-1'
+
+# fixes for the locale, see https://github.com/robbyrussell/oh-my-zsh/issues/6985
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
