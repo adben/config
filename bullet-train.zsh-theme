@@ -88,7 +88,7 @@ if [ ! -n "${BULLETTRAIN_VIRTUALENV_BG+1}" ]; then
     BULLETTRAIN_VIRTUALENV_BG=yellow
 fi
 if [ ! -n "${BULLETTRAIN_VIRTUALENV_FG+1}" ]; then
-    BULLETTRAIN_VIRTUALENV_FG=white
+    BULLETTRAIN_VIRTUALENV_FG=blue
 fi
 if [ ! -n "${BULLETTRAIN_VIRTUALENV_PREFIX+1}" ]; then
     BULLETTRAIN_VIRTUALENV_PREFIX=" "
@@ -99,7 +99,7 @@ if [ ! -n "${BULLETTRAIN_NVM_BG+1}" ]; then
     BULLETTRAIN_NVM_BG=green
 fi
 if [ ! -n "${BULLETTRAIN_NVM_FG+1}" ]; then
-    BULLETTRAIN_NVM_FG=white
+    BULLETTRAIN_NVM_FG=red
 fi
 if [ ! -n "${BULLETTRAIN_NVM_PREFIX+1}" ]; then
     BULLETTRAIN_NVM_PREFIX=" "
@@ -132,7 +132,7 @@ if [ ! -n "${BULLETTRAIN_JAVA_BG+1}" ]; then
     BULLETTRAIN_JAVA_BG=cyan
 fi
 if [ ! -n "${BULLETTRAIN_JAVA_FG+1}" ]; then
-    BULLETTRAIN_JAVA_FG=white
+    BULLETTRAIN_JAVA_FG=black
 fi
 if [ ! -n "${BULLETTRAIN_JAVA_PREFIX+1}" ]; then
     BULLETTRAIN_JAVA_PREFIX=" "
