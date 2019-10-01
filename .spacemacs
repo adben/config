@@ -92,7 +92,7 @@ This function should only modify configuration layer settings."
      elm
      yaml
      ;;multiple-cursors
-     neotree
+     treemacs
      nixos
      ;; (shell :variables
      ;;        shell-default-height 30
@@ -147,7 +147,7 @@ It should only modify the values of Spacemacs settings."
    ;; to compile Emacs 27 from source following the instructions in file
    ;; EXPERIMENTAL.org at to root of the git repository.
    ;; (default nil)
-   dotspacemacs-enable-emacs-pdumper t
+   dotspacemacs-enable-emacs-pdumper nil
 
    ;; Name of executable file pointing to emacs 27+. This executable must be
    ;; in your PATH.
@@ -168,8 +168,7 @@ It should only modify the values of Spacemacs settings."
    ;; This variable has no effect if Emacs is launched with the parameter
    ;; `--insecure' which forces the value of this variable to nil.
    ;; (default t)
-   dotspacemacs-elpa-https nil ;; temporary emacs-plus HEAD (+27)
-   ;; bug getting error url-http-parse-headers when starting elpa.
+   dotspacemacs-elpa-https t
 
    ;; Maximum allowed time in seconds to contact an ELPA repository.
    ;; (default 5)
@@ -420,6 +419,7 @@ It should only modify the values of Spacemacs settings."
    ;;                       pdf-view-mode
    ;;                       text-mode
    ;;   :size-limit-kb 1000)
+   ;; When used in a plist, `visual' takes precedence over `relative'.
    ;; (default nil)
    dotspacemacs-line-numbers 'relative
 
@@ -535,6 +535,8 @@ dump."
      Put your configuration code here, except for variables that should be set
      before packages are loaded."
 
+  ;; Set the Emacs PATH:
+  (setenv "PATH" (shell-command-to-string "echo $PATH"))
 
   ;; Haskell Dante mode see https://www.fosskers.ca/blog/nix-en.html
   (add-hook 'dante-mode-hook 'flycheck-mode)
@@ -552,32 +554,6 @@ dump."
   (require 'adoc-mode)
   (setq auto-mode-alist (append '(("\\.asciidoc$" . adoc-mode))
                                 auto-mode-alist))
-
-  ;; Neotree
-  ;; Add icon support for neotree
-  ;; Don't forget to install the fonts https://github.com/domtronn/all-the-icons.el
-  (require 'all-the-icons)
-  (setq neo-theme 'icons
-        ;; (if (display-graphic-p) 'icons 'arrow)
-        neo-banner-message "")
-  (setq neo-smart-open t)
-  (setq projectile-switch-project-action 'neotree-projectile-action)
-  (defun neotree-project-dir ()
-    "Open NeoTree using the git root."
-    (interactive)
-    (let ((project-dir (ffip-project-root))
-          (file-name (buffer-file-name)))
-      (if project-dir
-          (progn
-            (neotree-dir project-dir)
-            (neotree-find file-name))
-        (message "Could not find git project root."))))
-  ;; https://www.emacswiki.org/emacs/NeoTree
-  ;;If you use the find-file-in-project (ffip) library,
-  ;;you can open NeoTree at your directory root by adding this code to your .emacs.d:
-  ;; (define-key map (kbd "C-c C-p") 'neotree-project-dir)
-  ;; (global-set-key [f8] 'neotree-project-dir)
-
 
   ;; Add all-the-icons to dired-mode
   (add-hook 'dired-mode-hook 'all-the-icons-dired-mode)
@@ -644,6 +620,21 @@ dump."
   (add-hook 'lisp-interaction-mode-hook #'enable-paredit-mode)
   (add-hook 'scheme-mode-hook #'enable-paredit-mode)
 
+  ;; (eval-after-load 'treemacs
+  ;;   (lambda ()
+  ;;     (unless (require 'all-the-icons nil t)
+  ;;       (error "all-the-icons is not installed"))
+
+  ;;     (when treem)
+  ;;     ))
+
+  ;;check https://github.com/Alexander-Miller/treemacs/issues/3
+  (dolist (item all-the-icons-icon-alist)
+    (let ((extension (car item))
+          (icon (apply (cdr item))))
+      (ht-set! treemacs-icon-hash
+               (s-replace-all '(("\\" . "") ("." . "")) extension)
+               (concat icon " "))))
 
   ;;Clojure cookbook
   (defun increment-clojure-cookbook ()
