@@ -1,4 +1,4 @@
-## DEBUG ZSH: Performance see bottom 
+## DEBUG ZSH: Performance see bottom
 ## zmodload zsh/zprof # top of the .zshrc file
 
 #ssh-agent plugin see https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/ssh-agent
@@ -91,8 +91,9 @@ alias speedtest="wget -O /dev/null http://speedtest.wdc01.softlayer.com/download
 alias bower="noglob bower"
 alias pginit="postgres -D /usr/local/var/postgres"
 #Tasks
-alias caskold="brew cask outdated"
-alias brewup="brew -v update && brew -v upgrade && brew -v cleanup --prune-prefix && brew cask reinstall $(caskold) && brew -v doctor"
+alias brewup="brew -v update && brew -v upgrade && brew cask upgrade" #maybe brew cask upgrade --greedy
+alias brewclean="brew -v cleanup && rm -rf $(brew --cache) && brew -v doctor"
+
 alias pipup="pip3 list --outdated --format=freeze | grep -v '^\\-e' | cut -d = -f 1 | xargs -n1 pip3 install -U"
 alias goup="go get -u -v all"
 alias npmup="ncu -g"
