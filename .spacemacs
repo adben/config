@@ -629,12 +629,13 @@ dump."
   ;;     ))
 
   ;;check https://github.com/Alexander-Miller/treemacs/issues/3
-  (dolist (item all-the-icons-icon-alist)
-    (let ((extension (car item))
-          (icon (apply (cdr item))))
-      (ht-set! treemacs-icon-hash
-               (s-replace-all '(("\\" . "") ("." . "")) extension)
-               (concat icon " "))))
+
+  ;; (dolist (item all-the-icons-icon-alist)
+  ;;   (let ((extension (car item))
+  ;;         (icon (apply (cdr item))))
+  ;;     (ht-set! treemacs-icon-hash
+  ;;              (s-replace-all '(("\\" . "") ("." . "")) extension)
+  ;;              (concat icon " "))))
 
   ;;Clojure cookbook
   (defun increment-clojure-cookbook ()
