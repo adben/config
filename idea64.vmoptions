@@ -40,6 +40,10 @@
 -XX:+HeapDumpOnOutOfMemoryError
 -XX:+UseCompressedOops
 -XX:-OmitStackTraceInFastThrow
+-Djdk.attach.allowAttachSelf=true
+-Dkotlinx.coroutines.debug=off
+-Djdk.module.illegalAccess.silent=true
+-XX:+UseCompressedOops
 -Dfile.encoding=UTF-8
 -Xverify:none
 
