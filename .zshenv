@@ -76,6 +76,7 @@ export PKG_CONFIG_PATH="/usr/local/opt/ruby/lib/pkgconfig"
 export NVM_DIR="$HOME/.nvm"
 [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
 [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+[ -x "$(command -v npm)" ] && export NODE_PATH=$NODE_PATH:`npm root -g`
 
 #export EDITOR='/Applications/Emacs.app/Contents/MacOS/Emacs -nw'
 export EDITOR='vim'
