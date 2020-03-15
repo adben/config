@@ -72,7 +72,7 @@ setopt multios # perform implicit tees or cats when multiple redirections are at
 setopt rcquotes
 # custom theme, see https://github.com/caiogondim/bullet-train.zsh
 export ZSH_THEME="bullet-train"
-export DEFAULT_USER="adben"
+export DEFAULT_USER="ad"
 
 #Aliases
 # Colored cal output
@@ -184,3 +184,5 @@ eval "$(pyenv init -)"
 
 # # DEBUG ZSH: uncomment This.. needs to be at the bottom
 # zprof
+export PATH="$HOME/.jenv/bin:$PATH"
+eval "$(jenv init -)"
