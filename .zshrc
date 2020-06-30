@@ -1,6 +1,10 @@
 ## DEBUG ZSH: Performance see bottom
 ## zmodload zsh/zprof # top of the .zshrc file
 
+# Pure theme, not an omz one, see https://github.com/sindresorhus/pure#getting-started .zshrc
+autoload -U promptinit; promptinit
+prompt pure
+
 #ssh-agent plugin see https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/ssh-agent
 zstyle :omz:plugins:ssh-agent agent-forwarding on
 
@@ -70,8 +74,10 @@ setopt multios # perform implicit tees or cats when multiple redirections are at
 # setopt XTRACE VERBOSE
 # Helps whith the quotes problem
 setopt rcquotes
-# custom theme, see https://github.com/caiogondim/bullet-train.zsh
-export ZSH_THEME="bullet-train"
+# custom theme inc. java settings, see https://github.com/caiogondim/bullet-train.zsh
+#export ZSH_THEME="bullet-train"
+export ZSH_THEME=""
+
 export DEFAULT_USER="ad"
 
 #Aliases
@@ -163,7 +169,7 @@ SVN_SHOW_BRANCH="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(bower brew colorize command-not-found common-aliases cp dash dircycle dirhistory dirpersist docker emacs extract gem git gitignore git-extras git-hubflow gitfast github git-prompt gnu-utils go golang history history-substring-search httpie jenv jsontools last-working-dir lein lol mvn nmap npm nvm oc osx percol perl python pip pipenv repo rsync ruby rust scala sbt safe-paste screen singlechar spring sudo svcat swiftpm thefuck themes tmux transfer urltools vscode web-search wd xcode yarn zsh-navigation-tools zsh_reload)
+plugins=(bower brew colorize command-not-found common-aliases cp dash dircycle dirhistory dirpersist docker emacs extract gem git gitignore git-extras git-hubflow gitfast github git-prompt gnu-utils golang history history-substring-search httpie jenv jsontools last-working-dir lein lol mvn nmap npm nvm oc osx percol perl python pip pipenv repo rsync ruby rust scala sbt safe-paste screen singlechar spring sudo svcat swiftpm thefuck themes tmux transfer urltools vscode web-search wd xcode yarn zsh-navigation-tools zsh_reload)
 # plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
@@ -186,3 +192,4 @@ eval "$(pyenv init -)"
 # zprof
 export PATH="$HOME/.jenv/bin:$PATH"
 eval "$(jenv init -)"
+export PATH="/usr/local/opt/imagemagick@6/bin:$PATH"
