@@ -97,7 +97,7 @@ alias speedtest="wget -O /dev/null http://speedtest.wdc01.softlayer.com/download
 alias bower="noglob bower"
 alias pginit="postgres -D /usr/local/var/postgres"
 #Tasks
-alias brewup="brew -v update && brew -v upgrade && brew cask upgrade" #maybe brew cask upgrade --greedy
+alias brewup="brew -v update && brew -v upgrade && brew -v upgrade --cask" #maybe brew cask upgrade --greedy
 alias brewclean="brew -v cleanup && rm -rf $(brew --cache) && brew -v doctor"
 
 alias pipup="pip3 list --outdated --format=freeze | grep -v '^\\-e' | cut -d = -f 1 | xargs -n1 pip3 install -U"
@@ -193,3 +193,16 @@ eval "$(pyenv init -)"
 export PATH="$HOME/.jenv/bin:$PATH"
 eval "$(jenv init -)"
 export PATH="/usr/local/opt/imagemagick@6/bin:$PATH"
+export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
+export PATH="/usr/local/opt/python@3.8/bin:$PATH"
+
+if type brew &>/dev/null; then
+    FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
+
+    autoload -Uz compinit
+    compinit
+fi
+
+# Add Jbang to environment
+alias j!=jbang
+export PATH="$HOME/.jbang/bin:$PATH"
