@@ -206,3 +206,6 @@ fi
 # Add Jbang to environment
 alias j!=jbang
 export PATH="$HOME/.jbang/bin:$PATH"
+export PATH="/usr/local/opt/python@3.10/bin:$PATH"
+fpath=(~/.zsh/completion $fpath)
+autoload -Uz compinit ; compinit
