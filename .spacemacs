@@ -3,7 +3,7 @@
 ;; It must be stored in your home directory.
 
 ;;Byte recompile to force emacs version compatibility
-;; (byte-recompile-directory (expand-file-name "~/.emacs.d") 0)
+;;(byte-recompile-directory (expand-file-name "~/.emacs.d") 0)
 
 (defun dotspacemacs/layers ()
   "Layer configuration:
@@ -96,6 +96,7 @@ This function should only modify configuration layer settings."
      ;; (shell :variables
      ;;        shell-default-height 30
      ;;        shell-default-position 'bottom)
+     scala
      )
 
 
@@ -119,7 +120,8 @@ This function should only modify configuration layer settings."
                                       prettier-js
                                       racer
                                       circe
-                                      gruvbox-theme)
+                                      gruvbox-theme
+                                      go-translate)
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
 
@@ -535,14 +537,14 @@ It should only modify the values of Spacemacs settings."
    ;; (default nil)
    dotspacemacs-whitespace-cleanup nil
 
-   ;; If non nil activate `clean-aindent-mode' which tries to correct
-   ;; virtual indentation of simple modes. This can interfer with mode specific
+   ;; If non-nil activate `clean-aindent-mode' which tries to correct
+   ;; virtual indentation of simple modes. This can interfere with mode specific
    ;; indent handling like has been reported for `go-mode'.
    ;; If it does deactivate it here.
    ;; (default t)
    dotspacemacs-use-clean-aindent-mode t
 
-   ;; Accept SPC as y for prompts if non nil. (default nil)
+   ;; Accept SPC as y for prompts if non-nil. (default nil)
    dotspacemacs-use-SPC-as-y nil
 
    ;; If non-nil shift your number row to match the entered keyboard layout
@@ -562,7 +564,7 @@ It should only modify the values of Spacemacs settings."
    dotspacemacs-pretty-docs nil
 
    ;; If nil the home buffer shows the full path of agenda items
-   ;; and todos. If non nil only the file name is shown.
+   ;; and todos. If non-nil only the file name is shown.
    dotspacemacs-home-shorten-agenda-source nil
 
    ;; If non-nil then byte-compile some of Spacemacs files.
@@ -628,6 +630,10 @@ dump.")
   ;;Clojure cookbook
   (define-key adoc-mode-map (kbd "M-+") 'increment-clojure-cookbook)
 
+  ;;Scala metals
+  (setq scala-auto-treeview t)
+  (setq scala-sbt-window-position bottom)
+
   ;;JS mode
   (setq-default js2-basic-offset 2)
   (setq-default js-indent-level 2)
@@ -640,6 +646,22 @@ dump.")
 
   (setq clojure-enable-fancify-symbols t)
   ;;(spacemacs/set-font "PragmataPro Mono" 12)
+
+  ;;go-translate
+  (require 'go-translate)
+  ;;go-translate list declared languages
+  (setq gts-translate-list '(("nl" "en")
+                             ("nl" "es")
+                             ("en" "es")
+                             ("en" "nl")
+                             ("es" "nl")
+                             ("es" "en")))
+  ;;go-translate engine
+  (setq gts-default-translator
+        (gts-translator
+         :picker (gts-prompt-picker)
+         :engines (list (gts-bing-engine) (gts-google-engine))
+         :render (gts-buffer-render)))
 
   ;;voor Rust: https://github.com/racer-rust/Emacs[<8;106;17m-racer
   (require 'rust-mode)
