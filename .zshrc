@@ -169,7 +169,7 @@ SVN_SHOW_BRANCH="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(bower brew colorize command-not-found common-aliases cp dash dircycle dirhistory dirpersist docker emacs extract gem git gitignore git-extras git-hubflow gitfast github git-prompt gnu-utils golang history history-substring-search httpie jenv jsontools last-working-dir lein lol mvn nmap npm nvm oc osx percol perl python pip pipenv repo rsync ruby rust scala sbt safe-paste screen singlechar spring sudo svcat swiftpm thefuck themes tmux transfer urltools vscode web-search wd xcode yarn zsh-navigation-tools zsh_reload)
+plugins=(brew colorize command-not-found common-aliases cp dash dircycle dirhistory dirpersist docker emacs extract gem git gitignore git-extras git-hubflow gitfast github git-prompt gnu-utils golang history history-substring-search httpie jenv jsontools last-working-dir lein lol macos mvn nmap npm nvm oc percol perl python pip pipenv repo rsync rust safe-paste screen singlechar spring sudo svcat swiftpm thefuck themes tmux transfer urltools vscode web-search wd xcode yarn zsh-navigation-tools)
 # plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
@@ -202,6 +202,11 @@ if type brew &>/dev/null; then
     autoload -Uz compinit
     compinit
 fi
+
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "/usr/local/opt/nvm/nvm.sh" ] && \. "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
+[ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
 # Add Jbang to environment
 alias j!=jbang
