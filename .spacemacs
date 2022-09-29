@@ -93,6 +93,7 @@ This function should only modify configuration layer settings."
      ;;multiple-cursors
      treemacs
      nixos
+     multiple-cursors
      ;; (shell :variables
      ;;        shell-default-height 30
      ;;        shell-default-position 'bottom)
@@ -392,7 +393,7 @@ It should only modify the values of Spacemacs settings."
    ;; `right-then-bottom'. right-then-bottom tries to display the frame to the
    ;; right; if there is insufficient space it displays it at the bottom.
    ;; (default 'bottom)
-   dotspacemacs-which-key-position 'bottom
+   dotspacemacs-which-key-position 'right-then-bottom
 
    ;; Control where `switch-to-buffer' displays the buffer. If nil,
    ;; `switch-to-buffer' displays the buffer in the current window even if
@@ -546,7 +547,7 @@ It should only modify the values of Spacemacs settings."
    ;; Color highlight trailing whitespace in all prog-mode and text-mode derived
    ;; modes such as c++-mode, python-mode, emacs-lisp, html-mode, rst-mode etc.
    ;; (default t)
-   dotspacemacs-show-trailing-whitespace t 
+   dotspacemacs-show-trailing-whitespace t
 
    ;; Delete whitespace while saving buffer. Possible values are `all'
    ;; to aggressively delete empty line and long sequences of whitespace,
@@ -653,7 +654,7 @@ dump."
 
   ;;Scala metals
   (setq scala-auto-treeview t)
-  (setq scala-sbt-window-position bottom)
+  ;;(setq scala-sbt-window-position bottom)
 
   ;;JS mode
   (setq-default js2-basic-offset 2)
@@ -685,12 +686,12 @@ dump."
          :render (gts-buffer-render)))
 
   ;;voor Rust: https://github.com/racer-rust/Emacs[<8;106;17m-racer
-  (require 'rust-mode)
-  (require 'racer)
-  (add-hook 'rust-mode-hook #'racer-mode)
-  (add-hook 'racer-mode-hook #'company-mode)
+  ;;(require 'rust-mode)
+  ;;(require 'racer)
+  ;;(add-hook 'rust-mode-hook #'racer-mode)
+  ;;(add-hook 'racer-mode-hook #'company-mode)
 
-  (define-key rust-mode-map (kbd "TAB") #'company-indent-or-complete-common)
+  ;;(define-key rust-mode-map (kbd "TAB") #'company-indent-or-complete-common)
   (setq company-tooltip-align-annotations t)
 
   ;; Reduce the time after which the company auto completion popup opens
